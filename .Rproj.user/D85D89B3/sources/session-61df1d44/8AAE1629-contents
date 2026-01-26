@@ -1040,58 +1040,8 @@ for(i in 1:length(specimens)){
 }
 legend3d("topleft", cbind(as.character(classifier$Name[c(specimens)])), pch = 16, col = farbe, cex = 3)
 
-##### OLD spcecimen plotting code #### 
 
-# compare specimens
-# as.matrix(classifier$Name)
-# #specimens<-c(1,17); cbind(as.character(classifier$Name[c(specimens)]),farbe[c(1:length(specimens))])
-# specimens<-c(46,33); cbind(as.character(classifier$Name[c(specimens)]),farbe[c(1:length(specimens))])
-# show_landmarks = FALSE
-# 
-# clear3d("shapes");xmed<-median(Proc$rotated[,1,specimens[1]]); ymed<-median(Proc$rotated[,2,specimens[1]]); zmed<-median(Proc$rotated[,3,specimens[1]]);
-# plot3d(Proc$rotated[,,specimens[1]],type="n",xlab="", ylab="", zlab="",aspect =T,box=F,axes=F,xlim=c(xmed-0.4,xmed+0.4),ylim=c(ymed-0.4,ymed+0.4),zlim=c(zmed-0.4,zmed+0.4),col="red")
-# 
-# for(i in 1:length(specimens)){
-#   if(analysis %in% c("EDJ CEJ", "EDJ")){
-#     if(number_of_f_points == 4){
-#       lines3d(Proc$rotated[c(curves[[1]],curves[[2]],curves[[3]],curves[[4]]),,specimens[i]],col=farbe[i],lwd=2)
-#       if(show_landmarks){
-#         points3d(Proc$rotated[c(curves[[1]],curves[[2]],curves[[3]],curves[[4]]),,specimens[i]],col=farbe[i], size = 7)
-#       }
-#     } else {
-#       lines3d(Proc$rotated[c(curves[[1]],curves[[2]]),,specimens[i]],col=farbe[i],lwd=2)
-#       if(show_landmarks){
-#         points3d(Proc$rotated[c(curves[[1]],curves[[2]]),,specimens[i]],col=farbe[i], size = 7)
-#       }
-#     }
-#     
-#     if(analysis == "EDJ CEJ"){
-#       if(number_of_f_points == 4){
-#         lines3d(Proc$rotated[c(curves[[5]]),,specimens[i]],col=farbe[i],lwd=2)
-#         if(show_landmarks){
-#           points3d(Proc$rotated[c(curves[[5]]),,specimens[i]],col=farbe[i], size = 7)
-#         }
-#       } else{
-#         lines3d(Proc$rotated[c(curves[[3]]),,specimens[i]],col=farbe[i],lwd=2)
-#         if(show_landmarks){
-#           points3d(Proc$rotated[c(curves[[3]]),,specimens[i]],col=farbe[i], size = 7)
-#         }
-#       }
-#     } 
-#   } else {
-#     lines3d(Proc$rotated[curves[[1]],,specimens[i]],col=farbe[i],lwd=2)
-#     if(show_landmarks){
-#       points3d(Proc$rotated[curves[[1]],,specimens[i]],col=farbe[i], size = 7)
-#     }
-#   }
-#   spheres3d(Proc$rotated[fix,,specimens[i]],radius=0.003, col=farbe[i])
-# }
-# 
-# legend3d("topleft", cbind(as.character(classifier$Name[c(specimens)])), pch = 16, col = farbe, cex = 3)
-
-#####
-
-# compare group means
+## compare group means
 # optional modification of the groups
 # gp_char <- as.character(gp)
 # gp_char[2] <- "UW105_966_mykolas"
@@ -1115,48 +1065,7 @@ for(i in 1:length(groups)){
 
 legend3d("topleft", levels(gp)[groups], pch = 16, col = farbe[groups], cex = 3)
 
-#### OLD MEAN SHAPE PLOTTING CODE ####
-# par3d(FOV = 0)
-# clear3d("shapes");plot3d(Proc$rotated[,,1],type="n",xlab="", ylab="", zlab="",aspect =F,box=F,axes=F,col="red")
-# for(i in 1:length(groups)){
-# sub<-gp==levels(gp)[groups[i]]
-# X<-Proc$rotated[,1,sub]
-# Y<-Proc$rotated[,2,sub]
-# Z<-Proc$rotated[,3,sub]
-# if(is.vector(X)){
-# if(analysis %in% c("EDJ CEJ", "EDJ")){
-# lines3d(Proc$rotated[c(curves[[1]],curves[[2]],curves[[3]],curves[[4]]),,sub],col=farbe[groups[i]],lwd=2)
-# if(analysis == "EDJ CEJ"){
-# lines3d(Proc$rotated[c(curves[[5]]),,sub],col=farbe[groups[i]],lwd=2)
-# }
-# } else{
-# lines3d(Proc$rotated[curves[[1]],,sub],col=farbe[groups[i]],lwd=2)
-# }
-# spheres3d(Proc$rotated[fix,,sub],radius=0.003, col=farbe[groups[i]])
-# } else {
-# mean<-cbind(apply(X,1,mean),apply(Y,1,mean),apply(Z,1,mean))
-# if(analysis %in% c("EDJ CEJ", "EDJ")){
-# lines3d(mean[c(curves[[1]],curves[[2]],curves[[3]],curves[[4]]),],col=farbe[groups[i]],lwd=2)
-# if(analysis == "EDJ CEJ"){
-# lines3d(mean[c(curves[[5]]),],col=farbe[groups[i]],lwd=2)
-# }
-# } else{
-# lines3d(mean[curves[[1]],],col=farbe[groups[i]],lwd=2)
-# }
-# spheres3d(mean[fix,],radius=0.003, col=farbe[groups[i]])
-# }
-# }
-# legend3d("topleft", levels(gp)[groups], pch = 16, col = farbe[groups], cex = 3)
-
-########################################
-
-### testing mean groups with plotting individual specimens too ###
-# optional modification of the groups
-
-# transparency_range <- function(x, range_min, range_max){   
-#   (1 - (x - min(x))/(max(x)-min(x)) * (range_max - range_min)) + range_min 
-# }
-
+# Compare groups means + plots every specimens 
 transparency_range_inv <- function(x, range_min, range_max){   
   (1 - (x - min(x))/(max(x)-min(x))) * (range_max - range_min) + range_min
 }
@@ -1187,60 +1096,9 @@ nearest_neighbours_with_alpha <- function(procs, group_number, range_min = 0, ra
                        alpha_vals = alpha_vals)
 }
 
-# procs <- Proc$rotated
-# group_number <- 1
-# range_min <- 0.2
-# range_max <- 0.9
-# 
-gp_char <- as.character(gp)
-gp_char[12] <- "UW105-1007_ULP4"
-gp <- as.factor(gp_char)
-farbe <- c(farbe, "black")
-
-cbind(levels(gp),farbe[c(1:length(levels(gp)))])
-groups<-c(4,3)
-
-show_specimens = T
 
 dist_and_alpha_list<- nearest_neighbours_with_alpha(Proc$rotated, 1, 0.1 , 0.8)
 
-# par3d(FOV = 0)
-# clear3d("shapes");plot3d(Proc$rotated[,,1],type="n",xlab="", ylab="", zlab="",aspect =F,box=F,axes=F,col="red")
-# for(i in 1:length(groups)){
-#   sub<-gp==levels(gp)[groups[i]]
-#   X<-Proc$rotated[,1,sub]
-#   Y<-Proc$rotated[,2,sub]
-#   Z<-Proc$rotated[,3,sub]
-#   Procs_sub <- Proc$rotated[,,sub]
-#   if(is.vector(X)){
-#     if(analysis %in% c("EDJ CEJ", "EDJ")){
-#       lines3d(Proc$rotated[c(curves[[1]],curves[[2]],curves[[3]],curves[[4]]),,sub],col=farbe[groups[i]],lwd=2)
-#       if(analysis == "EDJ CEJ"){
-#         lines3d(Proc$rotated[c(curves[[5]]),,sub],col=farbe[groups[i]],lwd=2)
-#       }
-#     } else{
-#       lines3d(Proc$rotated[curves[[1]],,sub],col=farbe[groups[i]],lwd=3)
-#     }
-#     spheres3d(Proc$rotated[fix,,sub],radius=0.003, col=farbe[groups[i]])
-#   } else {
-#     mean<-cbind(apply(X,1,mean),apply(Y,1,mean),apply(Z,1,mean))
-#     if(analysis %in% c("EDJ CEJ", "EDJ")){
-#       lines3d(mean[c(curves[[1]],curves[[2]],curves[[3]],curves[[4]]),],col=farbe[groups[i]],lwd=2)
-#       if(analysis == "EDJ CEJ"){
-#         lines3d(mean[c(curves[[5]]),],col=farbe[groups[i]],lwd=2)
-#       }
-#     } else{
-#       lines3d(mean[curves[[1]],],col=farbe[groups[i]],lwd=3.3)
-#       if(show_specimens){
-#         for(s in 1:dim(Procs_sub)[[3]]){
-#           lines3d(Procs_sub[curves[[1]],,s],col=farbe[groups[i]],lwd=1.2, alpha = 0.4)
-#         }
-#       }
-#     }
-#     # lines3d(mean[curves[[3]],],col=farbe[groups[i]],lwd=2)
-#     spheres3d(mean[fix,],radius=0.003, col=farbe[groups[i]])
-#   }
-# }
 gp_char <- as.character(gp)
 gp_char[12] <- "UW105-1007_ULP4"
 gp <- as.factor(gp_char)
@@ -1270,42 +1128,6 @@ for(i in 1:length(groups)){
   })
 }
 legend3d("topleft", levels(gp)[groups], pch=16, col=farbe[1:length(groups)], cex=3)  
-
-##############################
-
-## premolar group comparisons 
-# cbind(levels(gp),farbe[c(1:length(levels(gp)))])
-# groups<-c(6,1)
-# 
-# par3d(FOV = 0)
-# clear3d("shapes");plot3d(Proc$rotated[,,1],type="n",xlab="", ylab="", zlab="",aspect =F,box=F,axes=F,col="red")
-# for(i in 1:length(groups)){
-#   sub<-gp==levels(gp)[groups[i]]
-#   X<-Proc$rotated[,1,sub]
-#   Y<-Proc$rotated[,2,sub]
-#   Z<-Proc$rotated[,3,sub]
-#   if(is.vector(X)){
-#     if(analysis %in% c("EDJ CEJ", "EDJ")){
-#       lines3d(Proc$rotated[c(curves[[1]],curves[[2]]),,sub],col=farbe[groups[i]],lwd=2)
-#       lines3d(Proc$rotated[curves[[3]],,sub],col=farbe[groups[i]],lwd=2)
-#     } else{
-#       lines3d(Proc$rotated[curves[[1]],,sub],col=farbe[groups[i]],lwd=2)
-#     }
-#     spheres3d(Proc$rotated[fix,,sub],radius=0.003, col=farbe[groups[i]])
-#   } else {
-#     mean<-cbind(apply(X,1,mean),apply(Y,1,mean),apply(Z,1,mean))
-#     if(analysis %in% c("EDJ CEJ", "EDJ")){
-#       lines3d(mean[c(curves[[1]],curves[[2]]),],col=farbe[groups[i]],lwd=2)
-#       lines3d(mean[curves[[3]],],col=farbe[groups[i]],lwd=2)
-#     } else{
-#       lines3d(mean[curves[[1]],],col=farbe[groups[i]],lwd=2)
-#     }
-#     # lines3d(mean[curves[[3]],],col=farbe[groups[i]],lwd=2)
-#     spheres3d(mean[fix,],radius=0.003, col=farbe[groups[i]])
-#   }
-# }
-# 
-# legend3d("topleft", levels(gp)[groups], pch = 16, col = farbe[groups], cex = 3)
 
 #Centroid size boxplot ggplot
 library(ggrepel); library(ggplot2); library(viridis); library(tidyverse)
