@@ -1,0 +1,46 @@
+Name,Tooth,Class1,Class2,Classify,Exclude
+Aafr_STS52B_LRP4,P4,Aus,Aus,*,*
+Aafr_STW131_LLP4,P4,Aus,Aus,*,*
+Aafr_STW213_LRP4,P4,Aus,Aus,*,*
+Aafr_STW327_LRP4,P4,Aus,Aus,*,*
+Aafr_STW404_LRP4,P4,Aus,Aus,*,*
+Aafr_STW537_LLP4,P4,Aus,Aus,*,*
+Aafr_STW_14_LLP4,P4,Aus,Aus,*,*
+Aafr_TM1523_LLP4,P4,Aus,Aus,*,*
+AL128-23_LRP4,P4,Aus,Aus,*,*
+AL266-1_LRP4,P4,Aus,Aus,*,*
+AL330-7_LLP4,P4,Aus,Aus,*,*
+AL330-5_LRP4,P4,Aus,Aus,*,*
+AL333w-1_LLP4,P4,Aus,Aus,*,*
+AL417-1a_LLP4,P4,Aus,Aus,*,*
+AL443-1_LLP4,P4,Aus,Aus,*,*
+KNM-ER_992_LRP4,P4,Early Homo,Here,*,ex
+KNM-ER_1507_LLP4,P4,Early Homo,Early Homo,*,*
+KNM-ER_1802_LRP4,P4,Early Homo,Early Homo,*,*
+KNM-ER_5431_LLP4,P4,Early Homo,Early Homo,*,*
+LH3r_LLP4,P4,Aus,Aus,*,*
+OH7_LRP4,P4,Early Homo,Hhab,*,*
+OH13_LRP4,P4,Early Homo,Hhab,*,*
+OH16_LLP4,P4,Early Homo,Hhab,*,*
+OH22_LRP4,P4,Early Homo,Here,*,ex
+Pboi_KNM-ER_3885_LRP4,P4,East Paranthropus,Pboi,*,*
+Pboi_KNMER_15951D_LRP4,P4,East Paranthropus,Pboi,*,*
+Prob_SK7_LRP4,P4,Prob,Prob,*,*
+Prob_SK9_LLP4,P4,Prob,Prob,*,*
+Prob_SK23_LRP4,P4,Prob,Prob,*,*
+Prob_SK25_LLP4,P4,Prob,Prob,*,*
+Prob_SK55B_LLP4,P4,Prob,Prob,*,*
+Prob_SK88_LLP4,P4,Prob,Prob,*,*
+Prob_SK826B_LLP4,P4,Prob,Prob,*,*
+Prob_SK1587a_LLP4,P4,Prob,Prob,*,*
+Prob_SK1588_LRP4,P4,Prob,Prob,*,*
+Prob_SKW5_LRP4,P4,Prob,Prob,*,*
+Prob_SKX4446_LRP4,P4,Prob,Prob,*,*
+SK6_LLP4,P4,Prob,Prob,*,*
+STW151_LLP4,P4,Early Homo,Early Homo,*,*
+UW101_184_LLP4,P4,Hnal,Hnal,*,*
+UW101_377_LRP4,P4,Hnal,Hnal,*,*
+UW101_383_LRP4,P4,Hnal,Hnal,*,*
+UW101_887_LLP4,P4,Hnal,Hnal,*,*
+UW101_1261_LLP4,P4,Hnal,Hnal,*,*
+UW105_811_LLP4,P4,UW105,UW105,*,*

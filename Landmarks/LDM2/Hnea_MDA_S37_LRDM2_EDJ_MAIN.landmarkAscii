@@ -1,0 +1,36 @@
+# Avizo 3D ASCII 3.0
+
+
+define Markers 4
+
+Parameters {
+    HistoryLogHead {
+        HistoryLog {
+            UID:8d0831d7-6b24-4871-a748-3d278b24d27f {
+                OriginalFile {
+                    NumSets 1,
+                    ContentType "LandmarkSet",
+                    LoadCommand "load \"D:/3D_GM/3D_GM_EDJr_EDJm_CEJ_LDM2s/Landmarks/Hnea_MDA_S37_LRDM2_EDJ_MAIN.landmarkAscii\"",
+                    Filename "D:/3D_GM/3D_GM_EDJr_EDJm_CEJ_LDM2s/Landmarks/Hnea_MDA_S37_LRDM2_EDJ_MAIN.landmarkAscii"
+                }
+                Product "Avizo",
+                Version "2023.2",
+                Date "2024-05-27T11:43:29",
+                Room "HxWorkroomMain"
+            }
+            CurrentUID "8d0831d7-6b24-4871-a748-3d278b24d27f"
+        }
+    }
+    NumSets 1,
+    ContentType "LandmarkSet"
+}
+
+Markers { float[3] Coordinates } @1
+
+# Data section follows
+@1
+2.273736238479614e+00 2.934778451919556e+00 4.041831493377686e+00 
+2.345812082290649e+00 3.373713731765747e+00 7.530786037445068e+00 
+1.299031257629395e+00 7.621293544769287e+00 8.146670341491699e+00 
+1.715397357940674e+00 6.713297843933105e+00 3.249909639358521e+00 
+

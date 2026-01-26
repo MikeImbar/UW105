@@ -1,0 +1,65 @@
+library(caret)
+
+train_set <- data.frame(Species = gsub(" ", "_", gp_class), Proc$PCscores_drop[classified,1:10] )
+train_set <- as.data.frame(train_set )
+
+# Set formula
+frmla <- as.formula(
+  paste("Species", paste(colnames(Proc$PCscores_drop[classified,1:10]), collapse = " + "), sep = " ~ "))
+
+# Set cross validation
+trControl <- trainControl(method  = "LOOCV",
+                          verboseIter = TRUE,
+                          savePredictions = "final",
+                          classProbs = TRUE)
+
+# C5.0 Tree 
+grid <- expand.grid(
+  winnow = c(TRUE), 
+  trials = seq(1, 5, by = 1), 
+  model = "tree" )
+
+set.seed(123)
+
+C50_Mod <- train(frmla, 
+                 train_set,
+                 method = "C5.0",
+                 trControl = trControl,
+                 metric = "Accuracy",
+                 tuneGrid = grid,
+                 importance = 'impurity')
+
+set.seed(123)
+
+LDA_Mod <- train(frmla, 
+                 train_set,
+                 method = "lda",
+                 trControl = trControl,
+                 metric = "Accuracy",
+                 
+                 importance = 'impurity')
+
+RF_Mod <- train(frmla, 
+                 train_set,
+                 method = "ranger",
+                 trControl = trControl,
+                 metric = "Kappa",
+                 
+                 importance = 'impurity')
+
+C50_Mod$results
+confusionMatrix(C50_Mod$pred$obs, C50_Mod$pred$pred)
+varImp(C50_Mod)
+confusionMatrix(LDA_Mod$pred$obs, LDA_Mod$pred$pred)
+confusionMatrix(RF_Mod$pred$obs, RF_Mod$pred$pred)
+
+C50_Mod$pred
+
+unknown <- data.frame(Species = gsub(" ", "_", gp[!classified]), t(as.data.frame(Proc$PCscores_drop[!classified,1:10])))
+unknown <- as.data.frame(unknown)
+?predict()
+
+typprob <- predict(LDA_Mod, unknown)
+typprob
+
+

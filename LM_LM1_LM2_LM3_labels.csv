@@ -1,0 +1,157 @@
+Name,Tooth,Class1,Class2,Classify,Exclude
+Aafr_STS24_LRM1,M1,Aus,Aafr,*,*
+Aafr_STS52b_LRM1,M1,Aus,Aafr,*,*
+Aafr_STW106_LRM1,M1,Aus,Aafr,*,*
+Aafr_STW123a_LRM1,M1,Aus,Aafr,*,*
+Aafr_STW145_LRM1,M1,Aus,Aafr,*,*
+Aafr_STW309A_LRM1,M1,Aus,Aafr,*,*
+Aafr_STW364_LRM1,M1,Aus,Aafr,*,*
+Aafr_STW421A_LRM1,M1,Aus,Aafr,*,*
+AL145-35_LLM1,M1,Aus,Aafa,*,*
+AL266-1_LLM1,M1,Aus,Aafa,*,*
+AL330-7_LLM1,M1,Aus,Aafa,*,*
+AL330-5_LRM1,M1,Aus,Aafa,*,*
+AL333w-1_LLM1,M1,Aus,Aafa,*,*
+AL417-1a_LLM1,M1,Aus,Aafa,*,*
+Hnal_UW101_285_LM1,M1,Hnal,Hnal,*,*
+Hnal_UW101_582_LM1,M1,Hnal,Hnal,*,*
+KNM-ER_806C_LLM1,M1,Early Homo,Here,*,*
+KNM-ER_992_LLM1,M1,Early Homo,Here,*,*
+KNM-ER_1502_LRM1,M1,Early Homo,Early Homo,*,*
+KNM-ER_1507_LLM1,M1,Early Homo,Early Homo,*,*
+KNM-ER_1802_LRM1,M1,Early Homo,Early Homo,*,*
+KNM-ER_1820_LLM1,M1,East Paranthropus,Pboi,*,*
+KNM-ER_5431_LRM1,M1,TO EXCLUDE,TO EXCLUDE,*,ex
+KNM-ER_15930_LLM1,M1,East Paranthropus,Pboi,*,*
+L26-1g_LRM1,M1,Early Homo,Early Homo,*,*
+LH3t_LLM1,M1,Aus,Aafa,*,*
+OH7_LLM1,M1,Early Homo,Hhab,*,*
+OH13_LRM1,M1,Early Homo,Hhab,*,*
+OH16_LRM1,M1,Early Homo,Hhab,*,*
+OH22_LRM1,M1,TO EXCLUDE,TO EXCLUDE,*,ex
+OH30_LLM1,M1,East Paranthropus,Pboi,*,*
+Pr_DNH8_LLM1,M1,Prob,Prob,*,*
+Pr_DNH46_LRM1,M1,Prob,Prob,*,*
+Pr_DNH60B_LRM1,M1,Prob,Prob,*,*
+Pr_SK6_LLM1,M1,Prob,Prob,*,*
+Pr_SK23_LLM1,M1,Prob,Prob,*,*
+Pr_SK25_LLM1,M1,Prob,Prob,*,*
+Pr_SK62_LLM1,M1,Prob,Prob,*,*
+Pr_SK104_LLM1,M1,Prob,Prob,*,*
+Pr_SK826b(828)_LLM1,M1,Prob,Prob,*,*
+Pr_SK843_LLM1,M1,Prob,Prob,*,*
+Pr_SK846a_LRM1,M1,Prob,Prob,*,*
+Pr_SK1587a_LLM1,M1,Prob,Prob,*,*
+Pr_SK1588_LRM1,M1,Prob,Prob,*,*
+Pr_SK3974_LRM1,M1,Prob,Prob,*,*
+Pr_SKW5_LRM1,M1,Prob,Prob,*,*
+Pr_SKX4446_LRM1,M1,Prob,Prob,*,*
+UW105_811_LLM1,M1,UW105,UW105,classify,*
+Aafr_MLD2_LRM2,M2,Aus,Aafr,*,ex
+Aafr_STS52b_LRM2,M2,Aus,Aafr,*,ex
+Aafr_STW14_LRM2,M2,Aus,Aafr,*,ex
+Aafr_STW109_LRM2,M2,Aus,Aafr,*,ex
+Aafr_STW133_LLM2,M2,Aus,Aafr,*,ex
+Aafr_STW213_LLM2,M2,Aus,Aafr,*,ex
+Aafr_STW234_LRM2,M2,Aus,Aafr,*,ex
+Aafr_STW327_LLM2,M2,Aus,Aafr,*,ex
+Aafr_STW404_LRM2,M2,Aus,Aafr,*,ex
+Aafr_STW412B_LLM2,M2,Aus,Aafr,*,ex
+Aafr_STW491_LLM2,M2,Aus,Aafr,*,ex
+Aafr_STW498c_LLM2,M2,Aus,Aafr,*,ex
+Aafr_STW560E_LRM2,M2,Aus,Aafr,*,ex
+AL128-23_LRM2,M2,Aus,Aafa,*,ex
+AL145-35_LLM2,M2,Aus,Aafa,*,ex
+AL188-1_LRM2,M2,Aus,Aafa,*,ex
+AL241-14_LLM2,M2,Aus,Aafa,*,ex
+AL266-1_LRM2,M2,Aus,Aafa,*,ex
+AL330-5_LRM2,M2,Aus,Aafa,*,ex
+AL333w-1_LLM2,M2,Aus,Aafa,*,ex
+AL417-1a_LLM2,M2,Aus,Aafa,*,ex
+AL440-1_LRM2,M2,Aus,Aafa,*,ex
+KNM-ER_806B_LLM2,M2,Early Homo,Here,*,ex
+KNM-ER_992_LLM2,M2,Early Homo,Here,*,ex
+KNM-ER_1507_LLM2,M2,Early Homo,Early Homo,*,ex
+KNM-ER_1802_LRM2,M2,Early Homo,Early Homo,*,ex
+KNM-ER_1808G_LRM2,M2,Early Homo,Here,*,ex
+KNM-ER_5431_LLM2,M2,TO EXCLUDE,TO EXCLUDE,*,ex
+LM2_Pboi_KNM-ER_15930_LLM2,M2,East Paranthropus,Pboi,*,ex
+OH7_LLM2,M2,Early Homo,Hhab,*,ex
+OH13_LRM2,M2,Early Homo,Hhab,*,ex
+OH16_LRM2,M2,Early Homo,Hhab,*,ex
+OH22_LRM2,M2,TO EXCLUDE,TO EXCLUDE,*,ex
+Pb_KNM-ER_25520_LRM2,M2,East Paranthropus,Pboi,*,ex
+Pb_L62-17_LRM2,M2,East Paranthropus,Paet,*,ex
+Pb_L157-35_LLM2,M2,East Paranthropus,Paet,*,ex
+Pb_OmoF203_LRM2,M2,East Paranthropus,Pboi,*,ex
+Pr_DNH7_LRM2,M2,Prob,Prob,*,ex
+Pr_DNH8_LLM2,M2,Prob,Prob,*,ex
+Pr_DNH60C_LRM2,M2,Prob,Prob,*,ex
+Pr_GDA2_LRM2,M2,Prob,Prob,*,ex
+Pr_SK1_LLM2,M2,Prob,Prob,*,ex
+Pr_SK6_LRM2,M2,Prob,Prob,*,ex
+Pr_SK23_LLM2,M2,Prob,Prob,*,ex
+Pr_SK25_LRM2,M2,Prob,Prob,*,ex
+Pr_SK843_LLM2,M2,Prob,Prob,*,ex
+Pr_SK1587B_LRM2,M2,Prob,Prob,*,ex
+Pr_SKW5_LLM2,M2,Prob,Prob,*,ex
+Pr_SKX4446_LRM2,M2,Prob,Prob,*,ex
+Pr_TM1600_LLM2,M2,Prob,Prob,*,ex
+UW101_145,M2,Hnal,Hnal,*,ex
+UW101_284,M2,Hnal,Hnal,*,ex
+UW101_377_LRM2,M2,Hnal,Hnal,*,ex
+UW101_507,M2,Hnal,Hnal,*,ex
+UW101_789,M2,Hnal,Hnal,*,ex
+UW101_1142_LRM2,M2,Hnal,Hnal,*,ex
+UW101_1283_LLM2,M2,Hnal,Hnal,*,ex
+AL188-1_LRM3,M3,Aus,Aafa,*,ex
+AL266-1_LRM3,M3,Aus,Aafa,*,ex
+AL288-1_LRM3,M3,Aus,Aafa,*,ex
+Hnal_UW101_LRM3,M3,Hnal,Hnal,*,ex
+Hnal_UW516_LLM3,M3,Hnal,Hnal,*,ex
+KNM-ER_806A_LLM3,M3,Early Homo,Here,*,ex
+KNM-ER_992_LRM3,M3,Early Homo,Here,*,ex
+KNM-ER_1812C_LLM3,M3,Early Homo,Here,*,ex
+LM3_Pboi_KNM-ER_15930_LLM3,M3,East Paranthropus,Pboi,*,ex
+LM3_Pboi_KNM-ER_25520_LRM3,M3,East Paranthropus,Pboi,*,ex
+OH4_LLM3,M3,Early Homo,Hhab,*,ex
+OH13_LLM3,M3,Early Homo,Hhab,*,ex
+OH16_LRM3,M3,Early Homo,Hhab,*,ex
+Pb_Omo47-1973-1500_LRM3,M2,East Paranthropus,Pboi,*,ex
+Pr_DNH7_LRM3,M3,Prob,Prob,*,ex
+Pr_DNH8_LLM3,M3,Prob,Prob,*,ex
+Pr_DNH12_LRM3,M3,Prob,Prob,*,ex
+Pr_DNH18_LRM3,M3,Prob,Prob,*,ex
+Pr_DNH21_LLM3,M3,Prob,Prob,*,ex
+Pr_DNH51_LRM3,M3,Prob,Prob,*,ex
+Pr_DNH68_LRM3,M3,Prob,Prob,*,ex
+Pr_SK6_LRM3,M3,Prob,Prob,*,ex
+Pr_SK22_LRM3,M3,Prob,Prob,*,ex
+Pr_SK23_LLM3,M3,Prob,Prob,*,ex
+Pr_SK34_LRM3,M3,Prob,Prob,*,ex
+Pr_SK75_LRM3,M3,Prob,Prob,*,ex
+Pr_SK841b_LLM3,M3,Prob,Prob,*,ex
+Pr_SK843_LLM3,M3,Prob,Prob,*,ex
+Pr_SKW5_LLM3,M3,Prob,Prob,*,ex
+Pr_SKX5014_LRM3,M3,Prob,Prob,*,ex
+Pr_SKX10642_LLM3,M3,Prob,Prob,*,ex
+Pr_SKX10643_LRM3,M3,Prob,Prob,*,ex
+Pr_TM1517b_LRM3,M3,Prob,Prob,*,ex
+Pr_TM1600_LLM3,M3,Prob,Prob,*,ex
+STW3_LLM3,M3,Aus,Aafr,*,ex
+STW14_LRM3,M3,Aus,Aafr,*,ex
+STW109_LRM3,M3,Aus,Aafr,*,ex
+STW142(STW312)_LLM3,M3,Aus,Aafr,*,ex
+STW237_LLM3,M3,Aus,Aafr,*,ex
+STW384_LRM3,M3,Aus,Aafr,*,ex
+STW404_LRM3,M3,Aus,Aafr,*,ex
+STW491_LLM3,M3,Aus,Aafr,*,ex
+STW498c_LLM3,M3,Aus,Aafr,*,ex
+STW520_LRM3,M3,Aus,Aafr,*,ex
+STW529_LLM3,M3,Aus,Aafr,*,ex
+STW537_LLM3,M3,Aus,Aafr,*,ex
+STW560A_LRM3,M3,Aus,Aafr,*,ex
+UW101_1261_LRM3,M3,Hnal,Hnal,*,ex
+UW105-001_LLM3,M3,UW105,UW105-001,*,ex
+UW105-825_LRM2,M2,UW105,UW105-825,classify,ex
+UW_105_002A_LLM2,M2,UW105,UW105-002A,classify,ex

@@ -1,0 +1,86 @@
+Name,Tooth,Class1,Class2,Classify,Exclude
+AL128-23_LRP3,P3,Aus,Aus,*,*
+AL266-1_LRP3,P3,Aus,Aus,*,*
+AL333-10_LLP3,P3,Aus,Aus,*,*
+AL333w-60_LLP3,P3,Aus,Aus,*,*
+AL333w-1_LRP3,P3,Aus,Aus,*,*
+AL417-1a_LLP3,P3,Aus,Aus,*,*
+AL655-1_LLP3,P3,Aus,Aus,*,*
+DNH8_LLP3,P3,Prob,Prob,*,*
+DNH46_LRP3,P3,Prob,Prob,*,*
+DNH51_LRP3,P3,Prob,Prob,*,*
+DNH68_LRP3,P3,Prob,Prob,*,*
+KNM-ER_992_LRP3,P3,Early Homo,Early Homo,*,*
+KNM-ER_1507_LLP3,P3,Early Homo,Early Homo,*,*
+KNM-ER_1802_LRP3,P3,Early Homo,Early Homo,*,*
+KNM-ER_5431_LLP3,P3,Early Homo,Early Homo,*,*
+KNM-WT_16005_LLP3,P3,Pboi,Pboi,*,*
+OH7_LRP3,P3,Early Homo,Early Homo,*,*
+OH13_LRP3,P3,Early Homo,Early Homo,*,*
+OH16_LRP3,P3,Early Homo,Early Homo,*,*
+OH22_LRP3,P3,TO EXCLUDE,TO EXCLUDE,*,ex
+Omo75i-1970-1255_LRP3,P3,Early Homo,Early Homo,*,*
+SK96_2_LLP3,P3,Prob,Prob,*,*
+SK100_LRP3,P3,Prob,Prob,*,*
+SK857_LRP3,P3,Prob,Prob,*,*
+SKW5_LRP3,P3,Prob,Prob,*,*
+STS51_LRP3,P3,Aus,Aus,*,*
+STS52b_LRP3,P3,Aus,Aus,*,*
+STW7_LLP3,P3,Aus,Aus,*,*
+STW213_LRP3,P3,Aus,Aus,*,*
+STW404_LRP3,P3,Aus,Aus,*,*
+UW101_144_LLP3,P3,Hnal,Hnal,*,*
+UW101_298_LRP3,P3,Hnal,Hnal,*,*
+UW101_377_LRP3,P3,Hnal,Hnal,*,*
+UW101_506_LRP3,P3,Hnal,Hnal,*,*
+UW101_889_LLP3,P3,Hnal,Hnal,*,*
+UW101_1261_LRP3,P3,Hnal,Hnal,*,*
+UW101_1565_LLP3,P3,Hnal,Hnal,*,*
+Aafr_STS52B_LRP4,P4,Aus,Aus,*,ex
+Aafr_STW131_LLP4,P4,Aus,Aus,*,ex
+Aafr_STW213_LRP4,P4,Aus,Aus,*,ex
+Aafr_STW327_LRP4,P4,Aus,Aus,*,ex
+Aafr_STW404_LRP4,P4,Aus,Aus,*,ex
+Aafr_STW537_LLP4,P4,Aus,Aus,*,ex
+Aafr_STW_14_LLP4,P4,Aus,Aus,*,ex
+Aafr_TM1523_LLP4,P4,Aus,Aus,*,ex
+AL128-23_LRP4,P4,Aus,Aus,*,ex
+AL266-1_LRP4,P4,Aus,Aus,*,ex
+AL330-7_LLP4,P4,Aus,Aus,*,ex
+AL330-5_LRP4,P4,Aus,Aus,*,ex
+AL333w-1_LLP4,P4,Aus,Aus,*,ex
+AL417-1a_LLP4,P4,Aus,Aus,*,ex
+AL443-1_LLP4,P4,Aus,Aus,*,ex
+DNH8_LLP4,P4,Prob,Prob,*,ex
+DNH51_LRP4,P4,Prob,Prob,*,ex
+KNM-ER_992_LRP4,P4,Early Homo,Here,*,ex
+KNM-ER_1507_LLP4,P4,Early Homo,Early Homo,*,ex
+KNM-ER_1802_LRP4,P4,Early Homo,Early Homo,*,ex
+KNM-ER_5431_LLP4,P4,TO EXCLUDE,TO EXCLUDE,*,ex
+LH3r_LLP4,P4,Aus,Aus,*,ex
+OH7_LRP4,P4,Early Homo,Hhab,*,ex
+OH13_LRP4,P4,Early Homo,Hhab,*,ex
+OH16_LLP4,P4,Early Homo,Hhab,*,ex
+OH22_LRP4,P4,TO EXCLUDE,TO EXCLUDE,*,ex
+Pboi_KNM-ER_3885_LRP4,P4,Pboi,Pboi,*,ex
+Pboi_KNMER_15951D_LRP4,P4,Pboi,Pboi,*,ex
+Prob_SK7_LRP4,P4,Prob,Prob,*,ex
+Prob_SK9_LLP4,P4,Prob,Prob,*,ex
+Prob_SK23_LRP4,P4,Prob,Prob,*,ex
+Prob_SK25_LLP4,P4,Prob,Prob,*,ex
+Prob_SK55B_LLP4,P4,Prob,Prob,*,ex
+Prob_SK88_LLP4,P4,Prob,Prob,*,ex
+Prob_SK826B_LLP4,P4,Prob,Prob,*,ex
+Prob_SK1587a_LLP4,P4,Prob,Prob,*,ex
+Prob_SK1588_LRP4,P4,Prob,Prob,*,ex
+Prob_SKW5_LRP4,P4,Prob,Prob,*,ex
+Prob_SKX4446_LRP4,P4,Prob,Prob,*,ex
+SK6_LLP4,P4,Prob,Prob,*,ex
+STW151_LLP4,P4,Early Homo,Early Homo,*,ex
+UW101_184_LLP4,P4,Hnal,Hnal,*,ex
+UW101_377_LRP4,P4,Hnal,Hnal,*,ex
+UW101_383_LRP4,P4,Hnal,Hnal,*,ex
+UW101_887_LLP4,P4,Hnal,Hnal,*,ex
+UW101_1261_LLP4,P4,Hnal,Hnal,*,ex
+UW105_811_LLP4,P4,UW105,UW105,*,ex
+UW_105_240_LLP,P,UW105,UW105,classify,ex

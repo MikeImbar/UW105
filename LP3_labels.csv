@@ -1,0 +1,40 @@
+Name,Tooth,Class1,Class2,Classify,Exclude
+AL128-23_LRP3,P3,Aus,Aus,*,*
+AL266-1_LRP3,P3,Aus,Aus,*,*
+AL333-10_LLP3,P3,Aus,Aus,*,*
+AL333w-60_LLP3,P3,Aus,Aus,*,*
+AL333w-1_LRP3,P3,Aus,Aus,*,*
+AL417-1a_LLP3,P3,Aus,Aus,*,*
+AL655-1_LLP3,P3,Aus,Aus,*,*
+DNH8_LLP3,P3,Prob,Prob,*,*
+DNH46_LRP3,P3,Prob,Prob,*,*
+DNH51_LRP3,P3,Prob,Prob,*,*
+DNH68_LRP3,P3,Prob,Prob,*,*
+KNM-ER_992_LRP3,P3,Early Homo,Early Homo,*,*
+KNM-ER_1507_LLP3,P3,Early Homo,Early Homo,*,*
+KNM-ER_1802_LRP3,P3,Early Homo,Early Homo,*,*
+KNM-ER_5431_LLP3,P3,TO EXCLUDE,TO EXCLUDE,*,ex
+KNM-WT_16005_LLP3,P3,Pboi,Pboi,*,*
+OH7_LRP3,P3,Early Homo,Early Homo,*,*
+OH13_LRP3,P3,Early Homo,Early Homo,*,*
+OH16_LRP3,P3,Early Homo,Early Homo,*,*
+OH22_LRP3,P3,TO EXCLUDE,TO EXCLUDE,*,ex
+Omo75i-1970-1255_LRP3,P3,Early Homo,Early Homo,*,*
+SK6_LRP3,P3,Prob,Prob,*,*
+SK96_2_LLP3,P3,Prob,Prob,*,*
+SK100_LRP3,P3,Prob,Prob,*,*
+SK857_LRP3,P3,Prob,Prob,*,*
+SKW5_LRP3,P3,Prob,Prob,*,*
+STS51_LRP3,P3,Aus,Aus,*,*
+STS52b_LRP3,P3,Aus,Aus,*,*
+STW7_LLP3,P3,Aus,Aus,*,*
+STW213_LRP3,P3,Aus,Aus,*,*
+STW404_LRP3,P3,Aus,Aus,*,*
+UW101_144_LLP3,P3,Hnal,Hnal,*,*
+UW101_298_LRP3,P3,Hnal,Hnal,*,*
+UW101_377_LRP3,P3,Hnal,Hnal,*,*
+UW101_506_LRP3,P3,Hnal,Hnal,*,*
+UW101_889_LLP3,P3,Hnal,Hnal,*,*
+UW101_1261_LRP3,P3,Hnal,Hnal,*,*
+UW101_1565_LLP3,P3,Hnal,Hnal,*,*
+UW_105_658_LRP3,P3,UW105,UW105,*,*

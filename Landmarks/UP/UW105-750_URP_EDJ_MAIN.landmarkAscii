@@ -1,0 +1,17 @@
+# Avizo 3D ASCII 3.0
+
+
+define Markers 2
+
+Parameters {
+    NumSets 1,
+    ContentType "LandmarkSet"
+}
+
+Markers { float[3] Coordinates } @1
+
+# Data section follows
+@1
+1.222442817687988e+001 6.019717216491699e+000 2.812934112548828e+001 
+5.176800727844238e+000 8.251052856445313e+000 2.716481971740723e+001 
+

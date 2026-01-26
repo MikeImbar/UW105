@@ -1,0 +1,17 @@
+# AmiraMesh 3D ASCII 2.0
+
+
+define Markers 2
+
+Parameters {
+    NumSets 1,
+    ContentType "LandmarkSet"
+}
+
+Markers { float[3] Coordinates } @1
+
+# Data section follows
+@1
+7.572177886962891e+000 5.279941082000732e+000 2.237348556518555e+000 
+2.770981788635254e+000 5.798621654510498e+000 4.095202445983887e+000 
+

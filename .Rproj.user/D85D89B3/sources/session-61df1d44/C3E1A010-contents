@@ -1,0 +1,646 @@
+setwd("C:/Users/tomda/Files/Mega/MPI/PhD work/Olduvai GM paper/GM")
+setwd("C:/Users/td306/Mega/MPI/PhD work/Olduvai GM paper/GM")
+
+# Discrimination
+library(geomorph)
+library(MASS)
+library(tripack)
+library(geometry)
+library(Morpho)
+
+library(lattice)
+library(klaR)
+library(graphics)
+library(ellipse)
+
+
+#rm(list = ls())
+
+if(position=="UM1" | position=="UM2"| position=="UM3"| position=="LM1"| position=="LM2"| position=="LM3"){
+  M_PM <- "M"; width <- 7
+} else if(position=="UP3" | position=="UP4" | position=="LP3" | position=="LP4"){
+  M_PM <- "P"; width <- 10
+}
+
+# SHAPE/FORM
+Analysis <- "SHAPE"
+
+if(Analysis == "SHAPE"){
+  coords<-two.d.array(Proc$rotated)  
+} else if(Analysis == "FORM"){
+  coords<-cbind(two.d.array(Proc$rotated),log(Proc$size))
+ }
+
+labels<-classifier
+labels$Class2 <- factor(labels$Class2)
+
+
+#LM1
+farbe<-c("#e41a1c","black","#377eb8","black","#4daf4a","black","#984ea3")
+#LM2
+farbe<-c("#e41a1c","black","#377eb8","black","black","#4daf4a","#984ea3","#ff7f00","#a65628","#f781bf","black","black","black","black")
+#LM3
+farbe<-c("#e41a1c","#377eb8","#4daf4a","#984ea3","#ff7f00","#a65628","#f781bf","black","black","black","black")
+#UM1
+farbe<-c("#e41a1c","#377eb8","#4daf4a","black","black","#984ea3","black","black","#ff7f00","#a65628","#f781bf","black","black","black","black")
+#UM2
+farbe<-c("#e41a1c","#377eb8","#4daf4a","black","black","#984ea3","black","#ff7f00","#a65628","#f781bf","black","black","black","black")
+#UM3
+farbe<-c("#e41a1c","#377eb8","#4daf4a","#984ea3")
+
+# UP3 colours
+farbe<-c("#e41a1c","#377eb8","black","#4daf4a","black","#984ea3")
+# UP colours
+farbe<-c("#e41a1c","#377eb8","black","#4daf4a","black","#984ea3")
+# LP3 colours
+farbe<-c("#e41a1c","black","#377eb8","black","black","#4daf4a","black","#984ea3")
+# LP4 colours
+farbe<-c("#e41a1c","black","#377eb8","black","black","#4daf4a","#984ea3")
+
+farbe1<-c("#e41a1c","#377eb8","#4daf4a","#984ea3")
+farbe1<-c("#66c2a5", "#e41a1c", "#fc8d62", "#8da0cb")
+
+coords.prc<-prcomp(coords)
+groupnum <-length(levels(labels$Class2))
+gp_class<-factor(labels$Class2[classified])
+groupnum_c<-length(levels(gp_class))
+
+#PCA PC1 vs PC2
+plot(cbind(coords.prc$x[,1],coords.prc$x[,2]),type="n",asp=1,cex=1,xlab="PC 1",ylab="PC 2",main="Shape-PCA of EDJ&CEJ")
+for(gruppe in 1:groupnum){
+  sub<-labels$Class2==levels(labels$Class2)[gruppe]
+  tr <- NULL
+  try(tr<-tri.mesh(x=coords.prc$x[sub,1],y=coords.prc$x[sub,2],duplicate = "error"))
+  if(!is.null(tr)){
+  #convex.hull(tr,plot.it=TRUE,col=farbe[gruppe],add=TRUE,lwd=1,lty=1)}
+  polygon(convex.hull(tr)$x,convex.hull(tr)$y,col=(adjustcolor(farbe[gruppe], alpha.f = 0.5)),border=farbe[gruppe])
+} else if(sum(sub)==2){
+  lines(coords.prc$x[sub,1],coords.prc$x[sub,2],col=farbe1[gruppe],lwd = 2)
+}}
+points(coords.prc$x[,c(1,2)],col=farbe[gp],pch=19)
+text(coords.prc$x[,c(1,2)],label=labels$Name,col=farbe[labels$Class2],pos=c(1,2),cex=0.6,offset=0.5)
+
+#var along PCs
+ref <- mshape(Proc$rotated_drop)
+PCnum<-2
+PC <- Proc$PCscores[,PCnum]
+PC_preds <- shape.predictor(Proc$rotated_drop, x= PC, Intercept = FALSE, pred1 = mean(PC)-(1.5*(sd(PC))), pred2 = mean(PC)+(1.5*(sd(PC)))) 
+#preds <- shape.predictor(Proc$rotated_drop, x= PC, Intercept = FALSE, pred1 = min(PC), pred2 = max(PC))
+pos_PC<-PC_preds$pred2;neg_PC<-PC_preds$pred1
+
+#PC pos
+clear3d("shapes")
+legend3d("topright",legend="", title= paste("PC",PCnum,"pos"),pch = 16, cex=1, inset=c(0.02))
+plot3d(pos_PC[curves[[1]],],type="l",lwd=3,xlab="", ylab="", zlab="",aspect =F,box=F,axes=F)
+if(M_PM == "M"){
+  lines3d(pos_PC[curves[[2]],],lwd=3);lines3d(pos_PC[curves[[3]],],lwd=3);lines3d(pos_PC[curves[[4]],],lwd=3);lines3d(pos_PC[curves[[5]],],col="navy",lwd=3)
+  points3d(pos_PC[fix[c(1,2,3,4)],],col="black",size=12)
+} else if(M_PM == "P"){
+lines3d(pos_PC[curves[[2]],],lwd=3);lines3d(pos_PC[curves[[3]],],col="navy",lwd=3)
+points3d(pos_PC[fix[c(1,2)],],col="black",size=12)}
+
+#PC neg
+clear3d("shapes")
+legend3d("topright",legend="", title= paste("PC",PCnum,"neg"),pch = 16, cex=1, inset=c(0.02))
+plot3d(neg_PC[curves[[1]],],type="l",lwd=3,xlab="", ylab="", zlab="",aspect =F,box=F,axes=F)
+if(M_PM == "M"){
+lines3d(neg_PC[curves[[2]],],lwd=3);lines3d(neg_PC[curves[[3]],],lwd=3);lines3d(neg_PC[curves[[4]],],lwd=3);lines3d(neg_PC[curves[[5]],],col="navy",lwd=3)
+points3d(neg_PC[fix[c(1,2,3,4)],],col="black",size=12)
+} else if(M_PM == "P"){
+lines3d(neg_PC[curves[[2]],],lwd=3);lines3d(neg_PC[curves[[3]],],col="navy",lwd=3)
+points3d(neg_PC[fix[c(1,2)],],col="black",size=12)}
+
+
+#evaluating the number of PCs to be selected for CVA - CHECK THIS
+ncomp <- ncol(Proc$PCscores)
+dat <- as.data.frame(cbind(Group = gp_class, Proc$PCscores[classified, 1:ncomp]))
+accuracies <- rep(NA, ncomp - 1)
+names(accuracies) <- paste(2:ncomp, "PCs")
+for (k in 3:ncol(dat)) {
+  #mod <- lda(dat[, 2:k],grouping=dat$Group,prior = rep(1/groupnum_c, groupnum_c),CV = TRUE)
+  mod <- lda(dat$Group ~ ., data = dat[, 1:k], prior = rep(1/groupnum_c, groupnum_c), CV = TRUE)
+  accuracies[k - 2] <- sum(mod$class == dat$Group,na.rm=T) / length(na.exclude(mod$class))
+}
+plot(x = 2:ncomp, y = accuracies,
+     type = "b", pch = 16,
+     xlab = "Number of PCA axes in LDA model",
+     ylab = "X-val classification accuracy",
+     ylim = (c(0,1)))
+grid()
+
+summary(coords.prc)
+number<-6
+
+# Morpho CVA
+CVA<-CVA(dataarray=Proc$PCscores[classified,1:number],groups=gp_class,weighting = TRUE, cv = TRUE, prior=rep(1/groupnum_c,groupnum_c))
+
+#Project specimens into CVA
+coords_excluded<- Proc$PCscores[!classified,1:number]
+
+coords_to_project<-NULL
+if(sum(!classified)==1){
+  coords_to_project<-t(as.matrix(coords_excluded))
+  row.names(coords_to_project)<-classifier[!classified,"Name"]
+} else if(sum(!classified)>1){
+  coords_to_project<-as.matrix(coords_excluded)
+}
+
+swept <- sweep(coords_to_project, 2, CVA$Grandm)
+projected <- swept %*% CVA$CV
+
+
+#CVA 1 v 2 (labels)
+yrange<-sum(abs(range(CVA$CVscores[,2])));ymin<-min(CVA$CVscores[,2]);ymax<-max(CVA$CVscores[,2])
+Xrange<-sum(abs(range(CVA$CVscores[,1])));Xmin<-min(CVA$CVscores[,1]);Xmax<-max(CVA$CVscores[,1])
+
+#pdf(paste("../Figures/All PCAs/Mar23 - Nat_comm_R1_Sang/CVA/",position,"_",number,"PCs_CVA_labels.pdf",sep=""),height=7,width=width)
+plot(cbind(CVA$CVscores[,1],CVA$CVscores[,2]),type="n",asp=1,cex=1,ylim=c(ymin-0.25*yrange,ymax+0.25*yrange),xlab=paste("CV 1 (",round(CVA$Var[1,2]),"%)",sep=""),ylab=paste("CV 2 (",round(CVA$Var[2,2]),"%)",sep=""))
+#plot(cbind(CVA$CVscores[,1],CVA$CVscores[,2]),type="n",asp=1,cex=1,xlim=c(Xmin-0.55*Xrange,Xmax+0.35*Xrange),xlab=paste("CV 1 (",round(CVA$Var[1,2]),"%)",sep=""),ylab=paste("CV 2 (",round(CVA$Var[2,2]),"%)",sep=""))
+for(gruppe in 1:length(levels(gp_class))){
+  sub<-gp_class==levels(gp_class)[gruppe]
+  tr <- NULL
+  try(tr<-tri.mesh(x=CVA$CVscores[sub,1],y=CVA$CVscores[sub,2],duplicate = "error"))
+  if(!is.null(tr)){
+    polygon(convex.hull(tr)$x,convex.hull(tr)$y,col=(adjustcolor(farbe[gruppe], alpha.f = 0.5)),border=farbe[gruppe])
+  } else if(sum(sub)==2){
+    lines(CVA$CVscores[sub,1],CVA$CVscores[sub,2],col=farbe[gruppe],lwd = 2)
+  }}
+points(CVA$CVscores[,c(1,2)],col=farbe[gp_class],pch=19)
+text(CVA$CVscores[,c(1,2)],label=labels$Name[classified],col=farbe[labels$Class2[classified]],pos=c(1,2),cex=0.6,offset=0.5)
+points(cbind(projected[,1],projected[,2]),pch=19)
+#text(cbind(projected[,1],projected[,2]),label=rownames(projected),pos=c(1,2),cex=0.6,offset=0.5)
+#dev.off()
+
+#save.image(file=paste("C:/Users/td306/Mega/Kent Postdoc/Sediba/GM/CVA_results_",position,"_size",include_size,"_",Sys.Date(),".RData",sep=""))
+
+#CVA 1 v 2
+pdf(paste("../Figures/All PCAs/Mar23 - Nat_comm_R1_Sang/CVA/",position,"_",number,"PCs_CVA.pdf",sep=""),height=7,width=width)
+#plot(cbind(CVA$CVscores[,1],CVA$CVscores[,2]),type="n",asp=1,cex=1,ylim=c(ymin-0.45*yrange,ymax+0.35*yrange),xlab=paste("CV 1 (",round(CVA$Var[1,2]),"%)",sep=""),ylab=paste("CV 2 (",round(CVA$Var[2,2]),"%)",sep=""))
+plot(cbind(CVA$CVscores[,1],CVA$CVscores[,2]),type="n",asp=1,cex=1,xlim=c(Xmin-0.3*Xrange,Xmax+0.3*Xrange),xlab=paste("CV 1 (",round(CVA$Var[1,2]),"%)",sep=""),ylab=paste("CV 2 (",round(CVA$Var[2,2]),"%)",sep=""))
+for(gruppe in 1:length(levels(gp_class))){
+  sub<-gp_class==levels(gp_class)[gruppe]
+  tr <- NULL
+  try(tr<-tri.mesh(x=CVA$CVscores[sub,1],y=CVA$CVscores[sub,2],duplicate = "error"))
+  if(!is.null(tr)){
+    polygon(convex.hull(tr)$x,convex.hull(tr)$y,col=(adjustcolor(farbe1[gruppe], alpha.f = 0.5)),border=farbe1[gruppe])
+  } else if(sum(sub)==2){
+    lines(CVA$CVscores[sub,1],CVA$CVscores[sub,2],col=farbe1[gruppe],lwd = 2)
+  }}
+points(CVA$CVscores[,c(1,2)],col=farbe1[gp_class],pch=19)
+points(projected,pch=19)
+dev.off()
+
+#CVA 1 v 2 CROSS VALIDATAED (labels)
+yrange<-sum(abs(range(CVA$CVcv[,2])));ymin<-min(CVA$CVcv[,2]);ymax<-max(CVA$CVcv[,2])
+pdf(paste("../Figures/All PCAs/Mar23 - Nat_comm_R1_Sang/cvCVA/",position,"_",number,"PCs_cvCVA_labels.pdf",sep=""),height=7,width=width)
+plot(cbind(CVA$CVcv[,1],CVA$CVcv[,2]),type="n",asp=1,cex=1,ylim=c(ymin-0.05*yrange,ymax+0.05*yrange),xlab="CV 1",ylab="CV 2")
+for(gruppe in 1:length(levels(gp_class))){
+  sub<-gp_class==levels(gp_class)[gruppe]
+  tr <- NULL
+  try(tr<-tri.mesh(x=CVA$CVcv[sub,1],y=CVA$CVcv[sub,2],duplicate = "error"))
+  if(!is.null(tr)){
+    polygon(convex.hull(tr)$x,convex.hull(tr)$y,col=(adjustcolor(farbe1[gruppe], alpha.f = 0.5)),border=farbe1[gruppe])
+  } else if(sum(sub)==2){
+    lines(CVA$CVcv[sub,1],CVA$CVcv[sub,2],col=farbe1[gruppe],lwd = 2)
+  }}
+points(CVA$CVcv[,c(1,2)],col=farbe1[gp_class],pch=19)
+text(CVA$CVcv[,c(1,2)],label=labels$Name[classified],col=farbe[labels$Class2[classified]],pos=c(1,2),cex=0.6,offset=0.5)
+dev.off()
+
+#CVA 1 v 2 CROSS VALIDATAED 
+pdf(paste("../Figures/All PCAs/Mar23 - Nat_comm_R1_Sang/cvCVA/",position,"_",number,"PCs_cvCVA.pdf",sep=""),height=7,width=width)
+plot(cbind(CVA$CVcv[,1],CVA$CVcv[,2]),type="n",asp=1,cex=1,ylim=c(ymin-0.05*yrange,ymax+0.05*yrange),xlab="CV 1",ylab="CV 2")
+for(gruppe in 1:length(levels(gp_class))){
+  sub<-gp_class==levels(gp_class)[gruppe]
+  tr <- NULL
+  try(tr<-tri.mesh(x=CVA$CVcv[sub,1],y=CVA$CVcv[sub,2],duplicate = "error"))
+  if(!is.null(tr)){
+    polygon(convex.hull(tr)$x,convex.hull(tr)$y,col=(adjustcolor(farbe1[gruppe], alpha.f = 0.5)),border=farbe1[gruppe])
+  } else if(sum(sub)==2){
+    lines(CVA$CVcv[sub,1],CVA$CVcv[sub,2],col=farbe1[gruppe],lwd = 2)
+  }}
+points(CVA$CVcv[,c(1,2)],col=farbe1[gp_class],pch=19)
+dev.off()
+
+
+#var along CVs
+### CHECK WHETHER THIS SHOULD BE ROTATED_DROP - NO DIFFERENCE IF NO DROPS
+ref <- mshape(Proc$rotated_drop)
+CVnum<-2
+CV <- CVA$CVscores[,CVnum]
+preds_CV <- shape.predictor(Proc$rotated[,,classified], x= CV, Intercept = FALSE, pred1 = mean(CV)-(1.5*(sd(CV))), pred2 = mean(CV)+(1.5*(sd(CV)))) 
+#preds <- shape.predictor(Proc$rotated_drop, x= CV, Intercept = FALSE, pred1 = min(CV), pred2 = max(CV))
+pos_CV<-preds_CV$pred2;neg_CV<-preds_CV$pred1
+
+#CV pos
+clear3d("shapes")
+legend3d("topright",legend="", title= paste("CV",CVnum,"pos"),pch = 16, cex=1, inset=c(0.02))
+plot3d(pos_CV[curves[[1]],],type="l",lwd=6,xlab="", ylab="", zlab="",aspect =F,box=F,axes=F)
+if(M_PM == "M"){
+  lines3d(pos_CV[curves[[2]],],lwd=6);lines3d(pos_CV[curves[[3]],],lwd=6);lines3d(pos_CV[curves[[4]],],lwd=6);lines3d(pos_CV[curves[[5]],],col="navy",lwd=6)
+  points3d(pos_CV[fix[c(1,2,3,4)],],col="black",size=24)
+  texts3d(pos_CV[fix[c(1,2,3,4)],],texts = c("Pro","Par","Met","Hyp"),adj=1)
+} else if(M_PM == "P"){
+  lines3d(pos_CV[curves[[2]],],lwd=6);lines3d(pos_CV[curves[[3]],],col="navy",lwd=6)
+  points3d(pos_CV[fix[c(1,2)],],col="black",size=24)
+  texts3d(pos_CV[fix[c(1,2)],],texts = c("Pro","Met"),adj=1)
+  }
+
+#CV neg
+clear3d("shapes")
+legend3d("topright",legend="", title= paste("CV",CVnum,"neg"),pch = 16, cex=1, inset=c(0.02))
+plot3d(neg_CV[curves[[1]],],type="l",lwd=6,xlab="", ylab="", zlab="",aspect =F,box=F,axes=F)
+if(M_PM == "M"){
+  lines3d(neg_CV[curves[[2]],],lwd=6);lines3d(neg_CV[curves[[3]],],lwd=6);lines3d(neg_CV[curves[[4]],],lwd=6);lines3d(neg_CV[curves[[5]],],col="navy",lwd=6)
+  points3d(neg_CV[fix[c(1,2,3,4)],],col="black",size=24)
+} else if(M_PM == "P"){
+  lines3d(neg_CV[curves[[2]],],lwd=6);lines3d(neg_CV[curves[[3]],],col="navy",lwd=6)
+  points3d(neg_CV[fix[c(1,2)],],col="black",size=24)}
+
+# compare
+clear3d("shapes")
+legend3d("topright",legend=c("pos","neg"),col=c("red","navy"), title= paste("CV",CVnum),pch = 16, cex=1, inset=c(0.02))
+plot3d(pos_CV[curves[[1]],],type="l",lwd=6,xlab="", ylab="", zlab="",aspect =F,box=F,axes=F,col="red")
+lines3d(neg_CV[curves[[1]],],lwd=6,col="navy")
+if(M_PM == "M"){
+  lines3d(pos_CV[curves[[2]],],col="red",lwd=6);lines3d(pos_CV[curves[[3]],],col="red",lwd=6);lines3d(pos_CV[curves[[4]],],col="red",lwd=6);lines3d(pos_CV[curves[[5]],],col="red",lwd=6)
+  points3d(pos_CV[fix[c(1,2,3,4)],],col="red",size=20)
+  lines3d(neg_CV[curves[[2]],],col="navy",lwd=6);lines3d(neg_CV[curves[[3]],],col="navy",lwd=6);lines3d(neg_CV[curves[[4]],],col="navy",lwd=6);lines3d(neg_CV[curves[[5]],],col="navy",lwd=6)
+  points3d(neg_CV[fix[c(1,2,3,4)],],col="navy",size=20)
+  texts3d(pos_CV[fix[c(1,2,3,4)],],texts = c("Pro","Par","Met","Hyp"),adj=1)
+} else if(M_PM == "P"){
+  lines3d(pos_CV[curves[[2]],],lwd=6);lines3d(pos_CV[curves[[3]],],col="navy",lwd=6)
+  points3d(pos_CV[fix[c(1,2)],],col="black",size=24)
+  texts3d(pos_CV[fix[c(1,2)],],texts = c("Pro","Met"),adj=1)
+}
+
+## typicality probabilities
+#habilis
+hab_array<-array(dim=c(sum(classifier$Class2[classified]==levels(gp_class)[3]),groupnum_c,6),dimnames=list(classifier[classifier$Class2==levels(gp_class)[3],1],levels(gp_class),paste(rep("PC",5),c(5:10))))
+hab_affins<-matrix(nrow = sum(classifier$Class2[classified]==levels(gp_class)[3]),ncol=6, dimnames=list(classifier[classifier$Class2==levels(gp_class)[3],1],paste(rep("PC",5),c(5:10))))
+for(i in 5:10){
+  CVA_typ_hab<-CVA(dataarray=Proc$PCscores[classified,1:i],groups=gp_class,weighting = TRUE, cv = TRUE, prior=rep(1/groupnum_c,groupnum_c))
+  typ<-typprobClass(x=CVA_typ_hab$CVscores,groups=gp_class,cv=TRUE,method="c")
+  typ_probs<-typ$probsCV;rownames(typ_probs)<-classifier$Name[classified]
+  habilis<-typ_probs[classifier$Class2[classified]==levels(gp_class)[3],]
+  hab_array[,,(i-4)]<-habilis
+  hab_affins[,(i-4)]<-as.character(typ$groupaffinCV[classifier$Class2[classified]==levels(gp_class)[3]])
+}
+write.csv(hab_array,file=paste("Manuscript datafiles/Typicality probabilities/",position,"_habilis_typ_prob.csv",sep=""))
+write.csv(as.data.frame(hab_affins),file=paste("Manuscript datafiles/Typicality probabilities/",position,"_habilis_typ_affins.csv",sep=""))
+
+#P3 habilis run
+hab_array<-array(dim=c(sum(classifier$Class2[classified]==levels(gp_class)[3]),groupnum_c,6),dimnames=list(classifier[classifier$Class2==levels(gp_class)[3],1],levels(gp_class),paste(rep("PC",5),c(5:10))))
+hab_affins<-matrix(nrow = sum(classifier$Class2[classified]==levels(gp_class)[3]),ncol=6, dimnames=list(classifier[classifier$Class2==levels(gp_class)[3],1],paste(rep("PC",5),c(5:10))))
+
+for(i in 5:10){
+  CVA_typ_hab<-CVA(dataarray=Proc$PCscores[classified,1:i],groups=gp_class,weighting = TRUE, cv = F, prior=rep(1/groupnum_c,groupnum_c))
+  rownames(CVA_typ_hab$CVscores)<-rownames(Proc$PCscores[classified,])
+  x<-CVA_typ_hab$CVscores[classifier$Class2[classified]==levels(gp_class)[3],]
+  for(k in 1:dim(hab_affins)[1]){
+    data<-CVA_typ_hab$CVscores[rownames(CVA_typ_hab$CVscores)!=rownames(x)[k],]
+    groups<-gp_class[rownames(CVA_typ_hab$CVscores)!=rownames(x)[k]]
+    typ<-typprobClass(x=x[k,],data=data,groups=groups,method="c")
+    hab_array[k,,(i-4)]<-typ$probs 
+    hab_affins[k,(i-4)]<-as.character(typ$groupaffin)
+  }
+}
+write.csv(hab_array,file=paste("Manuscript datafiles/Typicality probabilities/",position,"_habilis_typ_prob.csv",sep=""))
+write.csv(as.data.frame(hab_affins),file=paste("Manuscript datafiles/Typicality probabilities/",position,"_habilis_typ_affins.csv",sep=""))
+
+
+#habilis alternative method - 'correct' cross validation
+hab_array<-array(dim=c(sum(classifier$Class2[classified]==levels(gp_class)[3]),groupnum_c,6),dimnames=list(classifier[classifier$Class2==levels(gp_class)[3],1],levels(gp_class),paste(rep("PC",5),c(5:10))))
+hab_affins<-matrix(nrow = sum(classifier$Class2[classified]==levels(gp_class)[3]),ncol=6, dimnames=list(classifier[classifier$Class2==levels(gp_class)[3],1],paste(rep("PC",5),c(5:10))))
+hab_affins_summary<-matrix(nrow = sum(classifier$Class2[classified]==levels(gp_class)[3]),ncol=4,dimnames=list(classifier[classifier$Class2==levels(gp_class)[3],1],c(levels(gp_class),"none")))
+
+for(i in 5:10){
+  for(k in 1:dim(hab_affins)[1]){
+    subset<-rownames(hab_affins)[k]!=rownames(Proc$PCscores[classified,])
+    CVA_typ_hab<-CVA(dataarray=Proc$PCscores[classified,1:i][subset,],groups=gp_class[subset],weighting = TRUE, cv = TRUE, prior=rep(1/groupnum_c,groupnum_c))
+    rownames(CVA_typ_hab$CVscores)<-rownames(Proc$PCscores[classified,])[subset]
+    coords_excluded_hab<- Proc$PCscores[classified,1:i][!subset,]
+    coords_to_project_hab<-t(as.matrix(coords_excluded_hab))
+    row.names(coords_to_project_hab)<-classifier[classified,"Name"][!subset]
+    swept_hab <- sweep(coords_to_project_hab, 2, CVA_typ_hab$Grandm)
+    projected_hab <- swept_hab %*% CVA_typ_hab$CV
+    typ<-typprobClass(x=projected_hab,data=CVA_typ_hab$CVscores,groups=gp_class[subset],method="c",outlier=0.1)
+    hab_array[k,,i-4]<- typ$probs
+    hab_affins[k,i-4]<-as.character(typ$groupaffin)
+  }
+}
+
+for(k in 1:dim(hab_array)[1])
+for(i in 1:4){
+  sum<-sum(hab_affins[k,]==colnames(hab_affins_summary)[i])
+  hab_affins_summary[k,i]<-paste(sum,"/6",sep = "")
+}
+
+write.csv(hab_array,file=paste("Manuscript datafiles/Typicality probabilities/Raw/",position,"_habilis_typ_prob_alt.csv",sep=""))
+write.csv(as.data.frame(hab_affins),file=paste("Manuscript datafiles/Typicality probabilities/Raw/",position,"_habilis_typ_affins_alt.csv",sep=""))
+write.csv(as.data.frame(hab_affins_summary),file=paste("Manuscript datafiles/Typicality probabilities/Raw/",position,"_habilis_typ_affins_alt_summary.csv",sep=""))
+
+#projected alt
+proj_array1<-array(dim=c(dim(projected)[1],groupnum_c,6),dimnames=list(rownames(projected),levels(gp_class),paste(rep("PC",5),c(5:10))))
+proj_affins<-matrix(nrow = dim(projected)[1],ncol=6, dimnames=list(rownames(projected),paste(rep("PC",5),c(5:10))))
+proj_affins_summary<-matrix(nrow = dim(projected)[1],ncol=4,dimnames=list(rownames(projected),c(levels(gp_class),"none")))
+
+for(j in 5:10){
+  CVA_typ_proj<-CVA(dataarray=Proc$PCscores[classified,1:j],groups=gp_class,weighting = TRUE, prior=rep(1/groupnum_c,groupnum_c))
+  CVA_scores<-CVA_typ_proj$CVscores;rownames(CVA_scores)<-classifier$Name[classified]
+  proj<-typprobClass(x=projected,data=CVA_scores,groups=gp_class,method="c",outlier=0.1)
+  proj_array1[,,(j-4)]<-proj$probs
+  proj_affins[,(j-4)]<-as.character(proj$groupaffin)
+}
+
+for(k in 1:dim(proj_affins)[1])
+  for(i in 1:4){
+    sum<-sum(proj_affins[k,]==colnames(proj_affins_summary)[i])
+    proj_affins_summary[k,i]<-paste(sum,"/6",sep = "")
+  }
+
+write.csv(proj_array1,file=paste("Manuscript datafiles/Typicality probabilities/Raw/",position,"_proj_typ_prob_rerun.csv",sep=""))
+write.csv(as.data.frame(proj_affins),file=paste("Manuscript datafiles/Typicality probabilities/Raw/",position,"_proj_typ_prob_rerun_affins.csv",sep=""))
+write.csv(as.data.frame(proj_affins_summary),file=paste("Manuscript datafiles/Typicality probabilities/Raw/",position,"_proj_typ_prob_rerun_affins_summary.csv",sep=""))
+
+
+save.image(file=paste(position,"/CVA_results_",position,"_size",include_size,"_",Sys.Date(),".RData",sep=""))
+
+
+
+#projected - old version
+proj_array<-array(dim=c(dim(projected)[1],groupnum_c,6),dimnames=list(rownames(projected),levels(gp_class),paste(rep("PC",5),c(5:10))))
+for(j in 5:10){
+  CVA_typ_proj<-CVA(dataarray=Proc$PCscores[classified,1:j],groups=gp_class,weighting = TRUE, prior=rep(1/groupnum_c,groupnum_c))
+  CVA_scores<-CVA_typ_proj$CVscores;rownames(CVA_scores)<-classifier$Name[classified]
+  CVA_scores1<-rbind(CVA_scores,projected)
+  gp_class1<-factor(c(as.character(labels$Class2[classified]),"Hhab_UM1"))
+  proj<-typprobClass(x=CVA_scores1,groups=gp_class1,cv=TRUE,method="c")
+  proj_probs<-tail(proj$probsCV,n=sum(!classified))
+  proj_array[,,(j-4)]<-proj_probs
+}
+write.csv(proj_array,file=paste("Manuscript datafiles/Typicality probabilities/",position,"_proj_typ_prob.csv",sep=""))
+
+
+
+
+### 3D CVA
+clear3d("shapes")
+plot3d(cbind(CVA$CVscores[,1],CVA$CVscores[,2],CVA$CVscores[,3]),type="p",size=6,col=farbe1[gp_class],xlab="CV1", ylab="CV2", zlab="CV3",aspect = F,box=F)
+texts3d(cbind(CVA$CVscores[,1],CVA$CVscores[,2],CVA$CVscores[,3]),texts=labels$Name[classified],font=1,adj=1,cex=0.7)
+
+for(a in 1:length(levels(gp_class))){
+  sub<-gp_class==levels(gp_class)[a]
+  CVsub<-cbind(CVA$CVscores[sub,1],CVA$CVscores[sub,2],CVA$CVscores[sub,3])
+  if(length(CVsub[,1])>3){
+    hull<-t(convhulln(CVsub)) 
+    triangles3d(CVsub[hull,1],CVsub[hull,2],CVsub[hull,3],lit=T,shininess=101,specular=farbe1[a],ambient=farbe1[a],emission="black",alpha=0.2,col=farbe1[a],smooth=F,depth_test="notequal")
+  } else if(length(CVsub[,1])==3){
+    triangles3d(CVsub[,1],CVsub[,2],CVsub[,3],lit=T,shininess=101,specular=farbe1[a],ambient=farbe1[a],emission="black",alpha=0.2,col=farbe1[a],smooth=F,depth_test="notequal")
+  } else if(length(CVsub[,1])==2){
+    lines3d(CVsub,col=farbe1[a])
+  }
+}
+points3d(projected[,c(1,2,3)],size=6)
+texts3d(projected[,c(1,2,3)],texts=rownames(projected),font=1,adj=1,cex=0.7)
+
+
+
+
+#OR
+CVnum<-1
+CV <- CVA$CVscores[,CVnum]
+
+SD_pos<-mean(CV)+(1.5*(sd(CV)))
+CVvis_pos<-SD_pos*CVA$CVvis[,CVnum]+CVA$Grandm
+CVvis_pos_shape <- restoreShapes(CVvis_pos,Proc$PCs[,1:number],Proc$mshape)
+
+SD_neg<-mean(CV)-(1.5*(sd(CV)))
+CVvis_neg<-SD_neg*CVA$CVvis[,CVnum]+CVA$Grandm
+CVvis_neg_shape <- restoreShapes(CVvis_neg,Proc$PCs[,1:number],Proc$mshape)
+
+#CV pos
+clear3d("shapes")
+legend3d("topright",legend="", title= paste("CV",CVnum,"pos"),pch = 16, cex=1, inset=c(0.02))
+plot3d(CVvis_pos_shape[curves[[1]],],type="l",lwd=3,xlab="", ylab="", zlab="",aspect =F,box=F,axes=F)
+if(M_PM == "M"){
+lines3d(CVvis_pos_shape[curves[[2]],],lwd=3);lines3d(CVvis_pos_shape[curves[[3]],],lwd=3);lines3d(CVvis_pos_shape[curves[[4]],],lwd=3);lines3d(pos_CV[curves[[5]],],col="navy",lwd=3)
+points3d(CVvis_pos_shape[fix[c(1,2,3,4)],],col="black",size=12)
+} else if(M_PM == "P"){
+lines3d(CVvis_pos_shape[curves[[2]],],lwd=3);lines3d(CVvis_pos_shape[curves[[3]],],col="navy",lwd=3)
+points3d(CVvis_pos_shape[fix[c(1,2)],],col="black",size=12)}
+
+#CV neg
+clear3d("shapes")
+legend3d("topright",legend="", title= paste("CV",CVnum,"neg"),pch = 16, cex=1, inset=c(0.02))
+plot3d(CVvis_neg_shape[curves[[1]],],type="l",lwd=3,xlab="", ylab="", zlab="",aspect =F,box=F,axes=F)
+if(M_PM == "M"){
+lines3d(CVvis_neg_shape[curves[[2]],],lwd=3);lines3d(CVvis_neg_shape[curves[[3]],],lwd=3);lines3d(CVvis_neg_shape[curves[[4]],],lwd=3);lines3d(neg_CV[curves[[5]],],col="navy",lwd=3)
+points3d(CVvis_neg_shape[fix[c(1,2,3,4)],],col="black",size=12)
+} else if(M_PM == "P"){
+lines3d(CVvis_neg_shape[curves[[2]],],lwd=3);lines3d(CVvis_neg_shape[curves[[3]],],col="navy",lwd=3)
+points3d(CVvis_neg_shape[fix[c(1,2)],],col="black",size=12)}
+
+
+
+
+
+
+
+
+z <- lda(coords.prc$x[,1:number],grouping=labels$Class2,subset=classified,prior=rep(1/groupnum,groupnum))
+zcv<-lda(coords.prc$x[,1:number],grouping=labels$Class2,CV=TRUE,prior=rep(1/groupnum,groupnum))
+
+test<-predict(z,coords.prc$x[,1:number])
+classification<-cbind(as.matrix(labels$Name),as.matrix(labels$Tooth),as.matrix(test$class),as.matrix(zcv$class))
+print(classification)
+
+#pdf(paste("R/FULL/JHE rerun/CVA_",Analysis,"_FULL.pdf",sep=""),height=10,width=10)
+plot.range<-max(abs(test$x))
+plot(cbind(test$x[,1],test$x[,2]),pch=19,col = farbe[labels$Class2],asp=1,cex=1,xlab="Canonical Variate 1",ylab="Canonical Variate 2",main="EDJ & CEJ")
+for(gruppe in 1:groupnum) {
+sub<-labels$Class2==levels(labels$Class2)[gruppe] & classified
+tr <- NULL
+try(tr<-tri.mesh(x=test$x[sub,1],y=test$x[sub,2]))
+if(!is.null(tr)){
+convex.hull(tr,plot.it=TRUE,col=farbe[gruppe],add=TRUE,lwd=1,lty=1)}
+}
+text(test$x[,c(1,2)],label=labels$Name,col=farbe[labels$Tooth],pos=c(1,2),cex=0.4,offset=0.5)
+#dev.off()
+
+
+### 3D PCA
+clear3d("shapes")
+plot3d(cbind(test$x[,1],test$x[,2],test$x[,3]),type="p",size=6,col=farbe[gp],xlab="CV1", ylab="CV2", zlab="CV3",aspect = F,box=F)
+texts3d(cbind(test$x[,1],test$x[,2],test$x[,3]),texts=labels$Name,font=1,adj=1,cex=0.7)
+#hsub<-classifier$Class2!="Aus_LM2"&classifier$Class2!="HMP_LM2"
+#texts3d(cbind(Proc$PCscores[hsub,1],Proc$PCscores[hsub,2],Proc$PCscores[hsub,3]),texts = rownames(Proc$PCscores)[hsub],font=1,adj=1,cex=0.7)
+
+for(a in 1:length(levels(gp))){
+  sub<-gp==levels(gp)[a]
+  CVsub<-cbind(test$x[sub,1],test$x[sub,2],test$x[sub,3])
+  if(length(CVsub[,1])>3){
+    hull<-t(convhulln(CVsub)) 
+    triangles3d(CVsub[hull,1],CVsub[hull,2],CVsub[hull,3],lit=T,shininess=101,specular=farbe[a],ambient=farbe[a],emission="black",alpha=0.2,col=farbe[a],smooth=F,depth_test="notequal")
+  } else if(length(CVsub[,1])==3){
+    triangles3d(CVsub[,1],CVsub[,2],CVsub[,3],lit=T,shininess=101,specular=farbe[a],ambient=farbe[a],emission="black",alpha=0.2,col=farbe[a],smooth=F,depth_test="notequal")
+  } else if(length(CVsub[,1])==2){
+    lines3d(CVsub,col=farbe[a])
+  }
+}
+
+
+
+# RELIABILITY_CLASS2 (with the classified specimens and CV)
+classificationresults2<-matrix(0,ncol=number,nrow=sum(classified))
+classificationresults2[,1:2]<-cbind(as.matrix(labels$Name[classified]),as.matrix(labels$Tooth[classified]))
+
+for(pcnumber in 3:number){
+z2 <- lda(coords.prc$x[,1:pcnumber],grouping=labels$Tooth,subset=classified,CV=TRUE,prior=rep(1/groupnum,groupnum))
+#classification2<-predict(z2,coords.prc$x[,1:pcnumber])
+classificationresults2[,pcnumber]<-as.matrix(z2$class)
+}
+
+#write.table(classificationresults2[,],"O:/Research Projects/Dental Tissues Group/Workspace/SKINNER/PROJECTS_CURRENT/NEANDERTHAL_GM/GM_analysis/Reliability_Ridge_and_Cervix_Shape.txt")
+
+#Calculate classification frequency by number of PCs
+rat=rep(0,(ncol(classificationresults2)-2))
+rat <- cbind(c(3:number),rat)
+for(i in 1:(ncol(classificationresults2)-2)){
+rat[i,2]=mean(apply(classificationresults2[,c(2,(3+i-1)),drop=F],1,function(x) sum(x[-1]==x[1])/length(x[-1])))
+}
+rat[,2] <- rat[,2]*100
+#pdf(paste("R/FULL/JHE rerun/Classification_accuracy_",Analysis,"_FULL.pdf",sep=""),height=4,width=10)
+plot(rat,type="b",xlim=c(2,18),ylim=c(0,100),ylab="% correct",xlab="PC number")
+#dev.off()
+
+####### Classification of unknown specimens
+
+# CLASSIFICATION of unknown specimens_CLASS2
+classificationresults<-matrix(0,ncol=30,nrow=dim(coords.prc$x)[1])
+colnames(classificationresults) <- c("Name","Correct Class",c(1:(length(classificationresults[1,])-2)))
+correctclass <- paste(as.matrix(labels$Tooth), "x", sep="_")
+classificationresults[,1:2]<-cbind(as.matrix(labels$Name),correctclass)
+
+
+for(pcnumber in 3:number){
+  z1 <- lda(coords.prc$x[,1:pcnumber],grouping=labels$Tooth,subset=classified,prior=rep(1/groupnum,groupnum))
+  classification1<-predict(z1,coords.prc$x[,1:pcnumber])
+  classificationresults[,pcnumber]<-as.matrix(classification1$class)
+}
+
+
+#Calculate classification of unknown specimens by frequency by tooth type
+results<-classificationresults
+test=t(apply(results[,,drop=F],1,function(x) c(sum(x=="UP3"),sum(x=="UP4"),sum(x=="UP"))))
+#test=t(apply(results[,,drop=F],1,function(x) c(sum(x=="Aafri_LP3"),sum(x=="Aafri_LP4"),sum(x=="Hnal_LP3"),sum(x=="Hnal_LP4"),sum(x=="Hnea_LP3"),sum(x=="Hnea_LP4"),sum(x=="Hsap_LP3"),sum(x=="Hsap_LP4"),sum(x=="Prob_LP3"),sum(x=="Prob_LP4"))))
+rownames(test)=results[,1] 
+colnames(test)=c("UP3","UP4","UP")
+#colnames(test)=c("Aafri_LP3","Aafri_LP4","Hnal_LP3","Hnal_LP4","Hnea_LP3","Hnea_LP4","Hsap_LP3","Hsap_LP4","Prob_LP3","Prob_LP4")
+a <- matrix(ncol=2,nrow=length(test[,1]))
+colnames(a) <- c("Correct_class", "%Correct")
+test <- cbind(test,a)
+
+for(i in 1:length(test[,1])){
+  test[i,"Correct_class"] <- as.character(labels[i,"Tooth"])
+  b <- test[i,"Correct_class"] == colnames(test)
+  try(test[i,"%Correct"] <- round(as.numeric(test[i,b])/(sum(as.numeric(test[1,1:groupnum]))),4)) 
+}
+
+correct <- subset(test,test[,"%Correct"] > 0.8)
+notes <- matrix(nrow=length(test[,1]))
+notes[,1] <- ""
+notes[1,1] <- paste("Proportion over 80% = ", (length(correct[,1]) / length(test[,1])),". ", "PC number = ", number,sep="")
+test <- cbind(test,notes)
+test
+#write.csv(test,file=paste("R/FULL/JHE rerun/classifications_",Analysis,"_FULL.csv"))
+#write.csv(classificationresults,file=paste("R/FULL/JHE rerun/raw_classifications_",Analysis,"_FULL.csv"))
+
+# Centroid Size Analysis
+
+# for LM drop w/ separate CS
+csraw<-read.table("LANDMARK DROP/P3+4/60i_LMdrop_CS.txt",header=FALSE)
+cs<-as.data.frame(cbind(as.character(labelsraw[,1]),as.character(labelsraw[,4]),as.character(labelsraw[,6]),csraw[,1]))
+
+
+# for normal CS included in xxi_form.txt
+cs <- as.data.frame(cbind(as.character(labelsraw[,1]),as.character(labelsraw[,4]),as.character(labelsraw[,6]),as.numeric(coordsraw[,dim(coordsraw)[2]])))
+
+colnames(cs) <- c("Name","Class","Exclude?","CS")
+cs1 <- subset(cs,cs[,3]=="*")
+cs2 <- matrix(nrow=20,ncol=length(levels(factor(cs1[,2])))); colnames(cs2) <- levels(factor(cs1[,2]))
+for(i in 1:length(cs2[1,])){
+  sub <- subset(cs1,cs1[,2]==colnames(cs2)[i])
+  cs2[1:length(sub[,1]),i] <- as.numeric(as.character(sub[,"CS"]))
+}
+cs3<- cs2[,c("Aafri_LP3","Aafri_LP4","Prob_LP3","Prob_LP4","Hnal_LP3","Hnal_LP4","Hnea_LP3","Hnea_LP4","Hsap_LP3","Hsap_LP4")]
+
+x <- matrix(ncol=2, nrow=20)
+colnames(x) <- c("P3","P4")
+cs4 <- cbind(cs3[,c(1:6)],x,cs3[,c(7:10)])
+x[c(1:4),"P3"]<-cbind(cs2[1,c(9,11,15,18)])
+x[c(1:4),"P4"]<-cbind(cs2[1,c(10,12,16,17)])
+
+
+boxplot(cs4,boxwex = 0.5,pch=19)
+#points(5,na.omit(cs2[,15]),pch=20);
+points(c(7,7,7,7),na.omit(x[,1]),pch=19);points(c(8,8,8,8),na.omit(x[,2]),pch=19)
+lines(c(7,8),c(x[1,1],x[1,2]),lty = "dotted");lines(c(7,8),c(x[2,1],x[2,2]),lty = "dotted");lines(c(7,8),c(x[3,1],x[3,2]),lty = "dotted");lines(c(7,8),c(x[4,1],x[4,2]),lty = "dotted")
+
+csm<-as.matrix(cs)
+lesP3<-subset(csm,csm[,1]=="UW102_23_LRP3")
+lesP4<-subset(csm,csm[,1]=="UW102_23_LRP4")
+points(c(5,6),c(lesP3[,4],lesP4[,4]),pch=19)
+
+
+
+### KRUSCAL TEST WITH P3 AND P4 SEPARATE
+cs1[,"CS"] <- as.numeric(as.character(factor(cs1[,"CS"])))
+csP3 <- subset(cs1,cs1[,2]== "Aafri_LP3" |  cs1[,2]== "Hnea_LP3" |  cs1[,2]== "Hsap_LP3" |  cs1[,2]== "Prob_LP3" |  cs1[,2]=="Hnal_LP3")
+csP4 <- subset(cs1,cs1[,2]== "Aafri_LP4" |  cs1[,2]== "Hnea_LP4" |  cs1[,2]== "Hsap_LP4" | cs1[,2]== "Prob_LP4" |  cs1[,2]=="Hnal_LP4")
+
+kruskal.test(CS ~ Class, data = csP3)
+pairwiseP3 <- pairwise.wilcox.test(csP3$CS, csP3$Class,p.adjust.method = "BH")
+
+kruskal.test(CS ~ Class, data = csP4)
+pairwiseP4 <- pairwise.wilcox.test(csP4$CS, csP4$Class,p.adjust.method = "BH")
+
+#write.csv(pairwiseP3[3], file=paste("R/KruskalP3_",Analysis,"_FULL.csv"))
+#write.csv(pairwiseP4[3], file=paste("R/KruskalP4_",Analysis,"_FULL.csv"))
+
+### WITH P3 AND P4 TOGETHER
+kruskal.test(CS ~ Class, data = cs1)
+pairwise <- pairwise.wilcox.test(cs1$CS, cs1$Class,p.adjust.method = "BH")
+
+#write.csv(pairwise[3], file=paste("R/KruskalP3+4_",Analysis,"_FULL.csv"))
+
+# PC v centroid size
+
+cs.pca <- cbind(cs1[,c(1,2,4)],coords.prc$x[,c(1:20)])
+
+farbe1<-c("darkolivegreen4","darkolivegreen4","darkolivegreen4","blue","magenta","chartreuse","grey","darkblue","darkred","purple","darkorange","cyan","black","black","black","black","yellow","red","black","black","black","black","black")
+
+
+#PC1
+plot(as.numeric(as.character(cs.pca[,3])), cs.pca[,4], type = "n", xlab="CS", ylab="PC 1",pch=19, main="CS v PC1")
+for(i in c(1:groupnum)){
+  sub<-cs.pca[,2]==levels(cs.pca[,2])[i]
+  points(as.numeric(as.character(cs.pca[sub,3])),cs.pca[sub,4],pch=19,cex=1.2,col=farbe1[i])}
+
+#PC2
+plot(as.numeric(as.character(cs.pca[,3])), cs.pca[,5], type = "n", xlab="CS", ylab="PC 2",pch=19, main="CS v PC2")
+for(i in c(1:groupnum)){
+  sub<-cs.pca[,2]==levels(cs.pca[,2])[i]
+  points(as.numeric(as.character(cs.pca[sub,3])),cs.pca[sub,5],pch=19,cex=1.2,col=farbe1[i])}
+
+#PC3
+plot(as.numeric(as.character(cs.pca[,3])), cs.pca[,6], type = "n", xlab="CS", ylab="PC 3",pch=19, main="CS v PC3")
+for(i in c(1:groupnum)){
+  sub<-cs.pca[,2]==levels(cs.pca[,2])[i]
+  points(as.numeric(as.character(cs.pca[sub,3])),cs.pca[sub,6],pch=19,cex=1.2,col=farbe1[i])}
+
+
+plot(x=c(1:100),y=(1:100),type="n",xlim=c(0,4),ylim=c(0,50), axes=FALSE, xlab = "",ylab= "")
+legend(x=0,y=50,legend=c("1_LLP","2_LLP","5_LLP","Aafa_LP3","Aafri_LP3","Aana_LP3","Cave-of-hearths_LP3","Here_LP3","Hneand_LP3","Hnal_LP3","Qafzeh_LP3"),pch=19,col=c(farbe1[c(1:11)]),bty="n")
+legend(x=2.5,y=50,legend=c("Hsap_LP3","KNM-ER_5431E_LLP3","KNM-WT_8556_LLP3","KNMER_1802_LRP3","KNMER_992A_LRP3","Pboi_LP3","Prob_LP3","SK96_LP3","SKX21204_LRP3","STW151_LRP3"),pch=19,col=c(farbe1[c(12:21)]),bty="n")
+

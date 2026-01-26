@@ -1,0 +1,120 @@
+Name,Tooth,Class1,Class2,Classify,Exclude
+AL200-1a_ULM1,M1,*,Aus,*,ex
+AL333-86_URM1,M1,*,Aus,*,ex
+AL486-1_ULM1,M1,*,Aus,*,ex
+Ased_ULM1,M1,*,Aus,*,ex
+Ased_URM1,M1,*,Aus,*,ex
+DNH_39_URM1,M1,*,Early Homo,*,ex
+DNH_70_ULM1,M1,*,Early Homo,*,ex
+DNH_108_ULM1,M1,*,Prob,*,ex
+KNM-ER_807_URM1,M1,*,Early Homo,*,ex
+KNM-ER_1590K_ULM1,M1,*,Early Homo,*,ex
+KNM-ER_1813_ULM1,M1,*,Early Homo,*,ex
+KNM-WT_17400_URM1,M1,*,Pboi,*,ex
+LH6_URM1,M1,*,Aus,*,ex
+OH13_ULM1,M1,*,Early Homo,*,ex
+OH16_URM1,M1,*,Early Homo,*,ex
+OH21_ULM1,M1,*,Early Homo,*,ex
+OH24_ULM1,M1,*,Early Homo,*,ex
+OH45_ULM,M1,*,Early Homo,*,ex
+Prob_DNH_57B_URM1,M1,*,Prob,*,ex
+Prob_DNH_60A_ULM1,M1,*,Prob,*,ex
+Prob_SK829_ULM1,M1,*,Prob,*,ex
+Prob_SK_47_URM1,M1,*,Prob,*,ex
+Prob_SK_89a_ULM1,M1,*,Prob,*,ex
+Prob_SK_832_ULM1,M1,*,Prob,*,ex
+SK13.14_URM1,M1,*,Prob,*,ex
+SK27_ULM1,M1,*,Prob,*,ex
+SK_48_URM1,M1,*,Prob,*,ex
+SK_52_URM1,M1,*,Prob,*,ex
+SK_102_ULM1,M1,*,Prob,*,ex
+SK_829_ULM1,M1,*,Prob,*,ex
+SK_838a_URM1,M1,*,Prob,*,ex
+SK_14129A_URM1,M1,*,Prob,*,ex
+STS_1_ULM1,M1,*,Aus,*,ex
+STS_8_ULM1,M1,*,Aus,*,ex
+STS_24_URM1,M1,*,Aus,*,ex
+STS_56_ULM1,M1,*,Aus,*,ex
+STS_57_ULM1,M1,*,Aus,*,ex
+STW183_ULM1,M1,*,Aus,*,ex
+STW252J_ULM1,M1,*,Aus,*,ex
+STW_402_URM1,M1,*,Aus,*,ex
+STW_450_URM1,M1,*,Aus,*,ex
+TAUNG_1_ULM1,M1,*,Aus,*,ex
+TM_1517a_ULM1,M1,*,Prob,*,ex
+AL199-1_URM2,M2,*,Aus,*,ex
+AL200-1a_URM2,M2,*,Aus,*,ex
+AL417-1d_ULM2,M2,*,Aus,*,ex
+AL486-1_ULM2,M2,*,Aus,*,ex
+AL666-1_ULM2,M2,*,Aus,*,ex
+Ased_ULM2,M2,*,Aus,*,ex
+Ased_URM2,M2,*,Aus,*,ex
+DNH_7_URM2,M2,*,Prob,*,ex
+DNH_108_URM2,M2,*,Prob,*,ex
+KNM-ER_1590M_ULM2,M2,*,Early Homo,*,ex
+KNM-ER_1808H_URM2,M2,*,Early Homo,*,ex
+KNM-WT_17400_URM2,M2,*,Pboi,*,ex
+KNMER1813_ULM2,M2,*,Early Homo,*,ex
+OH13_ULM2,M2,*,Early Homo,*,ex
+OH16_ULM2,M2,*,Early Homo,*,ex
+OH39_ULM2,M2,*,Early Homo,*,ex
+Prob_SK_48_URM2,M2,*,Prob,*,ex
+Prob_SK_834_URM2,M2,*,Prob,*,ex
+SK13.14_URM2,M2,*,Prob,*,ex
+SK_16.1591_ULM2,M2,*,Prob,*,ex
+SK_47_URM2,M2,*,Prob,*,ex
+SK_49_URM2,M2,*,Prob,*,ex
+SK_52_URM2,M2,*,Prob,*,ex
+SKW_33_URM2,M2,*,Prob,*,ex
+STS_8_ULM2,M2,*,Aus,*,ex
+STS_22_ULM2,M2,*,Aus,*,ex
+STS_28_URM2,M2,*,Aus,*,ex
+STS_30_URM2,M2,*,Aus,*,ex
+STS_37_ULM2,M2,*,Aus,*,ex
+STS_52a_ULM2,M2,*,Aus,*,ex
+STS_56_ULM2,M2,*,Aus,*,ex
+STW_183_ULM2,M2,*,Aus,*,ex
+STW_188_URM2,M2,*,Aus,*,ex
+STW_252I_ULM2,M2,*,Aus,*,ex
+STW_280_ULM2,M2,*,Aus,*,ex
+STW_529_ULM2,M2,*,Aus,*,ex
+TM_1517a_ULM2,M2,*,Prob,*,ex
+TM_1517C_URM2,M2,*,Prob,*,ex
+AL200-1a_URM3,M3,*,Aus,*,*
+AL333x-1_URM3,M3,*,Aus,*,*
+AL486-1_ULM3,M3,*,Aus,*,*
+Ased_ULM3,M3,*,Aus,*,*
+Ased_URM3,M3,*,Aus,*,*
+DNH_54_ULM3,M3,*,Prob,*,*
+KNM-ER_807_URM3,M3,*,Early Homo,*,*
+KNM-ER_1813_ULM3,M3,*,Early Homo,*,*
+L398-573_ULM3,M3,*,Early Homo,*,*
+OH13_URM3,M3,*,Early Homo,*,*
+OH15_URM3,M3,*,Early Homo,*,*
+OH16_ULM3,M3,*,Early Homo,*,*
+Prob_DNH_3_ULM3,M3,*,Prob,*,*
+Prob_SK16_ULM3,M3,*,Prob,*,*
+Prob_SK3975_ULM3,M3,*,Prob,*,*
+Prob_SK3977_URM3,M3,*,Prob,*,*
+Prob_SK_831A_ULM3,M3,*,Prob,*,*
+Prob_SK_3975_ULM3,M3,*,Prob,*,*
+Prob_SK_3977_URM3,M3,*,Prob,*,*
+Prob_SKX21841_URM3,M3,*,Prob,*,*
+Prob_TM1517C_URM3,M3,*,Prob,*,*
+SK_13.14_URM3,M3,*,Prob,*,*
+SK_52_URM3,M3,*,Prob,*,*
+SK_105_ULM3,M3,*,Prob,*,*
+SK_847_UM3,M3,*,Prob,*,*
+STS_28_URM3,M3,*,Aus,*,*
+STS_37_ULM3,M3,*,Aus,*,*
+STS_52a_URM3,M3,*,Aus,*,*
+STS_53_ULM3,M3,*,Aus,*,*
+STW6_ULM3,M3,*,Aus,*,*
+STW179_ULM3,M3,*,Aus,*,*
+STW183_URM3,M3,*,Aus,*,*
+STW189_ULM3,M3,*,Aus,*,*
+STW252H_URM3,M3,*,Aus,*,*
+UW105-676_URM,M3,*,UW105,*,*
+UW105_681_URM,M2,*,UW105,classify,ex
+UW_105_042_URM1,M1,*,UW105,*,ex
+UW_105_074_URM,M3,*,UW105,classify,*
