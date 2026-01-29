@@ -1,0 +1,200 @@
+$ClassifiedResults
+                                Class             3 PCs             4 PCs             5 PCs
+Aafr_STS24_LRM1                  Aafr        Early Homo              Aafr              Aafr
+Aafr_STS52b_LRM1                 Aafr              Aafa              Aafr              Aafr
+Aafr_STW106_LRM1                 Aafr        Early Homo              Aafr              Aafr
+Aafr_STW123a_LRM1                Aafr              Aafr              Aafr              Aafr
+Aafr_STW145_LRM1                 Aafr              Aafr              Aafr              Aafr
+Aafr_STW309A_LRM1                Aafr              Prob              Prob              Prob
+Aafr_STW364_LRM1                 Aafr              Hnal              Hnal              Hnal
+Aafr_STW421A_LRM1                Aafr              Prob              Prob              Prob
+AL145-35_LLM1                    Aafa              Aafa              Aafa              Aafa
+AL266-1_LLM1                     Aafa              Aafa              Aafa              Aafa
+AL330-7_LLM1                     Aafa              Aafa              Aafr              Aafr
+AL330-5_LRM1                     Aafa              Aafa              Aafa              Aafa
+AL333w-1_LLM1                    Aafa              Aafa        Early Homo        Early Homo
+AL417-1a_LLM1                    Aafa        Early Homo              Aafr              Aafr
+Hnal_UW101_285_LM1               Hnal              Hnal              Hnal              Hnal
+Hnal_UW101_582_LM1               Hnal              Hnal              Hnal              Hnal
+KNM-ER_806C_LLM1           Early Homo        Early Homo        Early Homo        Early Homo
+KNM-ER_992_LLM1            Early Homo        Early Homo        Early Homo        Early Homo
+KNM-ER_1502_LRM1           Early Homo        Early Homo        Early Homo        Early Homo
+KNM-ER_1507_LLM1           Early Homo        Early Homo        Early Homo        Early Homo
+KNM-ER_1802_LRM1           Early Homo              Aafr              Aafr        Early Homo
+KNM-ER_1820_LLM1    East Paranthropus East Paranthropus East Paranthropus East Paranthropus
+KNM-ER_15930_LLM1   East Paranthropus East Paranthropus East Paranthropus East Paranthropus
+L26-1g_LRM1                Early Homo              Prob              Prob              Prob
+LH3t_LLM1                        Aafa              Aafa              Aafa              Aafa
+OH7_LLM1                   Early Homo              Aafr              Aafr              Aafr
+OH13_LRM1                  Early Homo              Hnal              Hnal        Early Homo
+OH16_LRM1                  Early Homo              Hnal        Early Homo        Early Homo
+OH30_LLM1           East Paranthropus East Paranthropus East Paranthropus              Prob
+Pr_DNH8_LLM1                     Prob East Paranthropus        Early Homo East Paranthropus
+Pr_DNH46_LRM1                    Prob              Prob              Prob              Prob
+Pr_DNH60B_LRM1                   Prob              Prob East Paranthropus East Paranthropus
+Pr_SK6_LLM1                      Prob              Prob              Prob              Prob
+Pr_SK23_LLM1                     Prob              Prob              Prob              Prob
+Pr_SK25_LLM1                     Prob              Prob              Prob              Prob
+Pr_SK62_LLM1                     Prob              Prob              Prob              Prob
+Pr_SK104_LLM1                    Prob              Prob              Prob              Prob
+Pr_SK826b(828)_LLM1              Prob              Prob              Prob              Prob
+Pr_SK843_LLM1                    Prob              Aafa              Aafa              Aafa
+Pr_SK846a_LRM1                   Prob              Prob              Aafa              Aafa
+Pr_SK1587a_LLM1                  Prob              Prob              Prob              Prob
+Pr_SK1588_LRM1                   Prob              Aafr        Early Homo        Early Homo
+Pr_SK3974_LRM1                   Prob East Paranthropus              Prob              Prob
+Pr_SKW5_LRM1                     Prob              Prob              Prob              Prob
+Pr_SKX4446_LRM1                  Prob              Prob              Prob              Prob
+CVA accuracy                        -             64.44             66.67             68.89
+                                6 PCs             7 PCs             8 PCs             9 PCs
+Aafr_STS24_LRM1                  Aafr              Aafr              Aafr              Aafr
+Aafr_STS52b_LRM1                 Aafr              Aafr              Aafr              Aafr
+Aafr_STW106_LRM1                 Aafr              Aafr              Aafr              Aafr
+Aafr_STW123a_LRM1                Aafr              Aafr              Aafr              Aafr
+Aafr_STW145_LRM1                 Aafr              Aafa              Aafr              Aafr
+Aafr_STW309A_LRM1                Aafa              Aafr              Aafr              Aafr
+Aafr_STW364_LRM1                 Hnal        Early Homo              Aafr              Aafr
+Aafr_STW421A_LRM1                Prob              Prob              Prob              Aafr
+AL145-35_LLM1                    Aafa              Aafr              Aafr              Aafr
+AL266-1_LLM1                     Aafa              Aafa              Aafa              Aafa
+AL330-7_LLM1                     Aafr              Aafa              Aafr              Aafr
+AL330-5_LRM1                     Aafa              Aafa              Aafa              Aafa
+AL333w-1_LLM1              Early Homo        Early Homo        Early Homo        Early Homo
+AL417-1a_LLM1                    Aafr              Aafr              Prob East Paranthropus
+Hnal_UW101_285_LM1               Hnal              Hnal              Hnal              Hnal
+Hnal_UW101_582_LM1               Hnal              Hnal              Hnal              Hnal
+KNM-ER_806C_LLM1           Early Homo        Early Homo        Early Homo        Early Homo
+KNM-ER_992_LLM1            Early Homo        Early Homo        Early Homo        Early Homo
+KNM-ER_1502_LRM1           Early Homo        Early Homo        Early Homo        Early Homo
+KNM-ER_1507_LLM1           Early Homo        Early Homo        Early Homo        Early Homo
+KNM-ER_1802_LRM1                 Aafr        Early Homo        Early Homo        Early Homo
+KNM-ER_1820_LLM1    East Paranthropus East Paranthropus East Paranthropus East Paranthropus
+KNM-ER_15930_LLM1   East Paranthropus East Paranthropus East Paranthropus East Paranthropus
+L26-1g_LRM1                      Prob              Prob              Prob              Prob
+LH3t_LLM1                        Aafa              Aafa              Aafa              Aafa
+OH7_LLM1                         Aafr        Early Homo        Early Homo        Early Homo
+OH13_LRM1                        Aafr        Early Homo              Aafr              Aafr
+OH16_LRM1                  Early Homo        Early Homo        Early Homo        Early Homo
+OH30_LLM1                        Prob              Prob              Prob        Early Homo
+Pr_DNH8_LLM1        East Paranthropus East Paranthropus East Paranthropus              Prob
+Pr_DNH46_LRM1                    Prob              Prob              Prob              Prob
+Pr_DNH60B_LRM1      East Paranthropus East Paranthropus East Paranthropus              Prob
+Pr_SK6_LLM1                      Prob              Prob              Prob              Prob
+Pr_SK23_LLM1                     Prob              Prob              Prob              Prob
+Pr_SK25_LLM1                     Prob              Prob              Prob              Prob
+Pr_SK62_LLM1                     Prob              Prob              Prob              Prob
+Pr_SK104_LLM1                    Prob              Prob              Prob              Prob
+Pr_SK826b(828)_LLM1              Prob              Prob              Prob              Prob
+Pr_SK843_LLM1                    Aafr              Aafa              Aafa              Prob
+Pr_SK846a_LRM1                   Aafa              Aafa              Aafa              Prob
+Pr_SK1587a_LLM1                  Prob              Prob              Prob              Aafa
+Pr_SK1588_LRM1             Early Homo        Early Homo        Early Homo        Early Homo
+Pr_SK3974_LRM1                   Prob East Paranthropus East Paranthropus              Prob
+Pr_SKW5_LRM1                     Prob              Prob              Prob              Prob
+Pr_SKX4446_LRM1                  Prob              Prob              Prob              Prob
+CVA accuracy                    64.44             68.89             68.89                80
+                               10 PCs            11 PCs            12 PCs ClassAccuracy
+Aafr_STS24_LRM1                  Aafr              Aafr              Aafr      90.00000
+Aafr_STS52b_LRM1                 Aafr              Aafr              Aafr      90.00000
+Aafr_STW106_LRM1                 Aafr              Aafr              Aafr      90.00000
+Aafr_STW123a_LRM1                Aafr              Aafr              Aafr     100.00000
+Aafr_STW145_LRM1                 Aafa              Aafr              Aafa      70.00000
+Aafr_STW309A_LRM1                Aafr              Aafr              Aafr      60.00000
+Aafr_STW364_LRM1                 Aafr              Aafr              Aafr      50.00000
+Aafr_STW421A_LRM1                Prob              Aafr              Aafr      30.00000
+AL145-35_LLM1                    Aafa              Aafa              Aafa      70.00000
+AL266-1_LLM1                     Prob              Prob              Aafa      80.00000
+AL330-7_LLM1                     Aafa              Aafa              Aafa      50.00000
+AL330-5_LRM1                     Aafa              Aafa              Aafa     100.00000
+AL333w-1_LLM1                    Aafa              Aafa        Early Homo      30.00000
+AL417-1a_LLM1                    Aafa              Aafa              Aafa      30.00000
+Hnal_UW101_285_LM1               Hnal              Hnal              Hnal     100.00000
+Hnal_UW101_582_LM1               Hnal              Hnal              Hnal     100.00000
+KNM-ER_806C_LLM1           Early Homo        Early Homo        Early Homo     100.00000
+KNM-ER_992_LLM1            Early Homo        Early Homo        Early Homo     100.00000
+KNM-ER_1502_LRM1           Early Homo        Early Homo        Early Homo     100.00000
+KNM-ER_1507_LLM1           Early Homo        Early Homo        Early Homo     100.00000
+KNM-ER_1802_LRM1           Early Homo        Early Homo        Early Homo      70.00000
+KNM-ER_1820_LLM1    East Paranthropus East Paranthropus East Paranthropus     100.00000
+KNM-ER_15930_LLM1   East Paranthropus East Paranthropus East Paranthropus     100.00000
+L26-1g_LRM1                      Prob              Prob              Prob       0.00000
+LH3t_LLM1                        Aafa              Aafa              Aafa     100.00000
+OH7_LLM1                   Early Homo        Early Homo        Early Homo      60.00000
+OH13_LRM1                        Aafr              Aafr              Aafr      20.00000
+OH16_LRM1                  Early Homo        Early Homo        Early Homo      90.00000
+OH30_LLM1                  Early Homo        Early Homo        Early Homo      20.00000
+Pr_DNH8_LLM1                     Prob              Prob              Prob      40.00000
+Pr_DNH46_LRM1                    Prob              Prob              Prob     100.00000
+Pr_DNH60B_LRM1                   Prob              Prob              Prob      50.00000
+Pr_SK6_LLM1                      Prob              Prob              Prob     100.00000
+Pr_SK23_LLM1                     Prob              Prob              Prob     100.00000
+Pr_SK25_LLM1                     Prob              Prob              Prob     100.00000
+Pr_SK62_LLM1                     Prob              Prob              Prob     100.00000
+Pr_SK104_LLM1                    Prob              Prob              Prob     100.00000
+Pr_SK826b(828)_LLM1              Prob              Prob              Prob     100.00000
+Pr_SK843_LLM1                    Prob              Prob              Prob      40.00000
+Pr_SK846a_LRM1                   Prob              Prob              Prob      50.00000
+Pr_SK1587a_LLM1                  Aafa              Aafa              Aafa      60.00000
+Pr_SK1588_LRM1             Early Homo        Early Homo        Early Homo       0.00000
+Pr_SK3974_LRM1                   Prob              Prob              Prob      70.00000
+Pr_SKW5_LRM1                     Prob              Prob              Prob     100.00000
+Pr_SKX4446_LRM1                  Prob              Prob              Prob     100.00000
+CVA accuracy                    82.22             86.67             84.44      73.55556
+
+$ToClassifyResults
+             UW105_811_LLM1
+Class                      
+3 PCs                  Prob
+4 PCs                  Prob
+5 PCs                  Prob
+6 PCs                  Prob
+7 PCs                  Prob
+8 PCs                  Prob
+9 PCs                  Prob
+10 PCs                 Prob
+11 PCs                 Prob
+12 PCs                 Prob
+ClassResults     Prob: 100%
+
+$PosteriorProbs
+$PosteriorProbs$`3_PCs`
+                     Aafa       Aafr  Early Homo East Paranthropus        Hnal      Prob
+UW105_811_LLM1 0.09705171 0.01342902 0.003874163       0.009096085 5.24848e-07 0.8765485
+
+$PosteriorProbs$`4_PCs`
+                     Aafa      Aafr  Early Homo East Paranthropus        Hnal      Prob
+UW105_811_LLM1 0.09446643 0.0120399 0.001557892      0.0005667139 4.84028e-07 0.8913686
+
+$PosteriorProbs$`5_PCs`
+                    Aafa        Aafr   Early Homo East Paranthropus         Hnal      Prob
+UW105_811_LLM1 0.1462433 0.009842358 0.0002970063       0.001157559 2.794724e-10 0.8424598
+
+$PosteriorProbs$`6_PCs`
+                       Aafa         Aafr   Early Homo East Paranthropus         Hnal      Prob
+UW105_811_LLM1 0.0001775471 0.0001207183 2.407464e-05      0.0003164979 5.773465e-11 0.9993612
+
+$PosteriorProbs$`7_PCs`
+                       Aafa         Aafr   Early Homo East Paranthropus         Hnal      Prob
+UW105_811_LLM1 0.0002145408 0.0002261656 1.055222e-05      7.880469e-05 6.514643e-16 0.9994699
+
+$PosteriorProbs$`8_PCs`
+                       Aafa         Aafr   Early Homo East Paranthropus         Hnal      Prob
+UW105_811_LLM1 0.0002416123 1.897215e-05 7.914887e-06      8.835726e-05 5.997003e-18 0.9996431
+
+$PosteriorProbs$`9_PCs`
+                       Aafa         Aafr   Early Homo East Paranthropus         Hnal      Prob
+UW105_811_LLM1 4.242308e-06 3.092767e-06 4.555544e-07      1.036044e-12 1.328542e-24 0.9999922
+
+$PosteriorProbs$`10_PCs`
+                       Aafa         Aafr   Early Homo East Paranthropus         Hnal      Prob
+UW105_811_LLM1 3.058244e-09 3.735792e-06 5.616364e-07      2.619174e-12 4.077551e-24 0.9999957
+
+$PosteriorProbs$`11_PCs`
+                       Aafa         Aafr   Early Homo East Paranthropus         Hnal      Prob
+UW105_811_LLM1 3.016249e-09 1.051663e-06 5.669085e-07      6.663879e-13 4.797739e-25 0.9999984
+
+$PosteriorProbs$`12_PCs`
+                       Aafa         Aafr   Early Homo East Paranthropus       Hnal      Prob
+UW105_811_LLM1 4.214264e-11 2.101154e-08 1.222647e-07      2.553098e-12 4.8352e-27 0.9999999
+
+

@@ -1,0 +1,130 @@
+$ClassifiedResults
+                        Class      3 PCs      4 PCs      5 PCs      6 PCs      7 PCs      8 PCs      9 PCs
+AL200-1a_URM3            Aafa       Aafa       Aafa       Aafa       Aafa       Aafa       Aafa       Aafa
+AL333x-1_URM3            Aafa       Ased       Aafa       Aafa       Aafa       Ased       Aafa       Aafa
+AL486-1_ULM3             Aafa       Aafa       Aafa       Aafa       Aafa       Aafa       Aafa       Aafa
+Ased_MH1_ULM3            Ased       Ased       Ased       Ased       Ased       Ased       Ased       Ased
+DNH_54_ULM3              Prob       Aafr       Aafr       Aafr       Aafr       Aafr       Ased       Aafr
+KNM-ER_807_URM3    Early Homo       Aafr       Aafr Early Homo Early Homo Early Homo Early Homo Early Homo
+KNM-ER_1813_ULM3   Early Homo Early Homo Early Homo Early Homo Early Homo Early Homo Early Homo Early Homo
+L398-573_ULM3      Early Homo       Aafr       Aafr       Aafr       Aafr       Aafr       Aafr       Aafr
+OH13_URM3          Early Homo Early Homo Early Homo Early Homo Early Homo Early Homo Early Homo Early Homo
+OH15_URM3          Early Homo Early Homo Early Homo Early Homo Early Homo Early Homo Early Homo Early Homo
+OH16_ULM3          Early Homo Early Homo Early Homo Early Homo Early Homo Early Homo Early Homo Early Homo
+Prob_DNH_3_ULM3          Prob       Aafa       Aafa       Prob       Prob       Prob       Prob       Prob
+Prob_SK16_ULM3           Prob       Ased       Prob       Prob       Prob       Prob       Prob       Prob
+Prob_SK3975_ULM3         Prob       Hnal       Hnal       Hnal       Prob       Ased       Ased       Prob
+Prob_SK3977_URM3         Prob       Hnal       Hnal       Hnal       Prob       Prob       Prob       Prob
+Prob_SK_831A_ULM3        Prob       Aafa       Aafa       Aafa       Aafa       Hnal       Ased       Ased
+Prob_SK_3975_ULM3        Prob       Hnal       Hnal       Hnal       Prob       Ased       Ased       Prob
+Prob_SK_3977_URM3        Prob       Hnal       Hnal       Prob       Prob       Prob       Prob       Prob
+Prob_SKX21841_URM3       Prob       Hnal       Prob       Prob       Prob       Prob       Prob       Prob
+Prob_TM1517C_URM3        Prob       Hnal       Prob       Prob       Prob       Prob       Prob       Prob
+SK_13.14_URM3            Prob       Ased       Ased       Aafa       Aafa       Prob       Prob       Prob
+SK_52_URM3               Prob       Prob       Prob       Prob       Prob       Prob       Prob       Prob
+SK_105_ULM3              Prob       Aafa       Prob       Prob       Prob       Prob       Prob       Prob
+SK_847_UM3               Prob       Aafr       Aafr       Aafr       Aafr Early Homo Early Homo Early Homo
+STS_28_URM3              Aafr       Aafr       Aafr       Aafr       Aafr       Aafr       Aafr       Aafr
+STS_37_ULM3              Aafr       Aafr Early Homo Early Homo Early Homo Early Homo Early Homo Early Homo
+STS_52a_URM3             Aafr       Aafr       Aafr       Aafr       Aafr       Aafr       Aafr       Aafr
+STS_53_ULM3              Aafr       Aafr       Aafr       Aafr       Aafr       Aafr       Aafr       Aafr
+STW6_ULM3                Aafr       Prob       Prob       Aafr       Aafr       Aafr       Hnal       Aafr
+STW179_ULM3              Aafr       Ased       Prob       Ased       Ased       Aafr       Aafr       Aafr
+STW183_URM3              Aafr Early Homo Early Homo       Aafr       Aafr       Aafr       Aafr       Aafr
+STW189_ULM3              Aafr       Aafr       Aafr       Aafr       Aafr       Aafr       Aafr       Prob
+STW252H_URM3             Aafr       Aafa       Aafr       Aafr       Aafr       Aafr       Aafr       Aafr
+UW101_594_URM3           Hnal       Hnal       Hnal       Hnal       Hnal       Hnal       Hnal       Hnal
+UW101_1269_ULM3          Hnal       Hnal       Hnal       Hnal       Hnal       Hnal       Hnal       Hnal
+UW101_1398a_URM3         Hnal       Prob       Ased       Ased       Hnal       Hnal       Hnal       Hnal
+CVA accuracy                -      41.67      55.56      69.44      80.56      77.78      77.78      83.33
+                       10 PCs     11 PCs ClassAccuracy
+AL200-1a_URM3            Aafa       Aafa     100.00000
+AL333x-1_URM3            Aafa       Aafa      77.78000
+AL486-1_ULM3             Aafa       Aafa     100.00000
+Ased_MH1_ULM3            Ased       Ased     100.00000
+DNH_54_ULM3              Aafr       Aafr       0.00000
+KNM-ER_807_URM3    Early Homo Early Homo      77.78000
+KNM-ER_1813_ULM3   Early Homo Early Homo     100.00000
+L398-573_ULM3      Early Homo Early Homo      22.22000
+OH13_URM3          Early Homo Early Homo     100.00000
+OH15_URM3          Early Homo Early Homo     100.00000
+OH16_ULM3          Early Homo Early Homo     100.00000
+Prob_DNH_3_ULM3          Prob       Prob      77.78000
+Prob_SK16_ULM3           Prob       Prob      88.89000
+Prob_SK3975_ULM3         Prob       Prob      44.44000
+Prob_SK3977_URM3         Prob       Prob      66.67000
+Prob_SK_831A_ULM3        Prob       Prob      22.22000
+Prob_SK_3975_ULM3        Prob       Prob      44.44000
+Prob_SK_3977_URM3        Prob       Prob      77.78000
+Prob_SKX21841_URM3       Prob       Prob      88.89000
+Prob_TM1517C_URM3        Prob       Prob      88.89000
+SK_13.14_URM3            Prob       Prob      55.56000
+SK_52_URM3               Prob       Prob     100.00000
+SK_105_ULM3              Prob       Prob      88.89000
+SK_847_UM3               Aafr       Aafr       0.00000
+STS_28_URM3              Aafr       Aafr     100.00000
+STS_37_ULM3              Aafr       Aafr      33.33000
+STS_52a_URM3             Aafr       Aafr     100.00000
+STS_53_ULM3              Aafr       Aafr     100.00000
+STW6_ULM3                Aafr       Aafr      66.67000
+STW179_ULM3              Aafr       Aafr      55.56000
+STW183_URM3              Aafr       Aafr      77.78000
+STW189_ULM3              Prob       Prob      66.67000
+STW252H_URM3             Aafr       Aafr      88.89000
+UW101_594_URM3           Hnal       Hnal     100.00000
+UW101_1269_ULM3          Hnal       Hnal     100.00000
+UW101_1398a_URM3         Hnal       Hnal      66.67000
+CVA accuracy            91.67      91.67      74.38333
+
+$ToClassifyResults
+                UW105-676_URM
+Class                        
+3 PCs              Early Homo
+4 PCs              Early Homo
+5 PCs              Early Homo
+6 PCs              Early Homo
+7 PCs              Early Homo
+8 PCs              Early Homo
+9 PCs              Early Homo
+10 PCs             Early Homo
+11 PCs             Early Homo
+ClassResults Early Homo: 100%
+
+$PosteriorProbs
+$PosteriorProbs$`3_PCs`
+           Aafa      Aafr       Ased Early Homo       Hnal       Prob
+post 0.00765419 0.3843026 0.08937924  0.4256679 0.05080199 0.04219401
+
+$PosteriorProbs$`4_PCs`
+            Aafa      Aafr       Ased Early Homo        Hnal       Prob
+post 0.000159115 0.3814075 0.01136091  0.5784636 0.005941725 0.02266714
+
+$PosteriorProbs$`5_PCs`
+             Aafa       Aafr         Ased Early Homo        Hnal       Prob
+post 2.933352e-05 0.08820873 0.0004045793  0.8956378 0.000628036 0.01509148
+
+$PosteriorProbs$`6_PCs`
+             Aafa       Aafr         Ased Early Homo       Hnal        Prob
+post 3.198474e-05 0.04036259 0.0001429184  0.9509681 0.00141629 0.007078149
+
+$PosteriorProbs$`7_PCs`
+             Aafa       Aafr         Ased Early Homo       Hnal       Prob
+post 2.897179e-05 0.02621623 0.0002223278  0.9613835 0.00211819 0.01003077
+
+$PosteriorProbs$`8_PCs`
+             Aafa       Aafr         Ased Early Homo        Hnal        Prob
+post 8.794516e-06 0.02420251 0.0001293424  0.9707388 0.001660168 0.003260405
+
+$PosteriorProbs$`9_PCs`
+             Aafa       Aafr         Ased Early Homo         Hnal       Prob
+post 2.242236e-05 0.08395522 3.459922e-06  0.8897616 1.259251e-05 0.02624473
+
+$PosteriorProbs$`10_PCs`
+             Aafa      Aafr         Ased Early Homo         Hnal      Prob
+post 2.572067e-05 0.2767386 1.649688e-05  0.5795421 7.817949e-07 0.1436763
+
+$PosteriorProbs$`11_PCs`
+             Aafa      Aafr         Ased Early Homo         Hnal       Prob
+post 1.407392e-05 0.3072961 7.471857e-07  0.6438829 7.546861e-08 0.04880619
+
+

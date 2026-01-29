@@ -1,0 +1,53 @@
+$ClassifiedResults
+                   Class 3 PCs 4 PCs 5 PCs 6 PCs 7 PCs ClassAccuracy
+Prob_SK64_LRDM1       M1    M1    M1    M1    M1    M1     100.00000
+Prob_TM1601a_LRDM1    M1    M1    M1    M1    M2    M2      60.00000
+SK61_LRDM1            M1    M2    M2    M1    M1    M1      60.00000
+SK63_LRDM1            M1    M1    M1    M1    M1    M1     100.00000
+SK3978_LLDM1          M1    M1    M1    M1    M1    M1     100.00000
+Prob_DNH_2_LLDM2      M2    M2    M2    M2    M2    M2     100.00000
+Prob_DNH_56B_LRDM2    M2    M2    M1    M1    M1    M1      20.00000
+Prob_DNH_60i_LLDM2    M2    M2    M2    M2    M2    M2     100.00000
+Prob_SK61_LRDM2       M2    M2    M2    M2    M2    M2     100.00000
+Prob_SK62_LLDM2       M2    M2    M2    M2    M2    M2     100.00000
+Prob_SK64_LRDM2       M2    M2    M2    M2    M2    M2     100.00000
+Prob_SK3978_LRDM2     M2    M2    M2    M2    M2    M2     100.00000
+CVA accuracy           - 91.67 83.33 91.67 83.33 83.33      86.66667
+
+$ToClassifyResults
+             UW105-076_LRDM1 UW105-249_LRDM2
+Class                                       
+3 PCs                     M1              M2
+4 PCs                     M1              M2
+5 PCs                     M2              M2
+6 PCs                     M2              M1
+7 PCs                     M2              M1
+ClassResults M1: 40% M2: 60% M1: 40% M2: 60%
+
+$PosteriorProbs
+$PosteriorProbs$`3_PCs`
+                         M1          M2
+UW105-076_LRDM1 0.993791796 0.006208204
+UW105-249_LRDM2 0.001938363 0.998061637
+
+$PosteriorProbs$`4_PCs`
+                        M1         M2
+UW105-076_LRDM1 0.93430216 0.06569784
+UW105-249_LRDM2 0.00208563 0.99791437
+
+$PosteriorProbs$`5_PCs`
+                          M1        M2
+UW105-076_LRDM1 5.952411e-05 0.9999405
+UW105-249_LRDM2 3.446929e-06 0.9999966
+
+$PosteriorProbs$`6_PCs`
+                          M1        M2
+UW105-076_LRDM1 1.025703e-12 1.0000000
+UW105-249_LRDM2 7.538553e-01 0.2461447
+
+$PosteriorProbs$`7_PCs`
+                          M1          M2
+UW105-076_LRDM1 5.321945e-13 1.000000000
+UW105-249_LRDM2 9.911289e-01 0.008871099
+
+

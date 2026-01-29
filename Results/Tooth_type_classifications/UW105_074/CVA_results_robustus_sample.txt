@@ -1,0 +1,90 @@
+$ClassifiedResults
+                   Class 3 PCs 4 PCs 5 PCs 6 PCs 7 PCs 8 PCs 9 PCs ClassAccuracy
+DNH_108_ULM1          M1    M1    M1    M1    M1    M1    M1    M1     100.00000
+Prob_DNH_57B_URM1     M1    M1    M1    M1    M1    M1    M1    M1     100.00000
+Prob_DNH_60A_ULM1     M1    M1    M1    M1    M1    M1    M1    M1     100.00000
+Prob_SK829_ULM1       M1    M1    M1    M1    M1    M1    M1    M1     100.00000
+Prob_SK_47_URM1       M1    M1    M1    M1    M1    M1    M1    M1     100.00000
+Prob_SK_89a_ULM1      M1    M1    M1    M1    M1    M1    M1    M1     100.00000
+Prob_SK_832_ULM1      M1    M1    M1    M1    M1    M1    M1    M1     100.00000
+SK13.14_URM1          M1    M1    M1    M1    M1    M1    M1    M1     100.00000
+SK27_ULM1             M1    M1    M1    M1    M1    M1    M1    M1     100.00000
+SK_48_URM1            M1    M1    M1    M1    M1    M1    M1    M1     100.00000
+SK_52_URM1            M1    M1    M1    M1    M1    M1    M1    M1     100.00000
+SK_102_ULM1           M1    M1    M1    M1    M1    M1    M1    M1     100.00000
+SK_829_ULM1           M1    M1    M1    M1    M1    M1    M1    M1     100.00000
+SK_838a_URM1          M1    M1    M1    M1    M1    M1    M1    M1     100.00000
+SK_14129A_URM1        M1    M2    M2    M2    M2    M2    M2    M2       0.00000
+TM_1517a_ULM1         M1    M1    M1    M1    M1    M1    M1    M1     100.00000
+DNH_7_URM2            M2    M2    M2    M2    M2    M2    M2    M2     100.00000
+DNH_108_URM2          M2    M2    M2    M2    M2    M1    M2    M2      85.71000
+Prob_SK_48_URM2       M2    M2    M2    M2    M2    M2    M2    M2     100.00000
+Prob_SK_834_URM2      M2    M2    M2    M2    M2    M2    M2    M2     100.00000
+SK13.14_URM2          M2    M2    M2    M2    M2    M2    M2    M2     100.00000
+SK_16.1591_ULM2       M2    M3    M3    M3    M3    M3    M3    M3       0.00000
+SK_47_URM2            M2    M1    M2    M2    M2    M2    M1    M2      71.43000
+SK_49_URM2            M2    M2    M2    M2    M2    M2    M2    M2     100.00000
+SK_52_URM2            M2    M3    M3    M3    M3    M3    M3    M3       0.00000
+SKW_33_URM2           M2    M2    M2    M2    M2    M2    M2    M2     100.00000
+TM_1517a_ULM2         M2    M2    M2    M2    M2    M2    M2    M2     100.00000
+TM_1517C_URM2         M2    M2    M2    M2    M2    M2    M2    M2     100.00000
+DNH_54_ULM3           M3    M2    M3    M2    M2    M3    M3    M3      57.14000
+Prob_DNH_3_ULM3       M3    M2    M2    M2    M2    M2    M2    M2       0.00000
+Prob_SK16_ULM3        M3    M3    M3    M3    M3    M3    M3    M3     100.00000
+Prob_SK3975_ULM3      M3    M3    M3    M3    M3    M3    M3    M3     100.00000
+Prob_SK3977_URM3      M3    M3    M3    M3    M3    M3    M3    M3     100.00000
+Prob_SK_831A_ULM3     M3    M2    M3    M3    M3    M3    M3    M3      85.71000
+Prob_SK_3975_ULM3     M3    M3    M3    M3    M3    M3    M3    M3     100.00000
+Prob_SK_3977_URM3     M3    M3    M3    M3    M3    M3    M3    M3     100.00000
+Prob_SKX21841_URM3    M3    M2    M2    M2    M2    M2    M2    M2       0.00000
+Prob_TM1517C_URM3     M3    M3    M3    M3    M3    M3    M3    M3     100.00000
+SK_13.14_URM3         M3    M3    M3    M3    M3    M3    M3    M3     100.00000
+SK_52_URM3            M3    M3    M3    M3    M3    M2    M2    M2      57.14000
+SK_105_ULM3           M3    M3    M2    M2    M2    M2    M2    M2      14.29000
+SK_847_UM3            M3    M3    M3    M3    M3    M3    M3    M3     100.00000
+UW105-676_URM         M3    M3    M3    M3    M3    M3    M3    M3     100.00000
+UW_105_042_URM1       M1    M1    M1    M1    M1    M1    M1    M1     100.00000
+CVA accuracy           - 81.82 86.36 84.09 84.09 81.82 81.82 84.09      83.44136
+
+$ToClassifyResults
+                    UW_105_074_URM
+Class                             
+3 PCs                           M2
+4 PCs                           M2
+5 PCs                           M2
+6 PCs                           M2
+7 PCs                           M2
+8 PCs                           M2
+9 PCs                           M3
+ClassResults M2: 85.71% M3: 14.29%
+
+$PosteriorProbs
+$PosteriorProbs$`3_PCs`
+               M1        M2        M3
+post 6.500625e-05 0.6526434 0.3472916
+
+$PosteriorProbs$`4_PCs`
+               M1        M2        M3
+post 1.918904e-05 0.8201819 0.1797989
+
+$PosteriorProbs$`5_PCs`
+               M1        M2        M3
+post 1.084943e-05 0.8035217 0.1964674
+
+$PosteriorProbs$`6_PCs`
+               M1        M2       M3
+post 4.610213e-05 0.8078189 0.192135
+
+$PosteriorProbs$`7_PCs`
+               M1        M2        M3
+post 6.179644e-05 0.5740026 0.4259356
+
+$PosteriorProbs$`8_PCs`
+               M1        M2        M3
+post 1.359028e-05 0.5080155 0.4919709
+
+$PosteriorProbs$`9_PCs`
+               M1        M2        M3
+post 1.817395e-05 0.4237686 0.5762132
+
+

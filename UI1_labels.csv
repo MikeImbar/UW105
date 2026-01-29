@@ -1,12 +1,12 @@
 Name,Tooth,Class1,Class2,Classify,Exclude
-AL200-1a_ULI1,I1,Aus,Aus,*,*
-AL486-1_ULI1,I1,Aus,Aus,*,*
+AL200-1a_ULI1,I1,Aus,Aafa,*,*
+AL486-1_ULI1,I1,Aus,Aafa,*,*
 DNH93_ULI1,I1,Prob,Prob,*,*
 DNH108_URI1,I1,Prob,Prob,*,*
 KNM-WT_15000A_ULI1,I1,Early Homo,Early Homo,*,*
-LH3b_ULI1,I1,Aus,Aus,*,*
-MH1_URI1,I1,Aus,Aus,*,*
-MLD43_ULI1,I1,Aus,Aus,*,*
+LH3b_ULI1,I1,Aus,Aafa,*,*
+MH1_URI1,I1,Aus,Ased,*,*
+MLD43_ULI1,I1,Aus,Aafr,*,*
 OH16_URI1,I1,Early Homo,Early Homo,*,*
 OH39_URI1,I1,Early Homo,Early Homo,*,*
 Prob_KB5389_ULI1,I1,Prob,Prob,*,*
@@ -16,11 +16,11 @@ Prob_SK40_ULI1,I1,Prob,Prob,*,*
 Prob_SK68_ULI1,I1,Prob,Prob,*,*
 Prob_SKX240_ULI1,I1,Prob,Prob,*,*
 SK65_ULI1,I1,Prob,Prob,*,*
-STS24a_URI1,I1,Aus,Aus,*,*
-STS52a_ULI1,I1,Aus,Aus,*,*
-STW75_STW78.79_ULI1,I1,Aus,Aus,*,*
-STW183a_URI1,I1,Aus,Aus,*,*
-STW252_ULI1,I1,Aus,Aus,*,*
+STS24a_URI1,I1,Aus,Aafr,*,*
+STS52a_ULI1,I1,Aus,Aafr,*,*
+STW75_STW78.79_ULI1,I1,Aus,Aafr,*,*
+STW183a_URI1,I1,Aus,Aafr,*,*
+STW252_ULI1,I1,Aus,Aafr,*,*
 UW101_038_URI1,I1,Hnal,Hnal,*,*
 UW101_591_ULI1,I1,Hnal,Hnal,*,*
 UW101_931_ULI1,I1,Hnal,Hnal,*,*

@@ -1,0 +1,79 @@
+$ClassifiedResults
+                      Class 3 PCs 4 PCs 5 PCs 6 PCs 7 PCs 8 PCs ClassAccuracy
+AL333-43b_LRM1           M1    M1    M1    M1    M1    M1    M1       100.000
+AL1030-1_LLDM1           M1    M1    M1    M1    M1    M1    M1       100.000
+DNH35_DNH35_LRDM1        M1    M1    M1    M1    M1    M1    M1       100.000
+Hnal_UW101_1685_LRDM1    M1    M1    M1    M1    M1    M1    M1       100.000
+KNM-ER820_LRDM1          M1    M1    M1    M1    M1    M1    M1       100.000
+LH2_LRDM1                M1    M1    M1    M1    M1    M1    M1       100.000
+LH3l_LRDM1               M1    M1    M1    M1    M1    M1    M1       100.000
+Omo222-1973-2744         M1    M1    M1    M1    M1    M1    M1       100.000
+Prob_SK64_LRDM1          M1    M1    M1    M1    M1    M1    M1       100.000
+Prob_TM1601a_LRDM1       M1    M1    M1    M1    M1    M1    M1       100.000
+SK61_LRDM1               M1    M2    M2    M2    M2    M2    M2         0.000
+SK63_LRDM1               M1    M1    M1    M1    M1    M1    M1       100.000
+SK3978_LLDM1             M1    M1    M1    M1    M1    M1    M1       100.000
+STS24_LLDM1              M1    M1    M1    M1    M1    M1    M1       100.000
+STW104_LLDM1             M1    M1    M1    M1    M1    M1    M1       100.000
+STW151_LRDM1             M1    M1    M1    M1    M1    M1    M1       100.000
+Aafr_MLD_5_LRDM2         M2    M2    M2    M2    M2    M2    M2       100.000
+Aafr_STW_428_LLDM2       M2    M2    M2    M2    M2    M2    M2       100.000
+Garba_LRDM2              M2    M2    M2    M2    M2    M2    M2       100.000
+Hnal_UW101_1686_LRDM2    M2    M2    M2    M2    M2    M2    M2       100.000
+KNM-ER820_LLDM2          M2    M2    M2    M2    M2    M2    M2       100.000
+LH2_LLDM2                M2    M2    M2    M2    M2    M2    M2       100.000
+Prob_DNH_2_LLDM2         M2    M2    M2    M2    M2    M2    M2       100.000
+Prob_DNH_56B_LRDM2       M2    M2    M2    M2    M2    M2    M2       100.000
+Prob_DNH_60i_LLDM2       M2    M2    M2    M2    M2    M2    M2       100.000
+Prob_SK61_LRDM2          M2    M2    M2    M2    M2    M2    M2       100.000
+Prob_SK62_LLDM2          M2    M2    M2    M2    M2    M2    M2       100.000
+Prob_SK64_LRDM2          M2    M2    M2    M2    M2    M2    M2       100.000
+Prob_SK3978_LRDM2        M2    M2    M2    M2    M2    M2    M2       100.000
+STS24_LRDM2              M2    M2    M2    M2    M2    M2    M2       100.000
+STW151_LRDM2             M2    M2    M2    M2    M2    M2    M2       100.000
+Taung1_LRDM2             M2    M2    M2    M2    M2    M2    M2       100.000
+CVA accuracy              - 96.88 96.88 96.88 96.88 96.88 96.88        96.875
+
+$ToClassifyResults
+             UW105-076_LRDM1 UW105-249_LRDM2
+Class                                       
+3 PCs                     M1              M2
+4 PCs                     M1              M2
+5 PCs                     M1              M2
+6 PCs                     M1              M2
+7 PCs                     M1              M2
+8 PCs                     M1              M2
+ClassResults        M1: 100%        M2: 100%
+
+$PosteriorProbs
+$PosteriorProbs$`3_PCs`
+                         M1           M2
+UW105-076_LRDM1 0.999993732 6.268312e-06
+UW105-249_LRDM2 0.009765678 9.902343e-01
+
+$PosteriorProbs$`4_PCs`
+                         M1           M2
+UW105-076_LRDM1 0.999997489 2.511038e-06
+UW105-249_LRDM2 0.006368838 9.936312e-01
+
+$PosteriorProbs$`5_PCs`
+                         M1           M2
+UW105-076_LRDM1 0.999997438 2.562306e-06
+UW105-249_LRDM2 0.006033538 9.939665e-01
+
+$PosteriorProbs$`6_PCs`
+                         M1           M2
+UW105-076_LRDM1 0.999997318 2.682404e-06
+UW105-249_LRDM2 0.005299149 9.947009e-01
+
+$PosteriorProbs$`7_PCs`
+                          M1           M2
+UW105-076_LRDM1 0.9999545223 4.547771e-05
+UW105-249_LRDM2 0.0005004115 9.994996e-01
+
+$PosteriorProbs$`8_PCs`
+                          M1           M2
+UW105-076_LRDM1 0.9998912222 0.0001087778
+UW105-249_LRDM2 0.0001960006 0.9998039994
+
+

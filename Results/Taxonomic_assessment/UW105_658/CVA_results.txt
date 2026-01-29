@@ -1,0 +1,115 @@
+$ClassifiedResults
+                           Class      3 PCs      4 PCs      5 PCs      6 PCs      7 PCs      8 PCs
+AL128-23_LRP3               Aafa       Aafa       Aafa       Aafr       Aafr       Aafa       Aafa
+AL266-1_LRP3                Aafa       Aafa       Aafa       Aafa       Aafa       Aafa       Aafa
+AL333-10_LLP3               Aafa Early Homo Early Homo Early Homo Early Homo Early Homo Early Homo
+AL333w-60_LLP3              Aafa Early Homo Early Homo Early Homo       Aafa Early Homo Early Homo
+AL333w-1_LRP3               Aafa       Aafa       Aafa       Aafa       Aafa       Aafa       Aafa
+AL417-1a_LLP3               Aafa       Aafa       Aafa       Aafa       Aafa       Aafa       Aafa
+AL655-1_LLP3                Aafa       Hnal Early Homo Early Homo       Aafa       Aafa       Aafa
+DNH8_LLP3                   Prob       Prob       Prob       Prob       Prob       Prob       Prob
+DNH46_LRP3                  Prob       Pboi       Pboi       Pboi       Prob       Prob       Prob
+DNH51_LRP3                  Prob       Pboi       Pboi       Prob       Prob       Prob       Prob
+DNH68_LRP3                  Prob       Prob       Prob       Prob       Prob       Prob       Prob
+KNM-ER_992_LRP3       Early Homo       Aafr Early Homo Early Homo Early Homo Early Homo Early Homo
+KNM-ER_1507_LLP3      Early Homo       Aafa       Aafr Early Homo       Aafa Early Homo Early Homo
+KNM-ER_1802_LRP3      Early Homo       Hnal       Hnal Early Homo Early Homo Early Homo Early Homo
+KNM-WT_16005_LLP3           Pboi       Pboi       Pboi       Pboi       Pboi       Pboi       Pboi
+OH7_LRP3              Early Homo       Aafa       Aafa       Aafa       Aafa Early Homo Early Homo
+OH13_LRP3             Early Homo       Hnal       Hnal       Hnal       Hnal       Hnal Early Homo
+OH16_LRP3             Early Homo       Aafr       Aafr       Aafr       Aafr Early Homo Early Homo
+Omo75i-1970-1255_LRP3 Early Homo Early Homo Early Homo Early Homo Early Homo Early Homo Early Homo
+SK6_LRP3                    Prob       Prob       Prob       Prob       Prob       Prob       Prob
+SK96_2_LLP3                 Prob       Prob Early Homo Early Homo       Hnal       Hnal       Prob
+SK100_LRP3                  Prob       Prob       Prob       Prob       Prob       Prob       Prob
+SK857_LRP3                  Prob       Pboi       Pboi       Prob       Pboi       Pboi       Prob
+SKW5_LRP3                   Prob       Prob       Prob       Prob       Prob       Prob       Prob
+STS51_LRP3                  Aafr       Aafr       Aafr       Aafr       Aafr       Aafr       Aafr
+STS52b_LRP3                 Aafr       Aafr       Aafr       Aafr       Aafr       Aafr       Aafr
+STW7_LLP3                   Aafr       Aafr       Aafr       Aafr       Aafr       Aafr       Aafr
+STW213_LRP3                 Aafr       Aafr       Aafr       Aafr       Aafr       Aafr       Aafr
+STW404_LRP3                 Aafr       Aafr       Aafr       Aafr       Aafr       Aafr       Aafr
+UW101_144_LLP3              Hnal       Hnal       Hnal       Hnal       Hnal       Hnal       Hnal
+UW101_298_LRP3              Hnal       Hnal       Hnal       Hnal       Hnal       Hnal       Hnal
+UW101_377_LRP3              Hnal       Hnal       Hnal       Hnal       Hnal       Hnal       Hnal
+UW101_506_LRP3              Hnal       Hnal       Hnal       Hnal       Hnal       Hnal       Hnal
+UW101_889_LLP3              Hnal       Hnal       Hnal       Hnal       Hnal       Hnal       Hnal
+UW101_1261_LRP3             Hnal       Hnal       Hnal       Hnal       Hnal       Hnal       Hnal
+UW101_1565_LLP3             Hnal       Hnal       Hnal       Hnal       Hnal       Hnal       Hnal
+CVA accuracy                   -      66.67      66.67         75      77.78      86.11      94.44
+                      ClassAccuracy
+AL128-23_LRP3              66.67000
+AL266-1_LRP3              100.00000
+AL333-10_LLP3               0.00000
+AL333w-60_LLP3             16.67000
+AL333w-1_LRP3             100.00000
+AL417-1a_LLP3             100.00000
+AL655-1_LLP3               50.00000
+DNH8_LLP3                 100.00000
+DNH46_LRP3                 50.00000
+DNH51_LRP3                 66.67000
+DNH68_LRP3                100.00000
+KNM-ER_992_LRP3            83.33000
+KNM-ER_1507_LLP3           50.00000
+KNM-ER_1802_LRP3           66.67000
+KNM-WT_16005_LLP3         100.00000
+OH7_LRP3                   33.33000
+OH13_LRP3                  16.67000
+OH16_LRP3                  33.33000
+Omo75i-1970-1255_LRP3     100.00000
+SK6_LRP3                  100.00000
+SK96_2_LLP3                33.33000
+SK100_LRP3                100.00000
+SK857_LRP3                 33.33000
+SKW5_LRP3                 100.00000
+STS51_LRP3                100.00000
+STS52b_LRP3               100.00000
+STW7_LLP3                 100.00000
+STW213_LRP3               100.00000
+STW404_LRP3               100.00000
+UW101_144_LLP3            100.00000
+UW101_298_LRP3            100.00000
+UW101_377_LRP3            100.00000
+UW101_506_LRP3            100.00000
+UW101_889_LLP3            100.00000
+UW101_1261_LRP3           100.00000
+UW101_1565_LLP3           100.00000
+CVA accuracy               77.77778
+
+$ToClassifyResults
+                 UW_105_658_LRP3
+Class                           
+3 PCs                       Prob
+4 PCs                       Prob
+5 PCs                       Prob
+6 PCs                       Pboi
+7 PCs                       Pboi
+8 PCs                       Pboi
+ClassResults Pboi: 50% Prob: 50%
+
+$PosteriorProbs
+$PosteriorProbs$`3_PCs`
+                        Aafa        Aafr  Early Homo       Hnal      Pboi      Prob
+UW_105_658_LRP3 9.412648e-05 0.000256982 0.001693313 0.00187648 0.2650774 0.7310017
+
+$PosteriorProbs$`4_PCs`
+                        Aafa         Aafr   Early Homo        Hnal      Pboi      Prob
+UW_105_658_LRP3 4.190802e-06 0.0001519789 0.0001398076 0.001035744 0.3454477 0.6532206
+
+$PosteriorProbs$`5_PCs`
+                       Aafa         Aafr   Early Homo         Hnal      Pboi      Prob
+UW_105_658_LRP3 5.23543e-06 0.0001151963 0.0001748529 0.0003169815 0.2838071 0.7155807
+
+$PosteriorProbs$`6_PCs`
+                        Aafa         Aafr   Early Homo         Hnal     Pboi      Prob
+UW_105_658_LRP3 1.457888e-07 2.545175e-06 2.419853e-08 1.374653e-05 0.947433 0.0525505
+
+$PosteriorProbs$`7_PCs`
+                       Aafa         Aafr   Early Homo         Hnal      Pboi       Prob
+UW_105_658_LRP3 7.21727e-09 1.438942e-06 2.642613e-08 1.344342e-05 0.9512473 0.04873777
+
+$PosteriorProbs$`8_PCs`
+                        Aafa         Aafr   Early Homo         Hnal      Pboi       Prob
+UW_105_658_LRP3 8.728957e-09 3.394117e-08 2.896484e-08 6.088672e-09 0.9084635 0.09153642
+
+

@@ -1,0 +1,143 @@
+$ClassifiedResults
+                            Class      3 PCs      4 PCs      5 PCs      6 PCs      7 PCs      8 PCs
+Aafr_STS52B_LRP4             Aafr       Aafa       Aafa       Aafa       Aafa       Aafa       Aafa
+Aafr_STW131_LLP4             Aafr       Hnal       Aafr       Aafr       Aafr       Aafr       Aafr
+Aafr_STW213_LRP4             Aafr Early Homo       Hnal       Hnal       Hnal Early Homo       Aafr
+Aafr_STW327_LRP4             Aafr       Aafr       Aafr       Aafr       Aafr       Aafr       Aafr
+Aafr_STW404_LRP4             Aafr       Aafr       Aafa       Aafr       Aafr       Aafr Early Homo
+Aafr_STW537_LLP4             Aafr       Pboi       Pboi       Aafa       Aafa       Aafr       Aafr
+Aafr_STW_14_LLP4             Aafr       Aafr       Aafr Early Homo       Aafa Early Homo       Aafa
+Aafr_TM1523_LLP4             Aafr       Aafr       Aafr       Aafr       Aafr       Aafr       Aafr
+AL128-23_LRP4                Aafa       Aafa       Aafa       Aafa       Aafa       Aafa       Aafa
+AL266-1_LRP4                 Aafa       Aafr       Aafr       Aafa       Aafa       Aafa       Aafa
+AL330-7_LLP4                 Aafa Early Homo Early Homo Early Homo Early Homo Early Homo Early Homo
+AL330-5_LRP4                 Aafa       Aafa       Aafa       Aafr       Aafr       Aafa Early Homo
+AL333w-1_LLP4                Aafa       Aafr       Aafr       Aafr       Aafr       Aafr       Aafr
+AL417-1a_LLP4                Aafa       Aafa       Aafa       Aafa       Aafa       Aafa       Aafa
+AL443-1_LLP4                 Aafa       Pboi       Aafa       Aafa       Aafa       Aafa       Aafa
+DNH8_LLP4                    Prob       Pboi       Pboi       Pboi       Pboi       Prob       Prob
+DNH51_LRP4                   Prob       Prob       Prob       Prob       Prob       Prob       Prob
+KNM-ER_992_LRP4        Early Homo Early Homo Early Homo Early Homo Early Homo Early Homo Early Homo
+KNM-ER_1507_LLP4       Early Homo Early Homo Early Homo Early Homo Early Homo Early Homo Early Homo
+KNM-ER_1802_LRP4       Early Homo       Aafa       Aafa       Aafr       Aafr       Aafr       Aafr
+LH3r_LLP4                    Aafa       Aafr       Aafr       Aafr       Aafr       Aafa Early Homo
+OH7_LRP4               Early Homo Early Homo Early Homo Early Homo Early Homo Early Homo Early Homo
+OH13_LRP4              Early Homo Early Homo Early Homo Early Homo       Hnal Early Homo Early Homo
+OH16_LLP4              Early Homo       Hnal Early Homo Early Homo Early Homo Early Homo Early Homo
+Pboi_KNM-ER_3885_LRP4        Pboi       Pboi       Pboi       Pboi       Pboi       Pboi       Pboi
+Pboi_KNMER_15951D_LRP4       Pboi       Pboi       Pboi       Pboi       Pboi       Pboi       Pboi
+Prob_SK7_LRP4                Prob       Pboi       Pboi       Prob       Prob       Prob       Prob
+Prob_SK9_LLP4                Prob       Prob       Prob       Prob       Prob       Prob       Prob
+Prob_SK23_LRP4               Prob       Prob       Prob       Aafr       Prob       Prob       Prob
+Prob_SK25_LLP4               Prob       Prob       Prob       Prob       Prob       Prob       Prob
+Prob_SK55B_LLP4              Prob       Prob       Prob       Prob       Prob       Prob       Prob
+Prob_SK88_LLP4               Prob       Prob       Pboi       Prob       Prob       Pboi       Pboi
+Prob_SK826B_LLP4             Prob       Aafr       Prob       Prob       Prob       Pboi       Pboi
+Prob_SK1587a_LLP4            Prob       Pboi       Pboi       Pboi       Pboi       Prob       Prob
+Prob_SK1588_LRP4             Prob       Prob       Prob       Prob       Prob       Prob       Prob
+Prob_SKW5_LRP4               Prob       Prob       Prob       Prob       Prob       Prob       Prob
+Prob_SKX4446_LRP4            Prob       Prob       Hnal       Hnal       Hnal       Hnal       Hnal
+SK6_LLP4                     Prob Early Homo       Pboi       Pboi       Pboi       Prob       Prob
+STW151_LLP4            Early Homo       Aafa       Aafa       Aafa       Aafa       Aafr       Aafr
+UW101_184_LLP4               Hnal       Hnal       Hnal       Hnal       Hnal       Hnal       Hnal
+UW101_377_LRP4               Hnal       Hnal       Hnal       Hnal       Hnal       Hnal       Hnal
+UW101_383_LRP4               Hnal       Hnal       Hnal       Hnal       Hnal       Hnal       Hnal
+UW101_887_LLP4               Hnal       Hnal       Hnal       Hnal       Hnal       Hnal       Hnal
+UW101_1261_LLP4              Hnal       Hnal       Hnal       Hnal       Hnal       Hnal       Hnal
+CVA accuracy                    -      61.36      63.64      65.91      65.91      77.27      72.73
+                            9 PCs ClassAccuracy
+Aafr_STS52B_LRP4             Aafr      14.29000
+Aafr_STW131_LLP4             Aafr      85.71000
+Aafr_STW213_LRP4             Aafr      28.57000
+Aafr_STW327_LRP4             Aafr     100.00000
+Aafr_STW404_LRP4       Early Homo      57.14000
+Aafr_STW537_LLP4             Aafa      28.57000
+Aafr_STW_14_LLP4             Aafa      28.57000
+Aafr_TM1523_LLP4             Aafr     100.00000
+AL128-23_LRP4                Aafa     100.00000
+AL266-1_LRP4                 Aafr      57.14000
+AL330-7_LLP4           Early Homo       0.00000
+AL330-5_LRP4           Early Homo      42.86000
+AL333w-1_LLP4                Aafr       0.00000
+AL417-1a_LLP4                Aafa     100.00000
+AL443-1_LLP4                 Aafa      85.71000
+DNH8_LLP4                    Prob      42.86000
+DNH51_LRP4                   Prob     100.00000
+KNM-ER_992_LRP4        Early Homo     100.00000
+KNM-ER_1507_LLP4       Early Homo     100.00000
+KNM-ER_1802_LRP4             Aafr       0.00000
+LH3r_LLP4              Early Homo      14.29000
+OH7_LRP4               Early Homo     100.00000
+OH13_LRP4              Early Homo      85.71000
+OH16_LLP4              Early Homo      85.71000
+Pboi_KNM-ER_3885_LRP4        Pboi     100.00000
+Pboi_KNMER_15951D_LRP4       Pboi     100.00000
+Prob_SK7_LRP4                Aafr      57.14000
+Prob_SK9_LLP4                Prob     100.00000
+Prob_SK23_LRP4               Prob      85.71000
+Prob_SK25_LLP4               Prob     100.00000
+Prob_SK55B_LLP4              Pboi      85.71000
+Prob_SK88_LLP4               Prob      57.14000
+Prob_SK826B_LLP4             Prob      57.14000
+Prob_SK1587a_LLP4            Prob      42.86000
+Prob_SK1588_LRP4             Prob     100.00000
+Prob_SKW5_LRP4               Prob     100.00000
+Prob_SKX4446_LRP4            Hnal      14.29000
+SK6_LLP4                     Prob      42.86000
+STW151_LLP4                  Aafr       0.00000
+UW101_184_LLP4               Hnal     100.00000
+UW101_377_LRP4               Hnal     100.00000
+UW101_383_LRP4               Hnal     100.00000
+UW101_887_LLP4               Hnal     100.00000
+UW101_1261_LLP4              Hnal     100.00000
+CVA accuracy                70.45      68.18136
+
+$ToClassifyResults
+                        UW105_811_LLP4            UW_105_240_LLP
+Class                                                           
+3 PCs                             Pboi                      Aafa
+4 PCs                             Pboi                      Pboi
+5 PCs                             Pboi                      Pboi
+6 PCs                             Pboi                      Pboi
+7 PCs                             Prob                      Pboi
+8 PCs                             Prob                      Pboi
+9 PCs                             Prob                      Pboi
+ClassResults Pboi: 57.14% Prob: 42.86% Aafa: 14.29% Pboi: 85.71%
+
+$PosteriorProbs
+$PosteriorProbs$`3_PCs`
+                      Aafa       Aafr   Early Homo         Hnal      Pboi        Prob
+UW105_811_LLP4 0.006805477 0.03878053 7.249313e-05 1.547622e-05 0.5624582 0.391867866
+UW_105_240_LLP 0.519368980 0.31067767 2.388680e-02 4.276269e-04 0.1423585 0.003280449
+
+$PosteriorProbs$`4_PCs`
+                     Aafa       Aafr   Early Homo         Hnal      Pboi       Prob
+UW105_811_LLP4 0.00836789 0.04346501 5.788736e-05 5.156814e-07 0.5504997 0.39760900
+UW_105_240_LLP 0.09377229 0.04273192 1.358918e-03 6.000851e-08 0.8431618 0.01897499
+
+$PosteriorProbs$`5_PCs`
+                       Aafa        Aafr   Early Homo         Hnal      Pboi       Prob
+UW105_811_LLP4 5.039403e-05 0.003358137 8.839230e-07 4.915180e-09 0.7385466 0.25804397
+UW_105_240_LLP 1.964029e-04 0.001462090 7.815175e-06 2.067048e-10 0.9908408 0.00749286
+
+$PosteriorProbs$`6_PCs`
+                       Aafa         Aafr   Early Homo         Hnal     Pboi        Prob
+UW105_811_LLP4 6.678901e-06 0.0012937528 1.786045e-07 2.800087e-09 0.730355 0.268344370
+UW_105_240_LLP 5.228981e-05 0.0009452217 2.976412e-06 1.805279e-10 0.990570 0.008429469
+
+$PosteriorProbs$`7_PCs`
+                       Aafa         Aafr   Early Homo         Hnal     Pboi        Prob
+UW105_811_LLP4 3.804141e-06 3.298962e-03 3.946520e-07 1.788702e-10 0.336557 0.660139796
+UW_105_240_LLP 4.832172e-05 7.851677e-05 5.435716e-07 2.264469e-10 0.998930 0.000942581
+
+$PosteriorProbs$`8_PCs`
+                       Aafa         Aafr   Early Homo         Hnal      Pboi         Prob
+UW105_811_LLP4 3.194442e-06 0.0036185706 3.637421e-07 1.530128e-10 0.3432127 0.6531651889
+UW_105_240_LLP 2.779972e-05 0.0001013269 3.339259e-06 1.466155e-09 0.9990105 0.0008570747
+
+$PosteriorProbs$`9_PCs`
+                       Aafa         Aafr   Early Homo         Hnal       Pboi         Prob
+UW105_811_LLP4 1.863261e-07 1.724136e-05 1.878206e-08 8.083008e-10 0.04773476 0.9522477953
+UW_105_240_LLP 2.486316e-05 4.708004e-05 2.922651e-06 1.822088e-10 0.99931053 0.0006146087
+
+

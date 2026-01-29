@@ -1,0 +1,81 @@
+$ClassifiedResults
+                           Class      3 PCs      4 PCs      5 PCs      6 PCs      7 PCs      8 PCs
+AL333-43b_LRM1              Aafa       Aafa       Aafa       Aafa       Aafa       Aafa       Aafa
+AL1030-1_LLDM1              Aafa       Aafa       Aafa       Aafa       Aafa       Aafa       Aafa
+DNH35_DNH35_LRDM1     Early Homo       Prob       Prob       Prob Early Homo Early Homo Early Homo
+Hnal_UW101_1685_LRDM1       Hnal       Hnal       Hnal       Hnal       Hnal       Hnal       Hnal
+KNM-ER820_LRDM1             Here       Here       Here       Here       Here       Here       Here
+LH2_LRDM1                   Aafa       Aafa       Aafa       Aafa       Aafa       Aafa       Aafa
+LH3l_LRDM1                  Aafa Early Homo Early Homo       Aafa       Aafa       Aafa       Aafa
+Omo222-1973-2744      Early Homo Early Homo Early Homo Early Homo Early Homo Early Homo Early Homo
+Prob_SK64_LRDM1             Prob       Prob       Prob       Prob       Prob       Prob       Prob
+Prob_TM1601a_LRDM1          Prob Early Homo       Prob       Prob       Prob       Prob       Prob
+SK61_LRDM1                  Prob       Prob       Prob       Prob       Prob       Prob       Prob
+SK63_LRDM1                  Prob       Prob       Prob       Prob       Prob       Prob       Prob
+SK3978_LLDM1                Prob       Prob       Prob       Prob       Prob       Prob       Prob
+STS24_LLDM1                 Aafr       Aafr       Aafr       Aafr       Aafr       Aafr       Aafr
+STW104_LLDM1                Aafr Early Homo       Aafr       Aafr       Aafr       Aafr       Aafr
+STW151_LRDM1          Early Homo       Aafr       Aafr Early Homo Early Homo Early Homo Early Homo
+CVA accuracy                   -      68.75      81.25      93.75        100        100        100
+                      ClassAccuracy
+AL333-43b_LRM1              100.000
+AL1030-1_LLDM1              100.000
+DNH35_DNH35_LRDM1            50.000
+Hnal_UW101_1685_LRDM1       100.000
+KNM-ER820_LRDM1             100.000
+LH2_LRDM1                   100.000
+LH3l_LRDM1                   66.670
+Omo222-1973-2744            100.000
+Prob_SK64_LRDM1             100.000
+Prob_TM1601a_LRDM1           83.330
+SK61_LRDM1                  100.000
+SK63_LRDM1                  100.000
+SK3978_LLDM1                100.000
+STS24_LLDM1                 100.000
+STW104_LLDM1                 83.330
+STW151_LRDM1                 66.670
+CVA accuracy                 90.625
+
+$ToClassifyResults
+             UW105-076_LRDM1                           UW105-249_LRDM2
+Class                                                                 
+3 PCs                   Aafa                                      Prob
+4 PCs                   Aafa                                      Prob
+5 PCs                   Aafa                                      Prob
+6 PCs                   Aafa                                Early Homo
+7 PCs                   Aafa                                      Hnal
+8 PCs                   Aafa                                      Hnal
+ClassResults      Aafa: 100% Early Homo: 16.67% Hnal: 33.33% Prob: 50%
+
+$PosteriorProbs
+$PosteriorProbs$`3_PCs`
+                      Aafa         Aafr   Early Homo         Here         Hnal         Prob
+UW105-076_LRDM1 0.99949475 9.169177e-05 0.0004099246 2.209844e-09 2.951661e-22 3.635206e-06
+UW105-249_LRDM2 0.03304397 2.007550e-02 0.0653484135 1.764732e-03 4.517229e-05 8.797222e-01
+
+$PosteriorProbs$`4_PCs`
+                        Aafa         Aafr  Early Homo         Here         Hnal       Prob
+UW105-076_LRDM1 0.9432609481 4.003886e-05 0.007495381 3.362221e-13 7.996893e-27 0.04920363
+UW105-249_LRDM2 0.0000325196 1.078228e-05 0.000634960 1.519390e-09 9.321525e-12 0.99932174
+
+$PosteriorProbs$`5_PCs`
+                        Aafa         Aafr   Early Homo         Here         Hnal        Prob
+UW105-076_LRDM1 9.999698e-01 3.474850e-15 1.608245e-06 4.028350e-23 2.304463e-33 0.000028629
+UW105-249_LRDM2 1.239627e-10 5.203662e-04 1.204653e-03 7.355756e-08 2.182561e-10 0.998274907
+
+$PosteriorProbs$`6_PCs`
+                        Aafa         Aafr   Early Homo         Here         Hnal         Prob
+UW105-076_LRDM1 9.999667e-01 6.364933e-18 1.728958e-05 1.112240e-23 4.997350e-33 1.596662e-05
+UW105-249_LRDM2 2.799234e-14 4.664742e-15 9.997196e-01 2.663899e-13 2.483566e-04 3.202880e-05
+
+$PosteriorProbs$`7_PCs`
+                        Aafa         Aafr   Early Homo         Here         Hnal         Prob
+UW105-076_LRDM1 9.999708e-01 1.833163e-19 1.109858e-05 8.302768e-26 1.136643e-39 1.811416e-05
+UW105-249_LRDM2 7.515710e-26 4.722477e-36 9.178371e-07 9.711638e-14 9.999991e-01 2.102918e-14
+
+$PosteriorProbs$`8_PCs`
+                        Aafa         Aafr   Early Homo         Here         Hnal         Prob
+UW105-076_LRDM1 9.999961e-01 4.853144e-26 1.351560e-07 1.502082e-27 1.156651e-40 3.757989e-06
+UW105-249_LRDM2 9.368704e-29 1.051514e-63 7.190564e-23 2.601167e-29 1.000000e+00 3.439585e-26
+
+

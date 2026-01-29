@@ -2,10 +2,11 @@ Name,Tooth,Class1,Class2,Classify,Exclude
 AL198-1_LLC,LC,*,Aus,*,*
 AL277-1_LLC,LC,*,Aus,*,*
 AL400-1_LLC,LC,*,Aus,*,*
+DNH8_LRC,LC,*,Prob,*,*
 DNH79a_LRC,LC,*,Prob,*,*
 KNM-ER1507_LLC,LC,*,Early Homo,*,*
-LH14e_LRC,LC,*,Aus,*,*
 MH1_LLC1,LC,*,Aus,*,*
+LH14e_LRC,LC,*,Aus,*,*
 MH2_LRC,LC,*,Aus,*,*
 MLD18_LRC,LC,*,Aus,*,*
 OH7_LRC,LC,*,Early Homo,*,*
@@ -18,10 +19,17 @@ STS50_LLC,LC,*,Aus,*,*
 STW132_LRC,LC,*,Aus,*,*
 STW142_LRC,LC,*,Aus,*,*
 STW213_LLC,LC,*,Aus,*,*
+TM1601c_LLC,LC,*,Prob,*,*
+UW101_339_LRC,LC,*,Hnal,*,*
+UW101_886_LRC,LC,*,Hnal,*,*
+UW101_1076_LLC,LC,*,Hnal,*,*
 UW101_1261_LRC,LC,*,Hnal,*,ex
 AL199-1_URC,UC,*,Aus,*,*
 AL200-1a_ULC,UC,*,Aus,*,*
 AL417-1d_URC,UC,*,Aus,*,*
+DNH7_ULC,UC,*,Prob,*,*
+DNH73_ULC,UC,*,Prob,*,*
+DNH108_ULC,UC,*,Prob,*,*
 KNM-ER1813_URC,UC,*,Early Homo,*,*
 KNM-ER_1590D_URC,UC,*,Early Homo,*,*
 LH5_URC,UC,*,Aus,*,*
@@ -39,5 +47,9 @@ SKX28724_URC,UC,*,Prob,*,*
 STS52a_URC,UC,*,Aus,*,*
 STW126_URC,UC,*,Aus,*,*
 STW252_ULC,UC,*,Aus,*,*
+UW101_337_URC,UC,*,Hnal,*,*
+UW101_412_ULC,UC,*,Hnal,*,*
+UW101_501_ULC,UC,*,Hnal,*,*
+UW101_706_ULC,UC,*,Hnal,*,*
+UW101_1556_ULC,UC,*,Hnal,*,*
 UW105_966,C,*,UW105,*,*
-UW105_966_reverse,C,*,UW105,*,*

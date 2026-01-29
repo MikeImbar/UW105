@@ -1,0 +1,55 @@
+Name,Tooth,Class1,Class2,Classify,Exclude
+AL198-1_LLC,LC,*,Aafa,*,ex
+AL277-1_LLC,LC,*,Aafa,*,ex
+AL400-1_LLC,LC,*,Aafa,*,ex
+DNH8_LRC,LC,*,Prob,*,ex
+DNH79a_LRC,LC,*,Prob,*,ex
+KNM-ER1507_LLC,LC,*,Early Homo,*,ex
+MH1_LLC1,LC,*,Ased,*,ex
+LH14e_LRC,LC,*,Aafa,*,ex
+MH2_LRC,LC,*,Ased,*,ex
+MLD18_LRC,LC,*,Aafr,*,ex
+OH7_LRC,LC,*,Early Homo,*,ex
+OH13_LRC,LC,*,Early Homo,*,ex
+OH16_LRC,LC,*,Early Homo,*,ex
+SK23_LRC,LC,*,Prob,*,ex
+SK87_LRC,LC,*,Prob,*,ex
+SK96_LLC,LC,*,Prob,*,ex
+STS50_LLC,LC,*,Aafr,*,ex
+STW132_LRC,LC,*,Aafr,*,ex
+STW142_LRC,LC,*,Aafr,*,ex
+STW213_LLC,LC,*,Aafr,*,ex
+TM1601c_LLC,LC,*,Prob,*,ex
+UW101_339_LRC,LC,*,Hnal,*,ex
+UW101_886_LRC,LC,*,Hnal,*,ex
+UW101_1076_LLC,LC,*,Hnal,*,ex
+UW101_1261_LRC,LC,*,Hnal,*,ex
+UW105_966,C,*,UW105,*,*
+AL199-1_URC,UC,*,Aafa,*,*
+AL200-1a_ULC,UC,*,Aafa,*,*
+AL417-1d_URC,UC,*,Aafa,*,*
+DNH7_ULC,UC,*,Prob,*,*
+DNH73_ULC,UC,*,Prob,*,*
+DNH108_ULC,UC,*,Prob,*,*
+KNM-ER1813_URC,UC,*,Early Homo,*,*
+KNM-ER_1590D_URC,UC,*,Early Homo,*,*
+LH5_URC,UC,*,Aafa,*,*
+MH1_URC1,UC,*,Ased,*,*
+MLD11_30_URC,UC,*,Aafr,*,*
+OH15_URC,UC,*,Early Homo,*,*
+OH39_URC,UC,*,Early Homo,*,*
+OH62_URC,UC,*,Early Homo,*,*
+SK4_URC,UC,*,Prob,*,*
+SK65a_URC,UC,*,Prob,*,*
+SK93_ULC,UC,*,Prob,*,*
+SKX162_URC,UC,*,Prob,*,*
+SKX25296_ULC,UC,*,Prob,*,*
+SKX28724_URC,UC,*,Prob,*,*
+STS52a_URC,UC,*,Aafr,*,*
+STW126_URC,UC,*,Aafr,*,*
+STW252_ULC,UC,*,Aafr,*,*
+UW101_337_URC,UC,*,Hnal,*,*
+UW101_412_ULC,UC,*,Hnal,*,*
+UW101_501_ULC,UC,*,Hnal,*,*
+UW101_706_ULC,UC,*,Hnal,*,*
+UW101_1556_ULC,UC,*,Hnal,*,*

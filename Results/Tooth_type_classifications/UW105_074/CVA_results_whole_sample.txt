@@ -1,0 +1,157 @@
+$ClassifiedResults
+                   Class 3 PCs 4 PCs 5 PCs 6 PCs 7 PCs 8 PCs 9 PCs ClassAccuracy
+AL200-1a_ULM1         M1    M1    M1    M1    M1    M1    M1    M1        100.00
+AL333-86_URM1         M1    M1    M1    M1    M1    M1    M1    M1        100.00
+AL486-1_ULM1          M1    M1    M2    M1    M2    M2    M2    M2         28.57
+Ased_MH1_ULM1         M1    M1    M1    M1    M1    M1    M1    M1        100.00
+DNH_39_URM1           M1    M1    M1    M1    M1    M1    M1    M1        100.00
+DNH_70_ULM1           M1    M1    M1    M1    M1    M1    M1    M1        100.00
+DNH_108_ULM1          M1    M1    M1    M1    M1    M1    M1    M1        100.00
+KNM-ER_807_URM1       M1    M1    M1    M1    M1    M1    M1    M1        100.00
+KNM-ER_1590K_ULM1     M1    M1    M1    M1    M1    M1    M1    M1        100.00
+KNM-ER_1813_ULM1      M1    M1    M1    M1    M1    M1    M1    M1        100.00
+KNM-WT_17400_URM1     M1    M2    M2    M2    M2    M2    M2    M2          0.00
+LH6_URM1              M1    M2    M2    M1    M1    M1    M1    M1         71.43
+OH13_ULM1             M1    M1    M1    M1    M1    M1    M1    M1        100.00
+OH16_URM1             M1    M1    M1    M1    M1    M1    M1    M1        100.00
+OH21_ULM1             M1    M1    M1    M1    M1    M1    M1    M1        100.00
+OH24_ULM1             M1    M1    M1    M1    M1    M1    M1    M1        100.00
+OH45_ULM              M1    M1    M1    M1    M1    M1    M1    M1        100.00
+Prob_DNH_57B_URM1     M1    M1    M1    M1    M1    M1    M1    M1        100.00
+Prob_DNH_60A_ULM1     M1    M1    M1    M1    M1    M1    M1    M1        100.00
+Prob_SK829_ULM1       M1    M1    M1    M1    M1    M1    M1    M1        100.00
+Prob_SK_47_URM1       M1    M1    M1    M1    M1    M1    M1    M1        100.00
+Prob_SK_89a_ULM1      M1    M1    M1    M1    M1    M1    M1    M1        100.00
+Prob_SK_832_ULM1      M1    M1    M1    M1    M1    M1    M1    M1        100.00
+SK13.14_URM1          M1    M1    M1    M1    M1    M1    M1    M1        100.00
+SK27_ULM1             M1    M1    M1    M1    M1    M1    M1    M1        100.00
+SK_48_URM1            M1    M1    M1    M1    M1    M1    M1    M1        100.00
+SK_52_URM1            M1    M1    M1    M1    M1    M1    M1    M1        100.00
+SK_102_ULM1           M1    M1    M1    M1    M1    M1    M1    M1        100.00
+SK_829_ULM1           M1    M1    M1    M1    M1    M1    M1    M1        100.00
+SK_838a_URM1          M1    M1    M1    M1    M1    M1    M1    M1        100.00
+SK_14129A_URM1        M1    M2    M2    M2    M2    M2    M2    M2          0.00
+STS_1_ULM1            M1    M1    M1    M1    M1    M1    M1    M1        100.00
+STS_8_ULM1            M1    M1    M1    M1    M1    M1    M1    M1        100.00
+STS_24_URM1           M1    M1    M1    M1    M1    M1    M1    M1        100.00
+STS_56_ULM1           M1    M1    M1    M1    M1    M1    M1    M1        100.00
+STS_57_ULM1           M1    M1    M1    M1    M1    M1    M1    M1        100.00
+STW183_ULM1           M1    M1    M1    M1    M1    M1    M1    M1        100.00
+STW252J_ULM1          M1    M1    M1    M1    M1    M1    M1    M1        100.00
+STW_402_URM1          M1    M1    M1    M1    M1    M1    M1    M1        100.00
+STW_450_URM1          M1    M1    M1    M1    M1    M1    M1    M1        100.00
+TAUNG_1_ULM1          M1    M1    M1    M1    M1    M1    M1    M1        100.00
+TM_1517a_ULM1         M1    M1    M1    M1    M1    M1    M1    M1        100.00
+UW101_445_ULM1        M1    M1    M1    M1    M1    M1    M1    M1        100.00
+UW101_708_ULM1        M1    M1    M1    M1    M1    M1    M1    M1        100.00
+AL199-1_URM2          M2    M2    M2    M2    M2    M2    M2    M2        100.00
+AL200-1a_URM2         M2    M2    M1    M1    M2    M2    M2    M2         71.43
+AL417-1d_ULM2         M2    M2    M2    M2    M2    M2    M2    M2        100.00
+AL486-1_ULM2          M2    M3    M3    M3    M3    M3    M3    M3          0.00
+AL666-1_ULM2          M2    M2    M2    M2    M1    M1    M1    M1         42.86
+Ased_MH1_ULM2         M2    M2    M2    M2    M2    M2    M2    M2        100.00
+DNH_7_URM2            M2    M2    M2    M2    M2    M2    M2    M2        100.00
+DNH_108_URM2          M2    M3    M3    M2    M2    M2    M2    M2         71.43
+KNM-ER_1590M_ULM2     M2    M2    M2    M2    M2    M2    M2    M2        100.00
+KNM-ER_1808H_URM2     M2    M3    M3    M3    M2    M2    M2    M2         57.14
+KNM-WT_17400_URM2     M2    M2    M2    M2    M2    M2    M2    M2        100.00
+KNMER1813_ULM2        M2    M2    M2    M2    M2    M2    M2    M2        100.00
+OH13_ULM2             M2    M2    M2    M2    M1    M1    M1    M2         57.14
+OH16_ULM2             M2    M2    M2    M2    M2    M2    M2    M2        100.00
+OH39_ULM2             M2    M3    M3    M3    M2    M2    M2    M2         57.14
+Prob_SK_48_URM2       M2    M2    M2    M2    M2    M2    M2    M2        100.00
+Prob_SK_834_URM2      M2    M2    M2    M2    M2    M2    M2    M2        100.00
+SK13.14_URM2          M2    M2    M2    M2    M2    M2    M2    M2        100.00
+SK_16.1591_ULM2       M2    M3    M3    M3    M3    M3    M3    M3          0.00
+SK_47_URM2            M2    M1    M2    M2    M2    M2    M2    M2         85.71
+SK_49_URM2            M2    M2    M2    M2    M2    M2    M2    M2        100.00
+SK_52_URM2            M2    M3    M3    M3    M3    M3    M3    M3          0.00
+SKW_33_URM2           M2    M2    M2    M2    M2    M2    M2    M2        100.00
+STS_8_ULM2            M2    M2    M2    M2    M2    M2    M2    M2        100.00
+STS_22_ULM2           M2    M2    M2    M2    M2    M2    M2    M2        100.00
+STS_28_URM2           M2    M2    M2    M2    M2    M2    M3    M3         71.43
+STS_30_URM2           M2    M2    M2    M1    M2    M2    M2    M2         85.71
+STS_37_ULM2           M2    M2    M2    M2    M2    M2    M2    M2        100.00
+STS_52a_ULM2          M2    M2    M2    M2    M2    M2    M2    M2        100.00
+STS_56_ULM2           M2    M3    M3    M3    M3    M3    M3    M3          0.00
+STW_183_ULM2          M2    M1    M1    M1    M1    M1    M1    M2         14.29
+STW_188_URM2          M2    M2    M2    M2    M2    M2    M2    M2        100.00
+STW_252I_ULM2         M2    M2    M2    M2    M2    M2    M2    M2        100.00
+STW_280_ULM2          M2    M2    M2    M2    M2    M2    M2    M2        100.00
+STW_529_ULM2          M2    M2    M2    M2    M2    M2    M2    M2        100.00
+TM_1517a_ULM2         M2    M2    M2    M2    M2    M2    M2    M2        100.00
+TM_1517C_URM2         M2    M2    M2    M2    M2    M2    M2    M2        100.00
+UW101_593_URM2        M2    M2    M2    M1    M2    M2    M2    M2         85.71
+UW101_867_URM2        M2    M2    M1    M1    M2    M2    M2    M2         71.43
+UW101_1015_ULM2       M2    M2    M2    M2    M2    M2    M2    M2        100.00
+UW101_1277_ULM2       M2    M2    M2    M2    M2    M2    M2    M2        100.00
+AL200-1a_URM3         M3    M3    M3    M2    M3    M3    M3    M3         85.71
+AL333x-1_URM3         M3    M3    M3    M3    M3    M3    M3    M3        100.00
+AL486-1_ULM3          M3    M3    M3    M3    M3    M3    M3    M3        100.00
+Ased_MH1_ULM3         M3    M2    M2    M2    M3    M3    M2    M2         28.57
+DNH_54_ULM3           M3    M3    M3    M3    M3    M3    M3    M3        100.00
+KNM-ER_807_URM3       M3    M3    M3    M3    M3    M3    M3    M3        100.00
+KNM-ER_1813_ULM3      M3    M3    M3    M3    M3    M3    M3    M3        100.00
+L398-573_ULM3         M3    M3    M3    M3    M3    M3    M3    M3        100.00
+OH13_URM3             M3    M3    M3    M3    M3    M3    M3    M3        100.00
+OH15_URM3             M3    M3    M3    M3    M3    M3    M3    M3        100.00
+OH16_ULM3             M3    M3    M3    M3    M3    M3    M3    M3        100.00
+Prob_DNH_3_ULM3       M3    M2    M2    M2    M2    M2    M2    M2          0.00
+Prob_SK16_ULM3        M3    M3    M3    M3    M3    M3    M3    M3        100.00
+Prob_SK3975_ULM3      M3    M3    M3    M3    M3    M3    M3    M3        100.00
+Prob_SK3977_URM3      M3    M3    M3    M3    M3    M3    M3    M3        100.00
+Prob_SK_831A_ULM3     M3    M2    M2    M2    M2    M2    M2    M2          0.00
+Prob_SK_3975_ULM3     M3    M3    M3    M3    M3    M3    M3    M3        100.00
+Prob_SK_3977_URM3     M3    M3    M3    M3    M3    M3    M3    M3        100.00
+Prob_SKX21841_URM3    M3    M2    M2    M2    M2    M2    M2    M2          0.00
+Prob_TM1517C_URM3     M3    M3    M3    M3    M3    M3    M3    M3        100.00
+SK_13.14_URM3         M3    M2    M2    M2    M2    M3    M3    M3         42.86
+SK_52_URM3            M3    M3    M3    M3    M3    M3    M3    M3        100.00
+SK_105_ULM3           M3    M2    M1    M2    M2    M2    M2    M2          0.00
+SK_847_UM3            M3    M3    M3    M3    M3    M3    M3    M3        100.00
+STS_28_URM3           M3    M2    M2    M3    M3    M3    M3    M3         71.43
+STS_37_ULM3           M3    M3    M3    M3    M3    M3    M3    M3        100.00
+ [ reached 'max' / getOption("max.print") -- omitted 13 rows ]
+
+$ToClassifyResults
+             UW_105_074_URM
+Class                      
+3 PCs                    M2
+4 PCs                    M2
+5 PCs                    M2
+6 PCs                    M2
+7 PCs                    M2
+8 PCs                    M2
+9 PCs                    M2
+ClassResults       M2: 100%
+
+$PosteriorProbs
+$PosteriorProbs$`3_PCs`
+               M1        M2        M3
+post 0.0004565548 0.8368234 0.1627201
+
+$PosteriorProbs$`4_PCs`
+               M1        M2       M3
+post 0.0002406805 0.8343123 0.165447
+
+$PosteriorProbs$`5_PCs`
+               M1        M2         M3
+post 0.0003161467 0.9088702 0.09081369
+
+$PosteriorProbs$`6_PCs`
+               M1       M2         M3
+post 0.0005486827 0.974107 0.02534431
+
+$PosteriorProbs$`7_PCs`
+               M1        M2         M3
+post 0.0005479791 0.9792017 0.02025032
+
+$PosteriorProbs$`8_PCs`
+               M1        M2          M3
+post 0.0004996078 0.9897084 0.009792036
+
+$PosteriorProbs$`9_PCs`
+               M1        M2         M3
+post 9.585795e-05 0.9886355 0.01126863
+
+

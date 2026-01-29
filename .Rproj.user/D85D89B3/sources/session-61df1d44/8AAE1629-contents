@@ -8,9 +8,11 @@ library(stringr)
 library(geometry)
 library(randomcoloR)
 library(Rvcg)
+library(ggrepel); library(ggplot2); library(viridis); library(tidyverse)
+library(hrbrthemes)
 
 # UM1/UM2/UM3/LM1/LM2/LM3
-position <- c("UP", "UP3", "UP4")
+position <- c("LM", "LM1", "LM2", "LM3")
 
 # Choose an analysis type. 
 # Options: "EDJ CEJ", "EDJ", "CEJ"
@@ -403,9 +405,9 @@ if(analysis %in% c("EDJ CEJ", "EDJ")){
   names(EDJ_nPoints) <- paste0("EDJ", 1:number_of_f_points)
   
   # define the number of points for each EDJ curve. EDJ1, EDJ2 etc...
-  points_per_curve <- c(25, 
-                        35,
-                        30,
+  points_per_curve <- c(20, 
+                        20,
+                        20,
                         20)
   
   for(i in 1:number_of_f_points){
@@ -634,13 +636,13 @@ if(analysis %in% c("EDJ CEJ", "EDJ")){
 }
 
 # Either "Tooth_position" or "Taxonomy"
-analysis_type <- "Tooth_position"
+analysis_type <- "Taxonomy"
 
 if(analysis_type == "Tooth_position"){
   gp <- as.factor(paste(classifier$Tooth)) # Tooth type
   
   farbe <- c(
-    "black",
+              "black",
              "#4daf4a", 
              "#e41a1c",
              "#1874CD",
@@ -654,12 +656,14 @@ if(analysis_type == "Tooth_position"){
              "#54FF9F"
              )
 } else {
-  gp <- as.factor(paste(classifier$Class1)) # Taxonomy
+  gp <- as.factor(paste(classifier$Class2)) # Taxonomy
   
   # set specific colours to group
   group_colours <- data.frame(
     matrix(
       c("Aus", "#e41a1c",
+        "Aafa", "#e41a1c",
+        "Aafr", "#CD661D",
         "STS52", "black",
         "UW105", "black",
         "AL199", "black",
@@ -671,8 +675,8 @@ if(analysis_type == "Tooth_position"){
         "ProbDNH", "#1C86EE",
         "Paet", "#53868B",
         "Hnal","#8B864E",
-        "Here", "darkslategray",
-        "Ased", "#EE5C42",
+        "Here", "cornsilk4",
+        "Ased", "#8B2323",
         "Hsap", "orange"
       ),
       ncol = 2, byrow = T)
@@ -707,13 +711,13 @@ lines3d(SubCoordsArray[c(curves[[1]],curves[[2]]),,a],col="gray")
 texts3d(SubCoordsArray[,,a],texts = c(1:length(SubCoordsArray[,,a][,1])),font=2)
 
 # Plot PLY or STL with landmarks 
-SurfaceModel <- file2mesh("O:/Research/DentalTissues/FOSSIL/NATIONAL_MUSEUMS_KENYA/KNM-ER820/KNM-ER820_10000258_002_001/KNM-ER 820_10000258_002_001_MAND.stl")
+SurfaceModel <- file2mesh("O:/Research/DentalTissues/FOSSIL/UW_105/X0003976_000_001_UW_105-681a_URM/FILT1_1/UW105_681a-files/UW105_681ab_combined_EDJ_patched.ply")
 # SurfaceModel <- readSTL("O:/Research/DentalTissues/FOSSIL/NATIONAL_MUSEUMS_KENYA/KNM-ER820/KNM-ER820_10000258_002_001/KNM-ER 820_10000258_002_001_MAND.stl")
 # SurfaceModel <- vcgPlyRead("O:/Research/DentalTissues/FOSSIL/UW_105/X0003973_000_001_UW_105-825_LRM/FILT1_1/UW105-825_LRM2-files/UW105-825_LLM2_Dentine.ply", updateNormals = TRUE, clean = TRUE)
 SurfaceModel$material$color <- "Azure4"
 
 dimnames(SubCoordsArray)
-spec_index <- 48
+spec_index <- 42
 
 plot3d(SurfaceModel, box = FALSE, aspect = FALSE, axes=FALSE, xlab="", ylab="", zlab="")
 spheres3d(SubCoordsArray[,,spec_index], radius = 0.05, col = "red")
@@ -723,7 +727,7 @@ text3d(SubCoordsArray[,,spec_index], texts = 1:nrow(SubCoordsArray[,,spec_index]
 DROPLMs<-F
 if (DROPLMs==TRUE) {
   #todrop<- c(1:4,19:26,41:47)
-  todrop<-c(60:62, 1:6)
+  todrop<-c(63:67, 81:84, 1:6)
   #todrop<-c(1:46)
   total<-c(1:length(SubCoordsArray[,,a][,1]))
   tokeep<-total[-todrop]
@@ -900,9 +904,12 @@ Include_size<-F
 dimnames(Landmarks_slid)[3] <- dimnames(SubCoordsArray)[3]
 Proc<-procSym(dataarray=Landmarks_slid,SMvector=NULL,outlines=curves, use.lm = tokeep, sizeshape = Include_size)
 
-# Colours
-# farbe<-c("black","#e41a1c","#984ea3","#377eb8","#4daf4a","black","black","#984ea3","black","black")
+# nearest neighbour based on PCs distances
+dist_mat <- as.matrix(dist(Proc$PCscores[,1:3]))
+rownames(dist_mat)
+PC_distances <- sort(dist_mat[which(rownames(dist_mat) == "UW105-1007_ULP4"),])
 
+# only_nearest_neighbour
 # Plot PCA PC1 V 2
 plot(cbind(Proc$PCscores[,1],Proc$PCscores[,2]),type="n",asp=1,cex=1,
      xlab=paste0("PC 1 ", "(", round(Proc$Variance[1,2], 2), "%", ")"),
@@ -917,8 +924,8 @@ for(a in setdiff(seq_along(levels(gp)), c(0))){
     lines(Proc$PCscores[sub,1],Proc$PCscores[sub,2],col=farbe[a],lwd = 2)
   }}
 points(cbind(Proc$PCscores[,1],Proc$PCscores[,2]),col=farbe[gp],pch=19)
-# text(cbind(Proc$PCscores[,1],Proc$PCscores[,2]),label=dimnames(Proc$PCscores)[[1]],col=farbe[gp],pos=c(1,2),cex=0.6,offset=0.5)
-# legend("bottomright", legend = levels(gp), col = farbe, pch = 19, bty = "n")
+text(cbind(Proc$PCscores[,1],Proc$PCscores[,2]),label=dimnames(Proc$PCscores)[[1]],col=farbe[gp],pos=c(1,2),cex=0.6,offset=0.5)
+legend("topright", legend = levels(gp), col = farbe, pch = 19, bty = "n")
 
 # Plot PCA PC1 V 3
 plot(cbind(Proc$PCscores[,1],Proc$PCscores[,3]),type="n",asp=1,cex=1,
@@ -948,9 +955,9 @@ plot3d(cbind(Proc$PCscores[,1],Proc$PCscores[,2],Proc$PCscores[,3]),type="p",lwd
        xlab = paste("PC1 (", round(Proc$Variance[1,2],1), "%)", sep = ""),
        ylab = paste("PC2 (", round(Proc$Variance[2,2],1), "%)", sep = ""),
        zlab = paste("PC3 (", round(Proc$Variance[3,2],1), "%)", sep = ""))
-# texts3d(cbind(Proc$PCscores[,1],Proc$PCscores[,2],Proc$PCscores[,3]),texts = rownames(Proc$PCscores),font=1,adj=1,cex=0.7)
+texts3d(cbind(Proc$PCscores[,1],Proc$PCscores[,2],Proc$PCscores[,3]),texts = rownames(Proc$PCscores),font=1,adj=1,cex=0.8)
 
-for(a in setdiff(seq_along(levels(gp)), c(0))){
+for(a in setdiff(seq_along(levels(gp)), c(7))){
   sub<-gp==levels(gp)[a]
   PCsub<-cbind(Proc$PCscores[sub,1],Proc$PCscores[sub,2],Proc$PCscores[sub,3])
   if(length(PCsub[,1])>3){
@@ -968,19 +975,19 @@ for(a in setdiff(seq_along(levels(gp)), c(0))){
 legend3d("topleft", levels(gp), pch = 16, col = farbe, cex = 3)
 
 #Save 3D PCA plot as HTML file
-save_location <- "D:/3D_GM/Projects/UW105/Results/Tooth_type_classifications/UW105_750_1007"
+save_location <- "D:/3D_GM/Projects/UW105/Results/Taxonomic_assessment/UW105_002a_825"
 setwd(save_location)
 widget <- rglwidget(webgl = TRUE, snapshot = FALSE, width = 1770, height = 1000)
-htmlwidgets::saveWidget(widget, file.path(save_location, "Only_Paranthropus_clean.html"))
+htmlwidgets::saveWidget(widget, file.path(save_location, "3D_PCA_clean_updated_oriented_for_002a.html"))
 
 # Save 3D PCA as svg
-rgl.postscript("Only_Paranthropus_clean.svg",fmt="svg")
+rgl.postscript("3D_PCA_labelled_updated_oriented_for_002a.svg",fmt="svg")
 setwd("D:/3D_GM/Projects/UW105")
 
 # as.matrix(dist(Proc$rotated))
 
 M <- mshape(Proc$rotated[tokeep,,])
-PC <-Proc$PCscores[,1]
+PC <-Proc$PCscores[,3]
 preds <- shape.predictor(Proc$rotated[tokeep,,], x= PC, Intercept = FALSE,
                          pred1 = min(PC), pred2 = max(PC)) # PC 1 extremes, more technically
 
@@ -1006,7 +1013,7 @@ text3d(preds$pred1, texts = 1:nrow(preds$pred1))
 pos<-pcaplot3d(Proc, pcshow = c(1,2,3), mag = 1, legend = F)
 neg<-pcaplot3d(Proc, pcshow = c(1,2,3), mag = -1, legend = F)
 
-PC<-1
+PC<-3
 
 clear3d("shapes");
 xmed<-median(pos[,,PC][,1]); 
@@ -1018,12 +1025,12 @@ lines3d(neg[,,PC],col="red")
 # nearest neighbour based on procrustes distance
 dist_mat <- as.matrix(dist(two.d.array(Proc$rotated)))
 rownames(dist_mat)
-sort(dist_mat[which(rownames(dist_mat) == "UW105_966"),])
+sort(dist_mat[which(rownames(dist_mat) == "UW_105_002A_LLM2"),])
 
 # compare specimens
 as.matrix(classifier$Name)
 #specimens<-c(1,17); cbind(as.character(classifier$Name[c(specimens)]),farbe[c(1:length(specimens))])
-specimens<-c(1,16); cbind(as.character(classifier$Name[c(specimens)]),farbe[c(1:length(specimens))])
+specimens<-c(58,47); cbind(as.character(classifier$Name[c(specimens)]),farbe[c(1:length(specimens))])
 show_landmarks = F
 
 clear3d("shapes");xmed<-median(Proc$rotated[,1,specimens[1]]); ymed<-median(Proc$rotated[,2,specimens[1]]); zmed<-median(Proc$rotated[,3,specimens[1]]);
@@ -1031,26 +1038,28 @@ plot3d(Proc$rotated[,,specimens[1]],type="n",xlab="", ylab="", zlab="",aspect =T
 
 for(i in 1:length(specimens)){
   lapply(seq(curves), function(x){
-    lines3d(Proc$rotated[curves[[x]],,specimens[i]], col=farbe[i],lwd=2)
+    lines3d(Proc$rotated[curves[[x]],,specimens[i]], col=farbe[gp][specimens[i]],lwd=2)
     if(show_landmarks){
-      points3d(Proc$rotated[curves[[x]],,specimens[i]],col=farbe[i], size = 7)
+      points3d(Proc$rotated[curves[[x]],,specimens[i]],col=farbe[gp][specimens[i]], size = 7)
     }
-    spheres3d(Proc$rotated[fix,,specimens[i]],radius=0.003, col=farbe[i])
+    spheres3d(Proc$rotated[fix,,specimens[i]],radius=0.003, col=farbe[gp][specimens[i]])
   })
 }
-legend3d("topleft", cbind(as.character(classifier$Name[c(specimens)])), pch = 16, col = farbe, cex = 3)
+legend3d("topleft", cbind(as.character(classifier$Name[c(specimens)])), pch = 16, col = farbe[gp][specimens], cex = 3)
 
 
 ## compare group means
 # optional modification of the groups
-# gp_char <- as.character(gp)
-# gp_char[2] <- "UW105_966_mykolas"
-# gp <- as.factor(gp_char)
-# farbe <- c("black", farbe)
+gp_char <- as.character(gp)
+gp_char[46] <- "UW_105_240_LLP"
+gp_char[45] <- "UW105_811_LLP4"
+gp <- as.factor(gp_char)
+farbe <- c(farbe, "black", "black")
 
 cbind(levels(gp),farbe[c(1:length(levels(gp)))])
-groups<-c(1,3)
+groups<-c(1,7)
 
+par3d(FOV = 0)
 clear3d("shapes");
 plot3d(Proc$rotated[,,1],type="n",xlab="", ylab="", zlab="",aspect =F,box=F,axes=F,col="red")
 for(i in 1:length(groups)){
@@ -1097,48 +1106,59 @@ nearest_neighbours_with_alpha <- function(procs, group_number, range_min = 0, ra
 }
 
 
-dist_and_alpha_list<- nearest_neighbours_with_alpha(Proc$rotated, 1, 0.1 , 0.8)
-
 gp_char <- as.character(gp)
-gp_char[12] <- "UW105-1007_ULP4"
+gp_char[58] <- "UW_105_002A"
+gp_char[57] <- "UW105-825_LRM2"
 gp <- as.factor(gp_char)
-farbe <- c(farbe, "black")
+# farbe[4] <- "black"
+farbe <- c(farbe[!is.na(farbe)], "black")
+
+dist_and_alpha_list<- nearest_neighbours_with_alpha(Proc$rotated, 7, 0.1 , 0.8)
 
 cbind(levels(gp),farbe[c(1:length(levels(gp)))])
-groups<-c(1,2)
+groups<-c(8,4)
 
 show_specimens = T
 
-par3d(FOV = 0)
 clear3d("shapes");plot3d(Proc$rotated[,,1],type="n",xlab="", ylab="", zlab="",aspect =F,box=F,axes=F,col="red")
-
 for(i in 1:length(groups)){
-  sub <- gp == levels(gp)[groups[i]]
+  sub<-gp==levels(gp)[groups[i]]
   groups_specs <- Proc$rotated[,,sub]
   group_mshape <- mshape(groups_specs)
   
   lapply(seq(curves), function(x){
-    lines3d(group_mshape[curves[[x]],], col=farbe[i], lwd=2)
+    lines3d(group_mshape[curves[[x]],], col=farbe[groups[i]],lwd=2)
     if(sum(sub) > 1 & show_specimens){
       for(s in 1:dim(groups_specs)[[3]]){
-        lines3d(groups_specs[curves[[x]],,s], col=farbe[i], lwd=1.2, alpha=0.4)  
+        lines3d(groups_specs[curves[[x]],,s],col=farbe[groups[i]],lwd=1.2, alpha = 0.4)
       }
     }
-    spheres3d(group_mshape[fix,], radius=0.003, col=farbe[i])  
+    spheres3d(group_mshape[fix,],radius=0.003, col=farbe[groups[i]])
   })
 }
-legend3d("topleft", levels(gp)[groups], pch=16, col=farbe[1:length(groups)], cex=3)  
+legend3d("topleft", levels(gp)[groups], pch = 16, col = farbe[groups], cex = 3)
 
 #Centroid size boxplot ggplot
 library(ggrepel); library(ggplot2); library(viridis); library(tidyverse)
 library(hrbrthemes)
 
-gp <- factor(gsub("ProbDNH", "Prob",as.character(gp)))
+# gp <- factor(gsub("ProbDNH", "Prob",as.character(gp)))
 
-manual_CEJ_csize <- apply(Landmarks_slid[unique(curves[length(curves)][[1]]),,], 3, cSize)
-SizeFromProc <- Proc$size
+if(!is.null(curves$CEJ)){
+  CEJ_curve_lms <- unique(curves$CEJ)
+  manual_CEJ_csize <- apply(Landmarks_slid[CEJ_curve_lms, , ], 3, cSize)
+} else {
+  print("No CEJ curve")
+}
 
-# data.cs <- data.frame(CSize = log(Proc$size), Group = gp, Spec = rownames(Proc$PCscores))
+# for(m in 1:dim(Landmarks_slid[unique(curves[length(curves)][[1]]),,])[3]){
+#   points3d(Landmarks_slid[unique(curves[length(curves)][[1]]),,m])
+#   lines3d(Landmarks_slid[unique(curves[length(curves)][[1]]),,m])
+# }
+
+# SizeFromProc <- Proc$size
+
+data.cs <- data.frame(CSize = log(manual_CEJ_csize), Group = gp, Spec = rownames(Proc$PCscores))
 data.cs <- data.frame(CSize = log(Proc$size), Group = gp, Spec = rownames(Proc$PCscores))
 
 df_cs_box <- data.cs %>% filter(Spec != "BK_LM")
@@ -1153,7 +1173,7 @@ df_cs_box %>%
   geom_point(size=2.5) + 
   geom_hline(data = df_cs_line, aes(yintercept = CSize),
              color = "black", linetype = "dashed", size = 0.6) +
-  # geom_text_repel(aes(label = Spec), color = "black", size = 3, segment.color = "grey") +
+  geom_text_repel(aes(label = Spec), color = "black", size = 3, segment.color = "grey") +
   scale_color_manual(values=farbe) +
   scale_fill_manual(values=farbe) + 
   xlab("") + 
@@ -1185,7 +1205,7 @@ par(mfrow = c(3, 3))
 
 # start PC = 80%, end PC = 95%
 start_PC <- 3
-end_PC <- 7
+end_PC <- 8
 
 if(DROPLMs){
   coords_excluded<- Proc$PCscores_drop[!classified,1:end_PC]
@@ -1215,12 +1235,14 @@ res_df_to_classify <- data.frame(matrix("", ncol = (end_PC-start_PC)+3, nrow = l
 colnames(res_df_to_classify) <- c("Class", paste0( start_PC:end_PC, " PCs"), "ClassResults")
 rownames(res_df_to_classify) <- spec_names_to_classify
 
+posterior_probabilities <- list()
+
 for(i in start_PC:end_PC){
   print(i)
   if(DROPLMs){
-    CVA_res<-CVA(dataarray=Proc$PCscores_drop[classified,1:i],groups=gp_class,weighting = TRUE, cv = TRUE, prior=rep(1/groupnum_c,groupnum_c))
+    CVA_res<-CVA(dataarray=Proc$PCscores_drop[classified,1:i],groups=gp_class,weighting = TRUE, cv = TRUE, prior=rep(1/groupnum_c,groupnum_c), plot = F)
   } else {
-    CVA_res<-CVA(dataarray=Proc$PCscores[classified,1:i],groups=gp_class,weighting = TRUE, cv = TRUE, prior=rep(1/groupnum_c,groupnum_c))
+    CVA_res<-CVA(dataarray=Proc$PCscores[classified,1:i],groups=gp_class,weighting = TRUE, cv = TRUE, prior=rep(1/groupnum_c,groupnum_c), plot = F)
   }
 
   class_acc<-round(sum(CVA_res$class==CVA_res$groups)/length(CVA_res$groups)*100, 2)
@@ -1229,7 +1251,8 @@ for(i in start_PC:end_PC){
   
   test<-classify(CVA_res,newdata=coords_to_project[,1:i, drop = FALSE])
   res_df_to_classify[,which(names(res_df_classified) == paste0(i, " PCs"))] <- as.character(test$class)
-  
+  posterior_probabilities[[paste0(i, "_PCs")]] <- test$posterior
+  rownames(posterior_probabilities[[paste0(i, "_PCs")]]) <- rownames(coords_to_project)
   
   # Plot CVA and project classified
   if(dim(coords_to_project)[1] < 2){
@@ -1242,30 +1265,54 @@ for(i in start_PC:end_PC){
   rownames(projected) <- classifier$Name[!classified]
   
   if(ncol(CVA_res$CVscores) == 1){
-    next
-  }
-  
-  #CVA 1 v 2 (labels)
-  yrange<-sum(abs(range(CVA_res$CVscores[,2])));ymin<-min(CVA_res$CVscores[,2]);ymax<-max(CVA_res$CVscores[,2])
-  Xrange<-sum(abs(range(CVA_res$CVscores[,1])));Xmin<-min(CVA_res$CVscores[,1]);Xmax<-max(CVA_res$CVscores[,1])
+    CV_data <- data.frame(CV = c(CVA_res$CVscores, projected), Group = gp, Spec = rownames(Proc$PCscores))
+    p <- CV_data %>%
+      ggplot(aes(x=Group, y=CV, fill=Group)) +
+      theme_bw() + 
+      geom_boxplot(alpha = 0.5) +
+      ggtitle("Log centroid size") +
+      geom_point(size=2.5) + 
+      geom_hline(data = df_cs_line, aes(yintercept = CSize),
+                 color = "black", linetype = "dashed", size = 0.6) +
+      # geom_text_repel(aes(label = Spec), color = "black", size = 3, segment.color = "grey") +
+      scale_color_manual(values=farbe[-1]) +
+      scale_fill_manual(values=farbe[-1]) + 
+      xlab("") + 
+      ylab("") +
+      theme(legend.position = "none") +
+      theme(axis.line = element_line(color='black'),
+            plot.background = element_blank(),
+            panel.grid.minor = element_blank(),
+            panel.grid.major = element_blank(),
+            axis.text=element_text(size=15),
+            plot.title = element_text(hjust = 0.5))
+    
+    print(p)
+  } else {
+    #CVA 1 v 2 (labels)
+    yrange<-sum(abs(range(CVA_res$CVscores[,2])));ymin<-min(CVA_res$CVscores[,2]);ymax<-max(CVA_res$CVscores[,2])
+    Xrange<-sum(abs(range(CVA_res$CVscores[,1])));Xmin<-min(CVA_res$CVscores[,1]);Xmax<-max(CVA_res$CVscores[,1])
 
-  plot(cbind(CVA_res$CVscores[,1],CVA_res$CVscores[,2]),type="n",asp=1,cex=1,ylim=c(ymin-0.25*yrange,ymax+0.25*yrange),xlab=paste("CV 1 (",round(CVA_res$Var[1,2]),"%)",sep=""),ylab=paste("CV 2 (",round(CVA_res$Var[2,2]),"%)",sep=""))
-  title(main = paste0(i ," PCs"))
-  #plot(cbind(CVA$CVscores[,1],CVA$CVscores[,2]),type="n",asp=1,cex=1,xlim=c(Xmin-0.55*Xrange,Xmax+0.35*Xrange),xlab=paste("CV 1 (",round(CVA$Var[1,2]),"%)",sep=""),ylab=paste("CV 2 (",round(CVA$Var[2,2]),"%)",sep=""))
-  for(gruppe in 1:length(levels(gp_class))){
-    sub<-gp_class==levels(gp_class)[gruppe]
-    tr <- NULL
-    try(tr<-tri.mesh(x=CVA_res$CVscores[sub,1],y=CVA_res$CVscores[sub,2],duplicate = "error"))
-    if(!is.null(tr)){
-      polygon(convex.hull(tr)$x,convex.hull(tr)$y,col=(adjustcolor(farbe[gruppe], alpha.f = 0.5)),border=farbe[gruppe])
-    } else if(sum(sub)==2){
-      lines(CVA_res$CVscores[sub,1],CVA_res$CVscores[sub,2],col=farbe[gruppe],lwd = 2)
-    }}
-  points(CVA_res$CVscores[,c(1,2)],col=farbe[gp_class],pch=19)
-  # text(CVA_res$CVscores[,c(1,2)],label=classifier$Name[classified],col=farbe[classifier$Class2[classified]],pos=c(1,2),cex=0.6,offset=0.5)
-  legend("bottomright", legend = levels(gp_class), col = farbe, pch = 19, bty = "n")
-  points(cbind(projected[,1],projected[,2]),pch=19)
-  text(cbind(projected[,1],projected[,2]), label = rownames(projected), cex = 0.6, pos = c(1,2))
+    try({
+      plot(cbind(CVA_res$CVscores[,1],CVA_res$CVscores[,2]),type="n",asp=1,cex=1,ylim=c(ymin-0.25*yrange,ymax+0.25*yrange),xlab=paste("CV 1 (",round(CVA_res$Var[1,2]),"%)",sep=""),ylab=paste("CV 2 (",round(CVA_res$Var[2,2]),"%)",sep=""))
+    title(main = paste0(i ," PCs"))
+    #plot(cbind(CVA$CVscores[,1],CVA$CVscores[,2]),type="n",asp=1,cex=1,xlim=c(Xmin-0.55*Xrange,Xmax+0.35*Xrange),xlab=paste("CV 1 (",round(CVA$Var[1,2]),"%)",sep=""),ylab=paste("CV 2 (",round(CVA$Var[2,2]),"%)",sep=""))
+    for(gruppe in 1:length(levels(gp_class))){
+      sub<-gp_class==levels(gp_class)[gruppe]
+      tr <- NULL
+      try(tr<-tri.mesh(x=CVA_res$CVscores[sub,1],y=CVA_res$CVscores[sub,2],duplicate = "error"))
+      if(!is.null(tr)){
+        polygon(convex.hull(tr)$x,convex.hull(tr)$y,col=(adjustcolor(farbe[gruppe], alpha.f = 0.5)),border=farbe[gruppe])
+      } else if(sum(sub)==2){
+        lines(CVA_res$CVscores[sub,1],CVA_res$CVscores[sub,2],col=farbe[gruppe],lwd = 2)
+      }}
+    points(CVA_res$CVscores[,c(1,2)],col=farbe[gp_class],pch=19)
+    # text(CVA_res$CVscores[,c(1,2)],label=classifier$Name[classified],col=farbe[classifier$Class2[classified]],pos=c(1,2),cex=0.6,offset=0.5)
+    legend("bottomright", legend = levels(gp_class), col = farbe, pch = 19, bty = "n")
+    points(cbind(projected[,1],projected[,2]),pch=19)
+    text(cbind(projected[,1],projected[,2]), label = rownames(projected), cex = 0.6, pos = c(1,2))
+    }, silent = T)
+  }
 }
 
 
@@ -1287,13 +1334,19 @@ res_df_classified$ClassAccuracy[nrow(res_df_classified)] <- per_spec_total_class
 
 CVA_results <- list(
   ClassifiedResults = res_df_classified,
-  ToClassifyResults = as.data.frame(t(res_df_to_classify))
+  ToClassifyResults = as.data.frame(t(res_df_to_classify)),
+  PosteriorProbs = posterior_probabilities
 )
 
 CVA_results$ToClassifyResults
 
 class_mat <- data.frame(matrix(c(gp_class, CVA_res$class), ncol =2))
 rownames(class_mat) <- spec_names_kept[classified]
+
+
+sink("D:/3D_GM/Projects/UW105/Results/Taxonomic_assessment/UW105_658/CVA_results.txt")
+print(CVA_results)
+sink()
 
 
 # Plot CVA and project classified
@@ -1445,7 +1498,7 @@ for(i in 1:length(groups)){
 legend3d("topright", legend = levels(gp)[groups], pch = 16, col = farbe[groups], cex=1, inset=c(0.02))
 
 ##REGENERATE PCA ON LM SUBSET
-include_size <- F
+include_size <- T
 
 procrot <- Morpho:::orp(Proc$rotated[tokeep,,], mshape = Proc$mshape[tokeep,])
 Symtan <- procrot
@@ -1486,7 +1539,7 @@ Proc$Variance_drop<-SymVar
 plot(cbind(Proc$PCscores_drop[,1],Proc$PCscores_drop[,2]),type="n",asp=1,cex=1,
      xlab=paste0("PC 1 ", "(", round(Proc$Variance[1,2], 2), "%", ")"),
      ylab=paste0("PC 2 ", "(", round(Proc$Variance[2,2], 2), "%", ")"))
-for(a in setdiff(seq_along(levels(gp)), c(6))){
+for(a in setdiff(seq_along(levels(gp)), c(8))){
   sub<-gp==levels(gp)[a]
   tr <- NULL
   try(tr<-tri.mesh(x=Proc$PCscores_drop[sub,1],y=Proc$PCscores_drop[sub,2],duplicate = "error"))
@@ -1496,8 +1549,8 @@ for(a in setdiff(seq_along(levels(gp)), c(6))){
     lines(Proc$PCscores_drop[sub,1],Proc$PCscores_drop[sub,2],col=farbe[a],lwd = 2)
   }}
 points(cbind(Proc$PCscores_drop[,1],Proc$PCscores_drop[,2]),col=farbe[gp],pch=19)
-text(cbind(Proc$PCscores_drop[,1],Proc$PCscores_drop[,2]),label=dimnames(SubCoordsArray)[[3]],col=farbe[gp],pos=c(1,2),cex=0.6,offset=0.5)
-legend("topright", legend = levels(gp), col = farbe, pch = 19, bty = "n")
+# text(cbind(Proc$PCscores_drop[,1],Proc$PCscores_drop[,2]),label=dimnames(SubCoordsArray)[[3]],col=farbe[gp],pos=c(1,2),cex=0.6,offset=0.5)
+# legend("topright", legend = levels(gp), col = farbe, pch = 19, bty = "n")
 
 # Plot PCA PC1 V 3
 plot(cbind(Proc$PCscores_drop[,1],Proc$PCscores_drop[,3]),type="n",asp=1,cex=1,
@@ -1528,10 +1581,10 @@ plot3d(cbind(Proc$PCscores_drop[,1],Proc$PCscores_drop[,2],Proc$PCscores_drop[,3
        xlab = paste("PC1 (", round(Proc$Variance[1,2],1), "%)", sep = ""),
        ylab = paste("PC2 (", round(Proc$Variance[2,2],1), "%)", sep = ""),
        zlab = paste("PC3 (", round(Proc$Variance[3,2],1), "%)", sep = ""))
-# texts3d(cbind(Proc$PCscores_drop[,1],Proc$PCscores_drop[,2],Proc$PCscores_drop[,3]),texts = classifier$Name,font=2,adj=1,cex=0.7)
+# texts3d(cbind(Proc$PCscores_drop[,1],Proc$PCscores_drop[,2],Proc$PCscores_drop[,3]),texts = classifier$Name,font=1,adj=1,cex=0.8)
 legend3d("topleft", levels(gp), pch = 16, col = farbe, cex = 3)
 
-for(a in setdiff(seq_along(levels(gp)), c(6))){
+for(a in setdiff(seq_along(levels(gp)), c(8))){
   sub<-gp==levels(gp)[a]
   PCsub<-cbind(Proc$PCscores_drop[sub,1],Proc$PCscores_drop[sub,2],Proc$PCscores_drop[sub,3])
   if(length(PCsub[,1])>3){
@@ -1549,7 +1602,7 @@ for(a in setdiff(seq_along(levels(gp)), c(6))){
 legend3d("topleft", levels(gp), pch = 16, col = farbe, cex = 3)
 
 #Save 3D PCA plot as HTML file
-save_location <- "D:/3D_GM/Projects/UW105/Results/Taxonomic_assessment/UW105_240_811_LP4"
+save_location <- "D:/3D_GM/Projects/UW105/Results/Taxonomic_assessment/UW105_811"
 setwd(save_location)
 widget <- rglwidget(webgl = TRUE, snapshot = FALSE, width = 1770, height = 1000)
 htmlwidgets::saveWidget(widget, file.path(save_location, "Shape_PCA_3D_dropped_landmarks_clean.html"))
@@ -1559,9 +1612,6 @@ rgl.postscript("Shape_PCA_3D_dropped_landmarks_clean.svg",fmt="svg")
 setwd("D:/3D_GM/Projects/UW105")
 
 ######### 
-library(ggrepel); library(ggplot2); library(viridis); library(tidyverse)
-library(hrbrthemes)
-
 data.cs <- data.frame(CSize = apply(SubCoordsArray[tokeep,,],3,cSize), Group = gp, Spec = rownames(Proc$PCscores))
 
 df_cs_box <- data.cs %>% filter(Spec != "CC7_2045")
@@ -1575,9 +1625,9 @@ df_cs_box %>%
   geom_point(size=2.5) + 
   geom_hline(data = df_cs_line, aes(yintercept = CSize),
              color = "black", linetype = "dashed", size = 0.6) +
-  # geom_text_repel(aes(label = Spec), color = "black", size = 3, segment.color = "grey") +
-  scale_color_manual(values=farbe[-1]) +
-  scale_fill_manual(values=farbe[-1]) + 
+  geom_text_repel(aes(label = Spec), color = "black", size = 3, segment.color = "grey") +
+  scale_color_manual(values=farbe) +
+  scale_fill_manual(values=farbe) + 
   xlab("") + 
   ylab("") +
   theme(legend.position = "none") +
@@ -1586,6 +1636,7 @@ df_cs_box %>%
         panel.grid.minor = element_blank(),
         panel.grid.major = element_blank(),
         axis.text=element_text(size=15),
+        axis.text.x = element_text(angle = 45, hjust = 1),
         plot.title = element_text(hjust = 0.5))
 
 ## premolar group comparisons 
@@ -1629,7 +1680,7 @@ par3d(FOV = 0)
 
 cbind(levels(gp),farbe[c(1:length(levels(gp)))])
 # groups<-c(1,3,5)
-groups<-c(2,6)
+groups<-c(2,7)
 
 clear3d("shapes");
 plot3d(Proc$rotated[curves_drop_orgn[[1]],,1],type="n",xlab="", ylab="", zlab="",aspect =F,box=F,axes=F,col="red")
@@ -1690,12 +1741,12 @@ legend3d("topleft", levels(gp)[groups], pch = 16, col = farbe[groups], cex = 3)
 # nearest neighbours based on procrustes distance
 dist_mat <- as.matrix(dist(two.d.array(Proc$rotated[tokeep,,])))
 rownames(dist_mat)
-sort(dist_mat[which(rownames(dist_mat) == "UW105_811_LLM1"),])
+sort(dist_mat[which(rownames(dist_mat) == "UW105_681_URM"),])
 
 # compare specimens
 as.matrix(classifier$Name)
 #specimens<-c(1,17); cbind(as.character(classifier$Name[c(specimens)]),farbe[c(1:length(specimens))])
-specimens<-c(46,45); cbind(as.character(classifier$Name[c(specimens)]),farbe[c(1:length(specimens))])
+specimens<-c(42,18); cbind(as.character(classifier$Name[c(specimens)]),farbe[c(1:length(specimens))])
 show_landmarks = FALSE
 
 clear3d("shapes");xmed<-median(Proc$rotated[,1,specimens[1]]); ymed<-median(Proc$rotated[,2,specimens[1]]); zmed<-median(Proc$rotated[,3,specimens[1]]);
@@ -1703,17 +1754,17 @@ plot3d(Proc$rotated[,,specimens[1]],type="n",xlab="", ylab="", zlab="",aspect =T
 
 for(i in 1:length(specimens)){
   lapply(seq(curves), function(x){
-    lines3d(Proc$rotated[curves_drop_orgn[[x]],,specimens[i]], col=farbe[i],lwd=2)
+    lines3d(Proc$rotated[curves_drop_orgn[[x]],,specimens[i]], col=farbe[gp][specimens[i]],lwd=2)
     if(show_landmarks){
-      points3d(Proc$rotated[curves_drop_orgn[[x]],,specimens[i]],col=farbe[i], size = 7)
+      points3d(Proc$rotated[curves_drop_orgn[[x]],,specimens[i]],col=farbe[gp][specimens[i]], size = 7)
     }
     match_fixed <- curves_drop_orgn[[x]] %in% fix 
     if(any(match_fixed)){
-      spheres3d(Proc$rotated[curves_drop_orgn[[x]][match_fixed],,specimens[i]],radius=0.003, col=farbe[i])
+      spheres3d(Proc$rotated[curves_drop_orgn[[x]][match_fixed],,specimens[i]],radius=0.003, col=farbe[gp][specimens[i]])
     }
   })
 }
-legend3d("topleft", cbind(as.character(classifier$Name[c(specimens)])), pch = 16, col = farbe, cex = 3)
+legend3d("topleft", cbind(as.character(classifier$Name[c(specimens)])), pch = 16, col = farbe[gp][specimens], cex = 3)
 
 
 #visualisation
